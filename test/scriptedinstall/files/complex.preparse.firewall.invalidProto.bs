@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	firewallport --proto must be either "tcp" or "udp".
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.firewallport.invalidProto.bs

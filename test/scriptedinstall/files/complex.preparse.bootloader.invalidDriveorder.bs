@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	bootloader --driveorder= specified, but drive "foo" was not found on the system.
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.bootloader.invalidDriveorder.bs

@@ -1,0 +1,6 @@
+#
+#	start_verify
+#	userchoices.getMediaLocation()['mediaLocation'] == 'ftp://www.aserver.com:902/'
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.install.ftp.bs

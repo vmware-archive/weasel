@@ -1,0 +1,8 @@
+#
+#	start_errors
+#	password not specified for rootpw command.
+#	end_errors
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/negative.rootpw.noPWD.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs

@@ -1,0 +1,1 @@
+clearpart --drives=vml.0000,sda --overwritevmfs

@@ -1,0 +1,10 @@
+#
+#	start_warnings
+#	--enablead is deprecated
+#	--enablemd5 is deprecated
+#	--enableshadow is deprecated
+#	end_warnings
+#
+
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/negative.auth.noADDomain.bs

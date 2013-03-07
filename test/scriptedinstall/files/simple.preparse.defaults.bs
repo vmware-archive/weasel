@@ -1,0 +1,10 @@
+#
+#	start_verify
+#	userchoices.getParanoid() == False
+#	userchoices.getUpgrade() == False
+#	userchoices.getReboot() == False
+#	userchoices.getNoEject() == False
+#	userchoices.getZeroMBR() == False
+#	userchoices.getDryrun() == False
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs

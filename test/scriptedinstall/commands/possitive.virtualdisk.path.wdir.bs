@@ -1,0 +1,2 @@
+part cosvmfs --fstype=vmfs3 --size=6000 --grow --ondisk=vml.0000
+virtualdisk cos --path="cos/cos.vmdk" --size=4000 --onvmfs=cosvmfs

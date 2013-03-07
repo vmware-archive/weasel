@@ -1,0 +1,1 @@
+firewallport --open --port=1234567 --proto=tcp --dir=in --name=myport

@@ -1,0 +1,195 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+
+install url http://myserver.com
+
+reboot
+
+>>> import docage
+>>> docage.run()
+>>> import fauxroot
+>>> "install depot is http://myserver.com" in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> "installation aborted" not in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> "installation complete" in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> import userchoices
+>>> userchoices.getMediaLocation()
+{'mediaLocation': 'http://myserver.com/'}
+>>> docage.printSystemLog()
+['chvt', '6']
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['touch', '/etc/ntp.conf']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkfs.ext2', '/dev/sda1']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sda1']
+['/usr/sbin/vmkfstools', '-C', 'vmfs3', '-b', '1m', '-S', 'datastore1', '/vmfs/devices/disks/vml.0000:4']
+['/usr/sbin/vmkfstools', '-c', '7604M', '/vmfs/volumes/datastore1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['/usr/sbin/vsd', '-cu', '-f', '/vmfs/volumes/datastore1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkswap', '-v1', '/dev/sdh1']
+['/usr/sbin/mkfs.ext2', '/dev/sdh2']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh2']
+['/usr/sbin/mkfs.ext2', '-L', 'esx-root', '/dev/sdh4']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh4']
+['/usr/bin/mount', '/dev/sdh4', '/mnt/sysimage']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/boot']
+['/usr/bin/mount', '/dev/sdh2', '/mnt/sysimage/var/log']
+['/usr/bin/mount', '-t', 'proc', '/proc', '/mnt/sysimage//proc']
+['/usr/bin/mount', '-t', 'sysfs', '/sys', '/mnt/sysimage//sys']
+['/bin/rpm', '--rebuilddb']
+['/sbin/chkconfig', 'netfs', 'off']
+['/sbin/chkconfig', 'nfslock', 'off']
+['/sbin/chkconfig', 'portmap', 'off']
+['/sbin/chkconfig', 'iptables', 'off']
+['/sbin/chkconfig', 'sshd', 'on']
+['/usr/sbin/esxupdate', 'syncdb', '-m', '/tmp/metadata.zip']
+['/mnt/sysimage/usr/sbin/esxcfg-configcheck']
+['/usr/sbin/esxcfg-auth', '--kickstart', '--nostart', '--usepamqc', '8', '8', '8', '7', '6', '0', '--disablenis', '--disableldap', '--disableldapauth', '--disableldaptls', '--disablekrb5']
+['/usr/bin/chage', '-M', '-1', 'root']
+['touch', '/mnt/sysimage//etc/vmware/sysboot.conf']
+['/usr/sbin/esxcfg-boot', '-b', '--update-trouble']
+['/usr/sbin/grub', '--batch', '--device-map=/tmp/device.map', '<<EOF', 'root', '(hd0,0)', 'setup', '(hd0)', 'quit', 'EOF']
+['/usr/sbin/esxcfg-boot', '--rebuild', '-b', '--update-trouble']
+['/etc/init.d/iptables', 'stop']
+['/usr/bin/umount', '/mnt/sysimage/proc']
+['/usr/bin/umount', '/mnt/sysimage/sys']
+['/usr/bin/umount', '/mnt/sysimage/var/log']
+['/usr/bin/umount', '/mnt/sysimage/boot']
+['/usr/bin/umount', '/mnt/sysimage']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/eject']
+>>> docage.printPartitions()
+/dev/sdn PARTITIONS:
+[{'num': 0, 'fs_type': {'formattable': True, 'name': 'ext3'}, 'flags': {}, 'native_type': 131, 'geom': {'start': 0, 'end': 100}, 'type': 0}]
+/dev/sdt PARTITIONS:
+[]
+/dev/sdq PARTITIONS:
+[]
+/dev/cciss/c0d1 PARTITIONS:
+[]
+/dev/cciss/c0d0 PARTITIONS:
+[]
+/dev/sdm PARTITIONS:
+[]
+/dev/sdh PARTITIONS:
+[{'num': 1, 'fs_type': {'formattable': True, 'name': 'linux-swap'}, 'flags': {}, 'native_type': 130, 'geom': {'start': 0L, 'end': 1228799.0}, 'type': 0},
+ {'num': 2, 'fs_type': {'formattable': True, 'name': 'ext3'}, 'flags': {}, 'native_type': 131, 'geom': {'start': 1228800.0, 'end': 5324799.0}, 'type': 0},
+ {'num': 3, 'fs_type': None, 'flags': {}, 'native_type': None, 'geom': {'start': 5324800.0, 'end': 7973371903L}, 'type': 2},
+ {'num': 4, 'fs_type': {'formattable': True, 'name': 'ext3'}, 'flags': {}, 'native_type': 131, 'geom': {'start': 5324800.0, 'end': 7973371903.0}, 'type': 1}]
+/dev/sdf PARTITIONS:
+[{'num': 0, 'fs_type': {'formattable': True, 'name': 'ext3'}, 'flags': {}, 'native_type': 131, 'geom': {'start': 0, 'end': 200}, 'type': 0},
+ {'num': 1, 'fs_type': {'formattable': True, 'name': 'ext3'}, 'flags': {}, 'native_type': 131, 'geom': {'start': 220, 'end': 600}, 'type': 0}]
+/dev/sdg PARTITIONS:
+[{'num': 0, 'fs_type': {'formattable': True, 'name': 'ext3'}, 'flags': {}, 'native_type': 131, 'geom': {'start': 0, 'end': 100}, 'type': 0}]
+/dev/sdd PARTITIONS:
+[{'num': 0, 'fs_type': {'formattable': True, 'name': 'ext3'}, 'flags': {}, 'native_type': 131, 'geom': {'start': 0, 'end': 100}, 'type': 0}]
+/dev/sde PARTITIONS:
+[]
+/dev/sdb PARTITIONS:
+[{'num': 5, 'fs_type': '', 'flags': {}, 'native_type': 251, 'geom': {'start': 100, 'end': 200}, 'type': 1}]
+/dev/sda PARTITIONS:
+[{'num': 1, 'fs_type': {'formattable': True, 'name': 'ext3'}, 'flags': {1: 1}, 'native_type': 131, 'geom': {'start': 0L, 'end': 2252799.0}, 'type': 0},
+ {'num': 2, 'fs_type': {'formattable': False, 'name': 'vmkcore'}, 'flags': {}, 'native_type': 252, 'geom': {'start': 2252800.0, 'end': 2478079.0}, 'type': 0},
+ {'num': 3, 'fs_type': None, 'flags': {}, 'native_type': None, 'geom': {'start': 2478080.0, 'end': 157286399L}, 'type': 2},
+ {'num': 4, 'fs_type': {'formattable': True, 'name': 'vmfs3'}, 'flags': {}, 'native_type': 251, 'geom': {'start': 2478080.0, 'end': 157286399.0}, 'type': 1}]
+>>> docage.printFiles(["/etc/ntp.conf",
+...                    "/mnt/sysimage/boot/grub/grub.conf",
+...                    "/mnt/sysimage/etc/sysconfig/keyboard",
+...                    "/mnt/sysimage/etc/sysconfig/clock",
+...                    "/mnt/sysimage/etc/sysconfig/i18n",
+...                    "/mnt/sysimage/root/ks.cfg"])
+/etc/ntp.conf (regular f 700)
+/mnt/sysimage/boot/grub/grub.conf (unmounted f 600)
+  default 0
+  ###################### grub.conf #####################
+  # this file was generated by bootloader.py
+  #
+  # Any entries in this file marked with the comment
+  #   #vmware:autogenerated esx
+  # Should not be edited by hand.  They are likely to
+  # be clobbered on or before the next reboot.
+  #
+  timeout=5
+<BLANKLINE>
+  title ESX vmkernel
+          #vmware:autogenerated esx
+          root (hd0,0)
+          uppermem 307200
+          kernel /vmlinuz ro root=UUID=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51c mem=300M quiet
+          initrd /initrd.img
+  title Troubleshooting mode
+          #vmware:autogenerated esx
+          root (hd0,0)
+          uppermem 307200
+          kernel /trouble/vmlinuz ro root=UUID=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51c mem=300M trouble quiet
+          initrd /trouble/initrd.img
+<BLANKLINE>
+/mnt/sysimage/etc/sysconfig/clock (unmounted f 700)
+  ZONE=US/Pacific
+  UTC=true
+  ARC=false
+<BLANKLINE>
+/mnt/sysimage/etc/sysconfig/i18n (unmounted f 700)
+  LANG="en_US.UTF-8"
+<BLANKLINE>
+/mnt/sysimage/etc/sysconfig/keyboard (unmounted f 700)
+  KEYTABLE="us"
+  KEYBOARDTYPE="pc"
+<BLANKLINE>
+/mnt/sysimage/root/ks.cfg (unmounted f 600)
+<BLANKLINE>
+  reboot
+  accepteula
+<BLANKLINE>
+  keyboard us
+<BLANKLINE>
+  auth 
+<BLANKLINE>
+  # Canonical drive names:
+  clearpart --drives=vml.0000
+  # Uncomment to use first detected disk:
+  #clearpart --firstdisk
+<BLANKLINE>
+  # Uncomment the esxlocation line and comment out the clearpart
+  # and physical partitions to do a non-destructive reinstall.
+  #esxlocation --uuid=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b
+<BLANKLINE>
+  install url http://myserver.com/
+<BLANKLINE>
+  rootpw --iscrypted ...
+<BLANKLINE>
+  network --addvmportgroup=true --device=vmnic32 --bootproto=dhcp
+<BLANKLINE>
+  part '/boot'  --fstype=ext3 --size=1100  --ondisk=vml.0000
+  # Uncomment to use first detected disk:
+  #part '/boot'  --fstype=ext3 --size=1100  --onfirstdisk
+  part 'none'  --fstype=vmkcore --size=110  --ondisk=vml.0000
+  # Uncomment to use first detected disk:
+  #part 'none'  --fstype=vmkcore --size=110  --onfirstdisk
+  part 'datastore1'  --fstype=vmfs3 --size=8604 --grow  --ondisk=vml.0000
+  # Uncomment to use first detected disk:
+  #part 'datastore1'  --fstype=vmfs3 --size=8604 --grow  --onfirstdisk
+<BLANKLINE>
+  virtualdisk 'esxconsole' --size=7604 --onvmfs='datastore1'
+<BLANKLINE>
+  part 'swap'  --fstype=swap --size=600 --onvirtualdisk='esxconsole'
+  part '/var/log'  --fstype=ext3 --size=2000 --onvirtualdisk='esxconsole'
+  part '/'  --fstype=ext3 --size=5000 --grow --onvirtualdisk='esxconsole'
+<BLANKLINE>
+  %post --interpreter=bash
+<BLANKLINE>

@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	invalid service "blah" specified.
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.firewallport.invalidService.bs

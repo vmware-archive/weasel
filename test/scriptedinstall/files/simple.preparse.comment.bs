@@ -1,0 +1,11 @@
+#
+#	start_verify
+#	userchoices.getBoot()['kernelParams'] == '#comment in a string'
+#	end_verify
+
+include ./scriptedinstall/files/possitive.minimal.bs
+#no space after the after so the hash is part of the first token.
+# with a space...
+ #leading spaces...
+ # foo
+bootloader --append="#comment in a string" --location=mbr # comment after a command

@@ -1,0 +1,150 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'cosnetworkadapter']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Network Configuration</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Select an adapter for ESX'
+>>> mainwindow.label175.get_property("label")
+'Select an adapter for ESX to use for system tasks.'
+>>> mainwindow.label180.get_property("label")
+'VLAN ID'
+>>> mainwindow.CosnetworkadapterVlanIDEntry.get_property("sensitive")
+True
+>>> mainwindow.label179.get_property("label")
+'VLAN Settings:'
+>>> mainwindow.CosnetworkadapterVlanCheckButton.get_property("label")
+'This adapter requires a VLAN ID (Leave unchecked if you are not sure)'
+>>> mainwindow.CosnetworkadapterVlanCheckButton.get_property("sensitive")
+True
+>>> mainwindow.label178.get_property("label")
+'Network Adapter:'
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label179.get_property("label")
+'Network Adapter:'
+>>> mainwindow.CosnetworkNetworkAdapterLabel.get_property("label")
+'vmnic32'
+>>> mainwindow.kGtkLabel0CosnetworkDHCPRadioButtonalignment18frame2alignment17framemainwindow.get_property("label")
+'Set automatically using DHCP'
+>>> mainwindow.CosnetworkDHCPRadioButton.get_property("sensitive")
+True
+>>> mainwindow.radiobutton2.get_property("label")
+'Use the following network settings:'
+>>> mainwindow.radiobutton2.get_property("sensitive")
+True
+>>> mainwindow.label192.get_property("label")
+'Enter a fully qualified host name (e.g. host.example.com)'
+>>> mainwindow.CosnetworkHostnameEntry.get_property("sensitive")
+True
+>>> mainwindow.SecondaryNS.get_property("sensitive")
+True
+>>> mainwindow.PrimaryNS.get_property("sensitive")
+True
+>>> mainwindow.label191.get_property("label")
+'Host name:'
+>>> mainwindow.label190.get_property("label")
+'Secondary DNS:'
+>>> mainwindow.label189.get_property("label")
+'Primary DNS:'
+>>> mainwindow.label186.get_property("label")
+'Gateway:'
+>>> mainwindow.label187.get_property("label")
+'Subnet Mask:'
+>>> mainwindow.label188.get_property("label")
+'IP Address:'
+>>> mainwindow.SubnetMask.get_property("sensitive")
+True
+>>> mainwindow.Gateway.get_property("sensitive")
+True
+>>> mainwindow.IPAddress.get_property("sensitive")
+True
+>>> mainwindow.label24.get_property("label")
+'Adapter Settings'
+>>> mainwindow.activate_button.get_property("label")
+'Test these settings'
+>>> mainwindow.activate_button.get_property("sensitive")
+True
+>>> mainwindow.CosnetworkDHCPRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.radiobutton2.clicked()
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("1")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.2")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.20")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.20.")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.20.1")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.20.11")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.20.118")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.20.118.")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.20.118.5")
+>>> runner.sleep()
+>>> mainwindow.IPAddress.set_text("10.20.118.55")
+>>> runner.sleep()
+>>> mainwindow.SubnetMask.grab_focus()
+>>> runner.sleep()
+>>> mainwindow.SubnetMask.get_text()
+'255.0.0.0'
+>>> runner.sleep()
+>>> mainwindow.Gateway.grab_focus()
+>>> runner.sleep()
+>>> mainwindow.Gateway.get_text()
+'10.255.255.254'
+>>> runner.sleep()
+>>> mainwindow.PrimaryNS.grab_focus()
+>>> runner.sleep()
+>>> mainwindow.PrimaryNS.get_text()
+'10.0.0.1'
+>>> runner.sleep()
+>>> mainwindow.CosnetworkHostnameEntry.set_text("f")
+>>> runner.sleep()
+>>> mainwindow.CosnetworkHostnameEntry.set_text("ff")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['touch', '/etc/ntp.conf']

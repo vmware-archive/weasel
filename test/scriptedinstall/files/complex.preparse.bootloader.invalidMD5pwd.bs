@@ -1,0 +1,10 @@
+#
+#	start_warnings
+#	bootloader --md5pass= string is not valid. Bootloader password is not set.
+#	end_warnings
+#	start_verify
+#	userchoices.getBoot()['password'] == ''
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.bootloader.invalidMD5.bs

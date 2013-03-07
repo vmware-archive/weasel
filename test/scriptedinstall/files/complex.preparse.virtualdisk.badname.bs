@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	argument "name" to command "virtualdisk" set but an invalid value was specified.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.virtualdisk.badname.bs

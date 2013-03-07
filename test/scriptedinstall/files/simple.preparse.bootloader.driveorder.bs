@@ -1,0 +1,12 @@
+#
+#	start_verify
+#	userchoices.getBoot()['upgrade'] == False
+#	userchoices.getBoot()['doNotInstall'] == False
+#	userchoices.getBoot()['location'] == userchoices.BOOT_LOC_MBR
+#	userchoices.getBoot()['kernelParams'] == 'noapic'
+#	userchoices.getBoot()['password'] == ''
+#	userchoices.getBoot()['passwordType'] == userchoices.BOOT_PASSWORD_TYPE_PLAIN
+#	[dev.name for dev in userchoices.getBoot()['driveOrder']] == ['vml.0000']
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.bootloader.driveorder.bs

@@ -1,0 +1,135 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'media']
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Install Media</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Select the source for this ESX installation'
+>>> mainwindow.InstallUsbRadioButton.get_property("label")
+'CD-ROM or USB Storage'
+>>> mainwindow.InstallUsbRadioButton.get_property("sensitive")
+True
+>>> mainwindow.InstallNfsRadioButton.get_property("label")
+'Network File System (NFS)'
+>>> mainwindow.InstallNfsRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallHttpRadioButtonalignment1framemainwindow.get_property("label")
+'World Wide Web (HTTP)'
+>>> mainwindow.InstallHttpRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallFtpRadioButtonalignment1framemainwindow.get_property("label")
+'File server (FTP)'
+>>> mainwindow.InstallFtpRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.InstallUsbRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.InstallNfsRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.nfslabel2.get_property("label")
+'Specify the Network Filesystem (NFS) Server and path'
+>>> mainwindow.NfsDirectoryEntry.get_property("sensitive")
+True
+>>> mainwindow.NfsServerEntry.get_property("sensitive")
+True
+>>> mainwindow.NfsServerEntry.set_text("f")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("fo")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("foo")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("foo.")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("foo.c")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("foo.co")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("foo.com")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("v")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("va")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var/")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var/w")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var/ww")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var/www")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var/www/")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var/www/t")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var/www/tw")
+>>> runner.sleep()
+>>> mainwindow.NfsDirectoryEntry.set_text("var/www/two")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> None # Added by shandy ---------------------------------------------------
+>>> import userchoices
+>>> userchoices.getMediaLocation()
+{}
+>>> None # -------------------------------------------------------------------
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkButtongtk_ok.clicked()
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("g")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("go")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("goo")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("good")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("good.")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("good.s")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("good.se")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("good.ser")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("good.serv")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("good.serve")
+>>> runner.sleep()
+>>> mainwindow.NfsServerEntry.set_text("good.server")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # Added by shandy ---------------------------------------------------
+>>> import userchoices
+>>> userchoices.getMediaLocation()
+{'mediaLocation': 'nfs://good.server/var/www/two/'}

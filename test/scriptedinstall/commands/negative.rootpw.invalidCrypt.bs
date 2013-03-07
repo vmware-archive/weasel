@@ -1,0 +1,1 @@
+rootpw --iscrypted 123abc

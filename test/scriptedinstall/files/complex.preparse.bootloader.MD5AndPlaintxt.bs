@@ -1,0 +1,10 @@
+#
+#
+#	start_warnings
+#	--md5pass and --password specified. Defaulting to md5pass.
+#	end_warnings
+#
+#
+
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.bootloader.MD5AndPlaintxt.bs

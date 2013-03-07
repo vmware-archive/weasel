@@ -1,0 +1,77 @@
+# Prohibit general access to this service.
+restrict default ignore
+
+# Permit all access over the loopback interface.  This could
+# be tightened as well, but to do so would effect some of
+# the administrative functions.
+restrict 127.0.0.1 
+
+
+# -- CLIENT NETWORK -------
+# Permit systems on this network to synchronize with this
+# time service.  Do not permit those systems to modify the
+# configuration of this service.  Also, do not use those
+# systems as peers for synchronization.
+# restrict 192.168.1.0 mask 255.255.255.0 notrust nomodify notrap
+
+
+# --- OUR TIMESERVERS ----- 
+# or remove the default restrict line 
+# Permit time synchronization with our time source, but do not
+# permit the source to query or modify the service on this system.
+
+# restrict mytrustedtimeserverip mask 255.255.255.255 nomodify notrap noquery
+# server mytrustedtimeserverip
+
+
+
+# --- NTP MULTICASTCLIENT ---
+#multicastclient			# listen on default 224.0.1.1
+# restrict 224.0.1.1 mask 255.255.255.255 notrust nomodify notrap
+# restrict 192.168.1.0 mask 255.255.255.0 notrust nomodify notrap
+
+
+
+# --- GENERAL CONFIGURATION ---
+#
+# Undisciplined Local Clock. This is a fake driver intended for backup
+# and when no outside source of synchronized time is available. The
+# default stratum is usually 3, but in this case we elect to use stratum
+# 0. Since the server line does not have the prefer keyword, this driver
+# is never used for synchronization, unless no other other
+# synchronization source is available. In case the local host is
+# controlled by some external source, such as an external oscillator or
+# another protocol, the prefer keyword would cause the local host to
+# disregard all other synchronization sources, unless the kernel
+# modifications are in use and declare an unsynchronized condition.
+#
+server	127.127.1.0	# local clock
+fudge	127.127.1.0 stratum 10	
+
+#
+# Drift file.  Put this in a directory which the daemon can write to.
+# No symbolic links allowed, either, since the daemon updates the file
+# by creating a temporary in the same directory and then rename()'ing
+# it to the file.
+#
+driftfile /var/lib/ntp/drift
+broadcastdelay	0.008
+
+#
+# Authentication delay.  If you use, or plan to use someday, the
+# authentication facility you should make the programs in the auth_stuff
+# directory and figure out what this number should be on your machine.
+#
+authenticate yes
+
+#
+# Keys file.  If you want to diddle your server at run time, make a
+# keys file (mode 600 for sure) and define the key number to be
+# used for making requests.
+#
+# PLEASE DO NOT USE THE DEFAULT VALUES HERE. Pick your own, or remote
+# systems might be able to reset your clock at will. Note also that
+# ntpd is started with a -A flag, disabling authentication, that
+# will have to be removed as well.
+#
+keys		/etc/ntp/keys

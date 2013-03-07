@@ -1,0 +1,1 @@
+auth --enableldap --enableldapauth --disablemd5 --disableshadow

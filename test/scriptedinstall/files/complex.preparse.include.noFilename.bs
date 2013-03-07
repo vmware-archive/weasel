@@ -1,0 +1,8 @@
+#
+#
+#	start_errors
+#	filename not specified for include command.
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include

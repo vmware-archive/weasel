@@ -1,0 +1,6 @@
+#
+#	start_warnings
+#	--maxsize specified but --grow is not defined, defaulting to grow to partition to --maxsize
+#	end_warnings
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.partition.implicitGrow.bs

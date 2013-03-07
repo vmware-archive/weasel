@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	firewallport --name must be specified for inbound ports.
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.firewallport.noName.bs

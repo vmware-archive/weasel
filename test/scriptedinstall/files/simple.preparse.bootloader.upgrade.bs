@@ -1,0 +1,2 @@
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.bootloader.upgrade.bs

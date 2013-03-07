@@ -1,0 +1,1 @@
+part /etc --size=256 --ondisk=vml.0000 --fstype=ext3

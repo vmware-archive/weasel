@@ -1,0 +1,1 @@
+part /bar --size=256 --fstype=ext3

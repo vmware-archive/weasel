@@ -1,0 +1,74 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'timezone']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Time Zone Settings</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Select the time zone for ESX'
+>>> mainwindow.TimezoneDrawingArea.get_property("sensitive")
+True
+>>> mainwindow.hover_label.get_property("label")
+''
+>>> mainwindow.tz_label.get_property("label")
+'Time zone:'
+>>> mainwindow.tz_entry.get_property("sensitive")
+False
+>>> mainwindow.kGtkLabelAdvanced___.get_property("label")
+'Advanced...'
+>>> mainwindow.tz_button.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> None #---------------------------------------------------------------------
+>>> mainwindow.tz_entry.get_text()
+'US/Pacific'
+>>> drawing_event(mainwindow.TimezoneDrawingArea, gtk.gdk.MOTION_NOTIFY, 159.000000, 137.000000)
+>>> mainwindow.hover_label.get_property("label")
+'Atlanta, USA'
+>>> drawing_event(mainwindow.TimezoneDrawingArea, gtk.gdk.BUTTON_PRESS, 524.000000, 261.000000)
+>>> runner.sleep()
+>>> drawing_event(mainwindow.TimezoneDrawingArea, gtk.gdk.BUTTON_RELEASE, 524.000000, 261.000000)
+>>> mainwindow.tz_entry.get_text()
+'Australia/Hobart'
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> None # -------------------------------------------------------------------
+>>> runner.sleep()
+>>> import userchoices
+>>> userchoices.getTimezone()
+{'city': u'Hobart, Australia', 'isUTC': True, 'tzName': u'Australia/Hobart', 'offset': u'UTC+10:00'}
+>>> import os
+>>> os.environ['TZ']
+u'Australia/Hobart'
+>>> os.environ['TZ'] = '' #set it back so as not to interfere with other tests
+>>> runner.sleep()
+>>> None # -------------------------------------------------------------------
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...

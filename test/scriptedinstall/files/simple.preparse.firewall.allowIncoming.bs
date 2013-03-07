@@ -1,0 +1,8 @@
+#
+#	start_verify
+#	userchoices.getESXFirewall()['incoming'] == userchoices.ESXFIREWALL_ALLOW
+#	userchoices.getESXFirewall()['outgoing'] == userchoices.ESXFIREWALL_BLOCK
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.firewall.allowIncoming.bs

@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	argument "--drives" is invalid when used with argument "--ignoredrives".
+#	argument "--ignoredrives" is invalid when used with argument "--drives".
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+clearpart --drives=sda --ignoredrives=sda

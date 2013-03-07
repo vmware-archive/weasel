@@ -1,0 +1,6 @@
+#
+#       start_verify
+#       (':' in userchoices.getPhysicalPartitionRequests('vml.0000')[6].fsType.volumeName) == True
+#       end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/positive.goodvmfs.bs

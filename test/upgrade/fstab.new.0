@@ -1,0 +1,4 @@
+None                    /proc                   proc    defaults        0 0
+None                    /dev/pts                devpts  defaults        0 0
+None                    /sys                    sysfs   defaults        0 0
+UUID=c959cead-b57f-4c6d-9f46-076f382516a5 /                       ext3    defaults        1 1

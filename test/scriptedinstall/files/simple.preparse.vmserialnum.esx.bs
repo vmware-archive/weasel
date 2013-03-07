@@ -1,0 +1,6 @@
+#
+#	start_verify
+#	userchoices.getSerialNumber() == {'esx':'0this-0is0a-valid-seria-lnumb'}
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.vmserialnum.esx.bs

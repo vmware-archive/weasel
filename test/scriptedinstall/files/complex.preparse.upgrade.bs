@@ -1,0 +1,12 @@
+#
+#	start_verify
+#	userchoices.getUpgrade() == True
+#	end_verify
+#	start_errors
+#	no "/boot" partition specified for upgrade.
+#	end_errors
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.install.cdrom.bs
+include ./scriptedinstall/commands/possitive.virtualdisk.existing.bs
+include ./scriptedinstall/commands/possitive.partition.cos.bs
+upgrade

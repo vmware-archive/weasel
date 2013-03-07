@@ -1,0 +1,12 @@
+
+This directory contains enough mock python modules to make it through
+most of a weasel installation.  The classes in the modules are pretty
+trivial, they construct objects from a dictionary and only provide a
+few methods for querying fields.  The dictionaries used to initialize
+are stored in a module named fauxconfig in a "configuration"
+directory, for example, test/good-config.1 .  The configuration
+directory acts as a fake root directory for fauxroot and through
+fauxconfig contains the canned responses for any mock objects.  So,
+good-config.1 contains a simple configuration that weasel should be
+able to operate on without errors.  Whereas a bad configuration
+directory might set things up so an install should error out.

@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	vmkcore partition cannot be inside of a virtual disk image.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.virtualdisk.minimal.bs
+include ./scriptedinstall/commands/negative.partition.vmkcore.virt.bs

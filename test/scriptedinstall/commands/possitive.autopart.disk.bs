@@ -1,0 +1,1 @@
+autopart  --disk=vml.0000

@@ -1,0 +1,11 @@
+#
+#	start_warnings
+#	--blockOutgoing is deprecated
+#	end_warnings
+#	start_verify
+#	userchoices.getESXFirewall()['incoming'] == userchoices.ESXFIREWALL_BLOCK
+#	userchoices.getESXFirewall()['outgoing'] == userchoices.ESXFIREWALL_BLOCK
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.firewall.blockOutgoing.bs

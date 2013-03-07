@@ -1,0 +1,7 @@
+#
+#	start_warnings
+#	unknown argument "--foo" to command "timezone"
+#	end_warnings
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+timezone --foo America/Los_Angeles

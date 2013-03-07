@@ -1,0 +1,1 @@
+auth --enablemd5 --enablenis --nisdomain=some.nis.domain --nisserver=some.nis.server --enablekrb5 --krb5realm=some.krb5.realm --krb5kdc=some.krb5.server --krb5adminserver=some.krb5.admin.server --disableshadow

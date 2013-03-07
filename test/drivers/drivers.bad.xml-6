@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ascii"?>
+<driver_disk version="1.1">
+ <driverlist>
+   <driver>
+    <name>Test-driver</name>
+    <version>0.0.0</version>
+    <filename>rpms/Test-driver-0.0.0.test.rpm</filename>
+    <kernel_module>usr/lib/vmware/vmkmod/foo.o</kernel_module>
+    <pci_snippet>etc/vmware/pciid/mptspi.xml</pci_snippet>
+   </driver>
+ </driverlist>
+</driver_disk>
+

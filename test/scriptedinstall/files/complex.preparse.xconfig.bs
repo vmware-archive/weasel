@@ -1,0 +1,7 @@
+#
+#	start_warnings
+#	command "xconfig" is deprecated and should not be used.	
+#	end_warnings
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+xconfig

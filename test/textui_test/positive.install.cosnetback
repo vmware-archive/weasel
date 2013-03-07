@@ -1,0 +1,565 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['-t'])
+>>> print docage.waitAndFeed('1')
+ESX 4.1 -- Virtual Infrastructure for the Enterprise------------
+Welcome to the ESX Text Installer
+Release 4.1
+<BLANKLINE>
+This wizard will guide you through the installation of ESX.
+<BLANKLINE>
+ESX installs on most systems, but only systems on VMware's Hardware
+Compatibility Guide (HCG) are supported. Please consult VMware's HCG on
+vmware.com.
+<BLANKLINE>
+ 1) Continue
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Keyboard--------------------------------------------------------
+Which keyboard model is attached to this computer?
+<BLANKLINE>
+Current choice:  U.S. English
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('accept')
+End User License Agreement--------------------------------------
+    To continue with the installation, please read and accept the
+    end user license agreement.
+<BLANKLINE>
+VMWARE MASTER END USER LICENSE AGREEMENT
+<BLANKLINE>
+NOTICE:  BY DOWNLOADING AND INSTALLING, COPYING OR OTHERWISE USING THE
+SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS VMWARE MASTER END USER
+LICENSE AGREEMENT ("EULA").  IF YOU DO NOT AGREE TO THE TERMS OF THIS EULA,
+YOU MAY NOT DOWNLOAD, INSTALL, COPY OR USE THE SOFTWARE, AND YOU MAY RETURN
+THE UNUSED SOFTWARE TO THE VENDOR FROM WHICH YOU ACQUIRED IT WITHIN THIRTY
+(30) DAYS AND REQUEST A REFUND OF THE LICENSE FEE, IF ANY, ALREADY PAID
+UPON SHOWING PROOF OF PAYMENT.  "YOU" MEANS THE NATURAL PERSON OR THE
+ENTITY THAT IS AGREEING TO BE BOUND BY THIS EULA, THEIR EMPLOYEES AND THIRD
+PARTY CONTRACTORS THAT PROVIDE SERVICES TO YOU.  YOU SHALL BE LIABLE FOR
+ANY FAILURE BY SUCH EMPLOYEES AND THIRD PARTY CONTRACTORS TO COMPLY WITH
+THE TERMS OF THIS AGREEMENT.
+<BLANKLINE>
+1.      DEFINITIONS
+<BLANKLINE>
+1.1     "Designated Administrative Access" means that access to the
+standard user interfaces of a given instance of the Software (designated in
+['accept': accept license, <enter>: more, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('2')
+Custom Drivers--------------------------------------------------
+Choose whether to install any custom drivers for this ESX installation.
+<BLANKLINE>
+Do you want to install any custom drivers?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Custom Drivers--------------------------------------------------
+Going to Load Drivers
+<BLANKLINE>
+The installer will now load any drivers required for ESX.  Once this
+step is completed, additional custom drivers cannot be loaded.
+<BLANKLINE>
+Load system drivers now?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+License---------------------------------------------------------
+Do you want to enter a serial number now or later?
+<BLANKLINE>
+ 1) Enter a serial number now
+ 2) Enter a serial number later and use evaluation mode
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+COS Network Adapter---------------------------------------------
+Select an adapter for ESX to use for system tasks.
+(Choose option 2 (Change) to change either the current adapter choice
+or the VLAN ID.)
+<BLANKLINE>
+Current choice:
+    afakenic: Acme Ethernet Corp: Fake NIC 2000
+    (00:50:56:C0:00:01) [connected]
+  VLAN ID: None
+<BLANKLINE>
+ 1) Keep 
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('3')
+COS Network Adapter---------------------------------------------
+    Select an adapter for ESX to use for system tasks.
+    Current choice:
+	afakenic: Acme Ethernet Corp: Fake NIC 2000
+	(00:50:56:C0:00:01) [connected]
+<BLANKLINE>
+ 1. e1000: vmnic32
+    (00:50:56:C0:00:00) [connected]
+ 2. afakenic: Acme Ethernet Corp: Fake NIC 2000
+    (00:50:56:C0:00:01) [connected]
+ 3. tfakenic: Tennessee TTT144: Gigabit catfish backbone
+    (00:50:56:C0:00:02) [not connected]
+ 4. vfakenic: Vulcan mind-meld wireless terabit
+    (00:50:56:C0:00:03) [connected]
+[<number>: adapter choice, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Adapter---------------------------------------------
+Does this adapter require a VLAN ID?
+(Choose option 2 (No) if you are not sure.)
+    Current choice:  No	   ID: None
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('4095')
+COS Network Adapter---------------------------------------------
+Enter the VLAN ID.  (an integer in the range of 0-4095)
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Adapter---------------------------------------------
+Select an adapter for ESX to use for system tasks.
+(Choose option 2 (Change) to change either the current adapter choice
+or the VLAN ID.)
+<BLANKLINE>
+Current choice:
+    tfakenic: Tennessee TTT144: Gigabit catfish backbone
+    (00:50:56:C0:00:02) [not connected]
+  VLAN ID: 4095
+<BLANKLINE>
+ 1) Keep (not connected)
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+COS Network Settings--------------------------------------------
+Choose how network settings should be configured (DHCP or Static IP).
+<BLANKLINE>
+Current choice: DHCP
+ 1) Keep automatic DHCP settings
+ 2) Change to static IP network settings
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('192.168.1.123')
+COS Network Configuration---------------------------------------
+Enter the IP Address
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+IP Address
+Current choice: 192.168.1.123
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Subnet Mask
+Current choice: 255.255.255.0
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Gateway
+Current choice: 192.168.1.254
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('192.168.1.11')
+COS Network Configuration---------------------------------------
+Enter the Primary DNS
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Primary DNS
+Current choice: 192.168.1.11
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('')
+COS Network Configuration---------------------------------------
+Enter the Secondary DNS
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Secondary DNS
+Current choice: None
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('myhost.mydomain.com')
+COS Network Configuration---------------------------------------
+Enter the Hostname
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Hostname
+Current choice: myhost.mydomain.com
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Current choices:
+IP Address:	192.168.1.123
+Subnet Mask:	255.255.255.0
+Gateway:	192.168.1.254
+Primary DNS:	192.168.1.11
+Secondary DNS:	(Not assigned)
+Hostname:	myhost.mydomain.com
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Disk Setup------------------------------------------------------
+Specify the type of setup for this installation.
+ 1) Basic Setup
+    Set up ESX on a single hard drive or LUN.
+ 2) Advanced Setup
+    View and customize the individual ESX partitions.
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Adapter---------------------------------------------
+Select an adapter for ESX to use for system tasks.
+(Choose option 2 (Change) to change either the current adapter choice
+or the VLAN ID.)
+<BLANKLINE>
+Current choice:
+    tfakenic: Tennessee TTT144: Gigabit catfish backbone
+    (00:50:56:C0:00:02) [not connected]
+  VLAN ID: 4095
+<BLANKLINE>
+ 1) Keep (not connected)
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Settings--------------------------------------------
+Choose how network settings should be configured (DHCP or Static IP).
+<BLANKLINE>
+Current choice: static IP
+ 1) Keep static IP network settings
+ 2) Change to automatic DHCP settings
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Current choices:
+IP Address:	192.168.1.123
+Subnet Mask:	255.255.255.0
+Gateway:	192.168.1.254
+Primary DNS:	192.168.1.11
+Secondary DNS:	(Not assigned)
+Hostname:	myhost.mydomain.com
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Disk Setup------------------------------------------------------
+Specify the type of setup for this installation.
+ 1) Basic Setup
+    Set up ESX on a single hard drive or LUN.
+ 2) Advanced Setup
+    View and customize the individual ESX partitions.
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+ESX Storage Device----------------------------------------------
+  1) ATA WDC FKE1600 (vml.0000)                                  76.80 GB
+  2) ATA WDC FKE1700UT (vml.0001)                                76.80 GB
+  3) ATA WDC FKE1600 (vml.0006)                                 768.00 GB
+  4) IDE HD Vendor IDE... (vml.0030)                             76.80 GB
+[<number>: storage, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('1')
+ESX Storage Device----------------------------------------------
+ARE YOU TRYING TO PERFORM AN UPGRADE?
+<BLANKLINE>
+The selected storage device contains an existing ESX installation and
+datastore. Continuing installation on this storage device will RESULT IN
+DATA LOSS, causing any ESX settings and virtual machines to be lost.
+<BLANKLINE>
+To UPGRADE the existing installation without incurring data loss, use
+the vSphere Host Update Utility installed along with vSphere Client or
+use vCenter Update Manager.
+<BLANKLINE>
+ 1) OK
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Timezone--------------------------------------------------------
+Which timezone should this computer use?
+<BLANKLINE>
+Current choice:  UTC-08:00 US/Pacific (San Francisco, USA)
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+Time/Date Settings----------------------------------------------
+Time/Date
+How do you want to configure the time and date for ESX?
+<BLANKLINE>
+ 1) Automatically by NTP server
+ 2) Manually
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Time/Date Settings----------------------------------------------
+<BLANKLINE>
+Time/Date (Manual)
+<BLANKLINE>
+The current time is:  ...
+Do you want to change it?
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('foobar')
+Administrator Password------------------------------------------
+Set the administrator (root) password for ESX
+(or enter '<' to go back).
+<BLANKLINE>
+Passwords must be at least 6 characters long.
+<BLANKLINE>
+Password: 
+
+>>> print docage.waitAndFeed('foobar')
+Confirm password: 
+
+>>> print docage.waitAndFeed('')
+Review----------------------------------------------------------
+ License:                             Evaluation mode
+ Keyboard:                            U.S. English
+ Custom Drivers:                      (none)    
+ ESX Storage Device:                  
+     Name:                            vml.0000  
+     Boot Loader Location:            Master Boot Record
+ Datastore:                           
+     Name:                            (auto-generated)
+     Type:                            New       
+     Storage Device:                  vml.0000  
+     Service Console Partitions:      vmkcore       110 MB                      
+                                      vmfs3       75.59 GB                      
+                                      swap          600 MB                      
+                                      ext3         5.00 GB  /                   
+                                      ext3         1.10 GB  /boot               
+                                      ext3         2.00 GB  /var/log            
+ Networking for Service Console:      
+     Network Adapter:                 Tennessee TTT144: Gigabit catfish backbone
+     VLAN ID:                         4095      
+     Network Settings:                Set manually
+[1: start the install, <enter>: forward, '<': back, '!': cancel, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+Review----------------------------------------------------------
+     IP Address:                      192.168.1.123
+     Subnet Mask:                     255.255.255.0
+     Gateway:                         192.168.1.254
+     Primary DNS:                     192.168.1.11
+     Secondary DNS:                   (none)    
+     Hostname:                        myhost.mydomain.com
+ Time zone:                           US/Pacific
+ NTP Server:                          (none)    
+ Media Location:                      CD-ROM    
+<BLANKLINE>
+[1: start the install, <enter>: forward, '<': back, '!': cancel, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+ESX Install Complete--------------------------------------------
+To manage this server after rebooting, use any browser to open
+the URL:
+    http://192.168.1.123
+<BLANKLINE>
+<BLANKLINE>
+ 1) Reboot and start ESX.
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['chvt', '6']
+['/usr/bin/umount', '/mnt/source']
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['touch', '/etc/ntp.conf']
+['/usr/bin/mount', '/dev/sda1', '/mnt/testdir']
+['/usr/bin/umount', '/mnt/testdir']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/cdrom', '/mnt/source']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkfs.ext2', '/dev/sda1']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sda1']
+['/usr/sbin/vmkfstools', '-C', 'vmfs3', '-b', '1m', '-S', 'Storage1', '/vmfs/devices/disks/vml.0000:4']
+['/usr/sbin/vmkfstools', '-c', '7604M', '/vmfs/volumes/Storage1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['/usr/sbin/vsd', '-cu', '-f', '/vmfs/volumes/Storage1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkswap', '-v1', '/dev/sdh1']
+['/usr/sbin/mkfs.ext2', '/dev/sdh2']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh2']
+['/usr/sbin/mkfs.ext2', '-L', 'esx-root', '/dev/sdh4']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh4']
+['/usr/bin/mount', '/dev/sdh4', '/mnt/sysimage']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/boot']
+['/usr/bin/mount', '/dev/sdh2', '/mnt/sysimage/var/log']
+['/usr/bin/mount', '-t', 'proc', '/proc', '/mnt/sysimage//proc']
+['/usr/bin/mount', '-t', 'sysfs', '/sys', '/mnt/sysimage//sys']
+['/bin/rpm', '--rebuilddb']
+['/sbin/chkconfig', 'netfs', 'off']
+['/sbin/chkconfig', 'nfslock', 'off']
+['/sbin/chkconfig', 'portmap', 'off']
+['/sbin/chkconfig', 'iptables', 'off']
+['/sbin/chkconfig', 'sshd', 'on']
+['/usr/sbin/esxupdate', 'syncdb', '-m', '/tmp/metadata.zip']
+['/mnt/sysimage/usr/sbin/esxcfg-configcheck']
+['/usr/sbin/esxcfg-auth', '--kickstart', '--nostart', '--usepamqc', '8', '8', '8', '7', '6', '0', '--enableshadow', '--enablemd5', '--disablenis', '--disableldap', '--disableldapauth', '--disableldaptls', '--disablekrb5']
+['/usr/bin/chage', '-M', '-1', 'root']
+['touch', '/mnt/sysimage//etc/vmware/sysboot.conf']
+['/usr/sbin/esxcfg-boot', '-b', '--update-trouble']
+['/usr/sbin/grub', '--batch', '--device-map=/tmp/device.map', '<<EOF', 'root', '(hd0,0)', 'setup', '(hd0)', 'quit', 'EOF']
+['/usr/sbin/esxcfg-boot', '--rebuild', '-b', '--update-trouble']
+['/etc/init.d/iptables', 'stop']
+['/usr/bin/umount', '/mnt/sysimage/proc']
+['/usr/bin/umount', '/mnt/sysimage/sys']
+['/usr/bin/umount', '/mnt/sysimage/var/log']
+['/usr/bin/umount', '/mnt/sysimage/boot']
+['/usr/bin/umount', '/mnt/sysimage']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/eject']

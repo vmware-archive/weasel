@@ -1,0 +1,66 @@
+# mode: -*- doctest -*-
+
+upgrade
+install cdrom
+
+virtualdisk cos --size=5000 --onvmfs='Storage1'
+
+part / --size=2500 --grow --onvirtualdisk=cos --fstype=ext3
+part swap --size=256 --onvirtualdisk=cos --fstype=swap
+
+vmaccepteula
+
+>>> import docage
+>>> docage.setup()
+>>> import fauxroot
+>>> fauxroot.WRITTEN_FILES["/proc/cmdline"] = fauxroot.CopyOnWriteFile(
+...     "upgrade "
+...     "bootpart=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b "
+...     "rootpart=4aa8e7c6-24ef-4f3e-9986-e628f7d1d61b "
+...     "ks=file:///ks.cfg")
+>>> import stat
+>>> fauxroot.WRITTEN_FILES["/dev/sda1"] = fauxroot.CopyOnWriteFile(
+...     "% 510s\x55\xaa" % "GRUB",
+...     fmode=stat.S_IFBLK)
+>>> fauxroot.WRITTEN_FILES["/dev/sda"] = fauxroot.CopyOnWriteFile(
+...     "% 510s\x55\xaa" % "GRUB",
+...     fmode=stat.S_IFBLK)
+>>> docage.doit(args=[])
+>>> docage.printSystemLog()
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/bin/mount', '/dev/sda1', '/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b']
+['/usr/bin/umount', '/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b']
+['chvt', '6']
+['/usr/bin/mount', '/dev/sda2', '/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d61b']
+['/usr/sbin/vmkfstools', '-c', '5000M', '/vmfs/volumes/Storage1/cos-47b51b25-7c15-28d3-7cd0-000c2935404a/cos.vmdk']
+['/usr/sbin/vsd', '-cu', '-f', '/vmfs/volumes/Storage1/cos-47b51b25-7c15-28d3-7cd0-000c2935404a/cos.vmdk']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkswap', '-v1', '/dev/sdh1']
+['/usr/sbin/mkfs.ext2', '-L', 'esx-root', '/dev/sdh2']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh2']
+['/usr/bin/mount', '/dev/sdh2', '/mnt/sysimage']
+['/usr/bin/mount', '/dev/sda2', '/mnt/sysimage/esx3-installation']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/boot']
+['/usr/bin/mount', '-t', 'proc', '/proc', '/mnt/sysimage//proc']
+['/usr/bin/mount', '-t', 'sysfs', '/sys', '/mnt/sysimage//sys']
+['/bin/rpm', '--rebuilddb']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/esx3-installation/boot']
+['/usr/sbin/tzdata-update']
+['/usr/sbin/esxupdate', 'syncdb', '-m', '/tmp/metadata.zip']
+['touch', '/etc/ntp.conf']
+['/mnt/sysimage/usr/sbin/esxcfg-configcheck']
+['touch', '/mnt/sysimage//etc/vmware/sysboot.conf']
+['/usr/sbin/esxcfg-boot', '-b', '--update-trouble']
+['/usr/sbin/grub', '--batch', '--device-map=/tmp/device.map', '<<EOF', 'root', '(hd0,0)', 'setup', '(hd0,0)', 'quit', 'EOF']
+['/usr/bin/eject', '/dev/cdrom']
+['/etc/init.d/iptables', 'stop']
+['/usr/bin/umount', '/mnt/sysimage/proc']
+['/usr/bin/umount', '/mnt/sysimage/sys']
+['/usr/bin/umount', '/mnt/sysimage']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/eject']

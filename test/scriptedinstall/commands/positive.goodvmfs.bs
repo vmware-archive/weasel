@@ -1,0 +1,1 @@
+part foo:bar --size=256 --ondisk=vml.0000 --fstype=vmfs3

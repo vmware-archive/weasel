@@ -1,0 +1,41 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+
+install cdrom
+
+reboot
+
+>>> import docage
+>>> docage.setup()
+>>> import vmkctl
+>>> vmkctl.VMKCTL_NET_CONFIG['pnics'] = [] # NO NICs !!!
+>>> import fauxconfig
+>>> fauxconfig.INIT_SCRIPTS['71.bogusipmi'] = ("Foobar", 3)
+>>> docage.doit()
+>>> docage.exitCode
+0
+>>> docage.printFiles(include=["/dev/tty6"])
+/dev/tty6 (regular f 700)
+  ...
+  The script 71.bogusipmi failed to execute and the installation can not continue.
+  ...
+  installation aborted
+<BLANKLINE>
+  No network adapters were detected. Either no network adapters are
+  physically connected to the system, or a suitable driver could not be
+  located. A third party driver may be required.
+<BLANKLINE>
+  ESX cannot be installed without a valid network adapter. Ensure that
+  there is at least one network adapter physically connected to the
+  system before attempting installation again. If the problem persists,
+  consult the VMware Knowledge Base.
+<BLANKLINE>
+  The script 71.bogusipmi failed to execute and the installation can not continue.
+  See /var/log/esx_install.log for more information.
+<BLANKLINE>

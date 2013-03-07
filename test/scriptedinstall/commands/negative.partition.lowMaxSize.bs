@@ -1,0 +1,1 @@
+part /bar --size=300 --maxsize=100 --grow --fstype=ext3 --ondisk=vml.0000

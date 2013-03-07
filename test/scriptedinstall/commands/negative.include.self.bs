@@ -1,0 +1,1 @@
+include ./scriptedinstall/commands/negative.include.self.bs

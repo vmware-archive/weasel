@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	timezone not specified for timezone command.
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.timezone.nozone.bs

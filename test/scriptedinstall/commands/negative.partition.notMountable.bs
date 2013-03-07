@@ -1,0 +1,1 @@
+part /swap --size=256 --ondisk=vml.0000 --fstype=swap

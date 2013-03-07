@@ -1,0 +1,10 @@
+#
+#	start_warnings
+#	bootloader --password= string is too long. Bootloader password will not be set.
+#	end_warnings
+#	start_verify
+#	userchoices.getBoot()['password'] == ''
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.bootloader.largePWD.bs

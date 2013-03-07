@@ -1,0 +1,10 @@
+#
+#	start_errors
+#	clearpart cannot be used on the same disk as esxlocation
+#	end_errors
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/negative.esxlocation.clearconflict.bs
+include ./scriptedinstall/commands/possitive.clearpart.minimal.bs

@@ -1,0 +1,70 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['bootloader'], textui.main.main)
+>>> print docage.waitAndFeed('1')
+Bootloader Options----------------------------------------------
+Do you want to specify kernel arguments for the GRUB bootloader?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('abc def')
+Bootloader Options----------------------------------------------
+Specify any kernel arguments for the GRUB bootloader
+<BLANKLINE>
+Kernel Arguments:
+> 
+
+>>> print docage.waitAndFeed('1')
+Bootloader Options----------------------------------------------
+Do you want to provide a bootloader password for your system?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('111111')
+Bootloader Options----------------------------------------------
+Set the bootloader password (or enter '<' to go back).
+Password: 
+
+>>> print docage.waitAndFeed('111111')
+Confirm password: 
+
+>>> print docage.waitAndFeed('1')
+Bootloader Options----------------------------------------------
+Where do you want to install GRUB?  (Select 1 (Master Boot Record)
+if you are unsure.)
+<BLANKLINE>
+ 1) Master Boot Record
+ 2) First partition of the disk
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> None # auto-verification below...
+>>> import pprint
+>>> import userchoices
+>>> pprint.pprint(userchoices.getBoot())
+{'doNotInstall': False,
+ 'driveOrder': None,
+ 'kernelParams': 'abc def',
+ 'location': 'mbr',
+ 'password': '111111',
+ 'passwordType': 'plain',
+ 'upgrade': False}

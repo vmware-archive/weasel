@@ -1,0 +1,12 @@
+# default: on
+# description: The VMware remote access authentification daemon
+service vmware-authd
+{
+    disable         = no
+    port            = 902
+    socket_type     = stream
+    protocol        = tcp
+    wait            = no
+    user            = root
+    server          = /usr/sbin/vmware-authd
+}

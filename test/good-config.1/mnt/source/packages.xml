@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ascii"?>
+<iso_build version="1.0">
+ <product>
+  <!-- NOTE: there can only be one product tag per packages.xml file -->
+  <name>VMware ESX K/L</name>
+  <version>3.0</version>
+  <release>00000</release>
+  <default_releaseprefix></default_releaseprefix>
+  <default_releasetype>beta</default_releasetype>
+  <install_depot>VMware/RPMS/</install_depot>
+  <esx_version>e.x.p</esx_version>
+  <esx_release>0.3</esx_release>
+  <esx_releasetype>obj</esx_releasetype>
+  <esx_tp_version>410</esx_tp_version>
+  <esx_tp_compat_version>400</esx_tp_compat_version>
+  <!-- NOTE: we can only have one type of kernel per product -->
+  <kernel_name>ESX vmkernel</kernel_name>
+  <kernel_version>2.6.18-53.ESX</kernel_version>
+ </product>
+
+ <depotlist>
+  <!--####################################################################
+  # Core VMware ESX rpms. These are the rpms produced by the
+  # server-rpm make target.
+  #####################################################################-->
+  <depot name="esx">
+   <arch>i386</arch>
+   <prefix>/build/ob/release/bora-${release}</prefix>
+   <suffix>bora/build/${releaseprefix}${releasetype}/server/dist</suffix>
+   <rpmlist>
+  <!--####################################################################
+  # cim and backuptools not built by scons, so we can't include it
+                   TODO!!!  XXX
+                   Wildcards will not work in the installer.
+                   This RPM needs to be corrected.
+                   TODO!!!  XXX
+  # <rpm>VMware-cim-esx-*-${release}.i386.rpm</rpm>
+  # <rpm>VMware-esx-backuptools-${esx_version}-${release}.i386.rpm</rpm>
+  #####################################################################-->
+    <rpm requirement="optional">VMware-esx-gunk-${esx_version}-${release}.i386.rpm</rpm>
+    <rpm requirement="recommended">foopkg-3.2.i386.rpm</rpm>
+    <rpm>VMware-esx-apps-${esx_version}-${release}.i386.rpm</rpm>
+   </rpmlist>
+  </depot>
+ </depotlist>
+</iso_build>

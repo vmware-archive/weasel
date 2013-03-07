@@ -1,0 +1,9 @@
+#
+#	start_warnings
+#	package "somepackage" not found
+#	package "busybox-1.2.0-3.i386.rpm" not found
+#	end_warnings
+#	chroot good-config.1
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.package.invalidPackage.bs

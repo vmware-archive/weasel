@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	swap partition does not have "swap" fstype.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.partition.notSwap.bs

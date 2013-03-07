@@ -1,0 +1,7 @@
+#
+#	start_warnings
+#	command "mouse" is deprecated and should not be used.
+#	end_warnings
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.mouse.bs

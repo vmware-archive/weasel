@@ -1,0 +1,1 @@
+network --vlanid=128 --bootproto=dhcp --device=vmnic32

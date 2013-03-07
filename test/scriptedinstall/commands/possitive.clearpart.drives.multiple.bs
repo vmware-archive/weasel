@@ -1,0 +1,1 @@
+clearpart --drives="vml.0000, vml.0001" --overwritevmfs

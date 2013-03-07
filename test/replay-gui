@@ -1,0 +1,69 @@
+#! /usr/bin/env python
+
+###############################################################################
+# Copyright (c) 2008-2009 VMware, Inc.
+#
+# This file is part of Weasel.
+#
+# Weasel is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation version 2 and no later version.
+#
+# Weasel is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+# version 2 for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51
+# Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+
+import os
+import sys
+import atexit
+
+TEST_DIR = os.path.dirname(__file__)
+
+sys.path.append(TEST_DIR)
+
+import docage # Has some utility functions the doctests might use.
+
+def usage(args):
+    print "usage: %s [-p] [-i] [-d duration] <test-name>" % args[0]
+    print
+    print "Tool for replaying a recorded GUI session in caged weasel."
+    print
+    print "Required arguments:"
+    print "  test-name     The name of the test."
+    print
+    print "Optional arguments:"
+    print "  -p            Instead of failing on a doctest error, ask if the"
+    print "                test case should be updated instead."
+    print "  -i            Instead of failing on a doctest error, show an"
+    print "                interactive prompt."
+    print "  -d duration   The duration to sleep between events, in seconds."
+    print "                (Default: 0.01)"
+    print
+    print "Examples:"
+    print "  To replay a test for the license screen:"
+    print "    $ %s test/gui/positive.license.eval"
+
+def main(args):
+    if not sys.version_info < (2,5):
+        print 'WARNING: test may not be accurate, python > 2.4 is being used'
+
+    if len(args) < 2:
+        usage(args)
+        sys.exit(1)
+
+    kiwiMain = os.path.join(TEST_DIR, "kiwi/ui/test/main.py")
+    scriptName = os.path.join(TEST_DIR, "gui", args[1])
+
+    sys.argv = [kiwiMain,] + args[1:]
+
+    execfile(kiwiMain, globals())
+    
+if __name__ == "__main__":
+    main(sys.argv)

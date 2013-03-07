@@ -1,0 +1,12 @@
+  <tests>
+    <test>
+      <name>TEST_CASE</name>
+      <expected>
+	<value>Dexter</value>
+      </expected>
+      <found>
+	<value>Debra</value>
+      </found>
+      <result>ERROR</result>
+    </test>
+  </tests>

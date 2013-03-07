@@ -1,0 +1,48 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+bootloader --location=mbr --md5pass='$1$i8osW$/uZCGzymJw4FzHFFH1ftN0'
+
+install cdrom
+
+reboot
+
+dryrun
+
+%pre
+echo Gutentag
+
+%post
+echo Hi
+
+>>> import docage
+>>> docage.setup()
+>>> import fauxroot
+>>> fauxroot.WRITTEN_FILES["/proc/cmdline"] = fauxroot.CopyOnWriteFile(
+...     "ks=UUID:4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b:/ks.cfg")
+>>> import fauxconfig
+>>> fauxconfig.PARTITION_CONTENTS['/dev/sda1']["ks.cfg"] = (
+...     fauxroot.WRITTEN_FILES['/ks.cfg'].getvalue())
+>>> docage.doit()
+>>> docage.printFiles(["/dev/tty6"])
+/dev/tty6 (regular f 700)
+  \033[H\033[JNo Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+<BLANKLINE>
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+  /mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b/ks.cfg:line 19: interpreter not defined. Defaulting to bash
+  error:/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b/ks.cfg:line 3: clearpart --drives= specified, but clearing drive "vml.0000" is not allowed.
+  installation aborted
+<BLANKLINE>

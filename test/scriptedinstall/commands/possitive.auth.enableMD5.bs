@@ -1,0 +1,1 @@
+auth --enablemd5 --disableshadow

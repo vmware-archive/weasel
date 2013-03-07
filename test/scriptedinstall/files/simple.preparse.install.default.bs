@@ -1,0 +1,9 @@
+#
+#	start_warnings
+#	installation method not specified. Defaulting to cdrom install
+#	end_warnings
+#	start_verify
+#	not userchoices.getMediaLocation()
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.install.default.bs

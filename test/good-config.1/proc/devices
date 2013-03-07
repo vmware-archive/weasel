@@ -1,0 +1,53 @@
+Character devices:
+  1 mem
+  2 pty
+  3 ttyp
+  4 /dev/vc/0
+  4 tty
+  4 ttyS
+  5 /dev/tty
+  5 /dev/console
+  5 /dev/ptmx
+  6 lp
+  7 vcs
+ 10 misc
+ 13 input
+ 14 sound
+ 21 sg
+ 29 fb
+ 99 ppdev
+116 alsa
+119 vmnet
+128 ptm
+136 pts
+171 ieee1394
+180 usb
+189 usb_device
+195 nvidia
+216 rfcomm
+252 hidraw
+253 usb_endpoint
+254 rtc
+
+Block devices:
+  1 ramdisk
+  2 fd
+  7 loop
+  8 ide0
+ 11 sr
+ 65 sd
+ 66 sd
+ 67 sd
+ 68 sd
+ 69 sd
+ 70 sd
+ 71 sd
+128 sd
+129 sd
+130 sd
+131 sd
+132 sd
+133 sd
+134 sd
+135 sd
+254 device-mapper

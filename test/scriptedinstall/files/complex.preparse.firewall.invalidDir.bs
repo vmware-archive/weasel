@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	firewallport --dir must be "in" or "out".
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.firewallport.invalidDir.bs

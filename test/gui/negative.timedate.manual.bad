@@ -1,0 +1,116 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'timedate']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.clock_entry.set_text("19:04:00")
+>>> runner.sleep()
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Date and Time</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Specify the date and time for ESX'
+>>> mainwindow.timedate_label.get_property("label")
+'How should the date and time for ESX be configured?'
+>>> mainwindow.label111.get_property("label")
+'NTP Server:'
+>>> mainwindow.ntpserver_entry.get_property("sensitive")
+True
+>>> mainwindow.ntpserver_error.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelSynchronize.get_property("label")
+'Synchronize'
+>>> mainwindow.ntpserver_sync.get_property("sensitive")
+False
+>>> mainwindow.kGtkLabelAutomatically.get_property("label")
+'Automatically'
+>>> mainwindow.TimedateAutomaticallyRadioButton.get_property("sensitive")
+True
+>>> mainwindow.clock_entry.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelManually.get_property("label")
+'Manually'
+>>> mainwindow.TimedateManuallyRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.clock_entry.grab_focus()
+>>> mainwindow.clock_entry.set_text("19:04:01")
+>>> runner.sleep()
+>>> mainwindow.clock_entry.set_text("19:04:0")
+>>> runner.sleep()
+>>> mainwindow.clock_entry.set_text("19:04:")
+>>> runner.sleep()
+>>> mainwindow.clock_entry.set_text("19:04:a")
+>>> runner.sleep()
+>>> mainwindow.clock_entry.set_text("19:04:aa")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.grab_focus()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_OK.get_property("label")
+'_OK'
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel0GtkFramecommon_windowGtkMessageDialog.get_property("label")
+'The time must be in hh:mm:ss format'
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>Invalid Time</b>'
+>>> GtkMessageDialog.kGtkButtongtk_ok.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose("GtkMessageDialog")
+>>> runner.sleep()
+>>> mainwindow.clock_entry.set_text("19:04:a")
+>>> runner.sleep()
+>>> mainwindow.clock_entry.set_text("19:04:")
+>>> runner.sleep()
+>>> mainwindow.clock_entry.set_text("19:04:0")
+>>> runner.sleep()
+>>> mainwindow.clock_entry.set_text("19:04:00")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.grab_focus()
+>>> runner.sleep()
+>>> mainwindow.clock_entry.emit('focus_out_event', None) #Note, faking this for it to work.
+False
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label128.get_property("label")
+'User Name:'
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> None # added by shandy------------------------------------------------
+>>> None # find the cmd that looks like ['TZ=', 'date', '-s', 'xxxx1904xxxx.00']
+>>> timedateCmds = [cmd for cmd in fauxroot.SYSTEM_LOG if cmd[0].replace('\x00','').startswith('TZ=')]
+>>> timedateCmds = [[x.replace('\x00','') for x in cmd] for cmd in timedateCmds]
+>>> len(timedateCmds)
+1
+>>> timedateCmd = timedateCmds[0]
+>>> timedateCmd[1:3]
+['date', '-s']
+>>> timedateCmd[3][4:8]
+'1904'

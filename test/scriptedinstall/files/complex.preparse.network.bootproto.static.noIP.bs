@@ -1,0 +1,8 @@
+#
+#	start_errors
+#	bootproto was set to static but "--ip=" was not set.
+#	end_errors
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/negative.network.bootproto.static.noIP.bs

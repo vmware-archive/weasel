@@ -1,0 +1,13 @@
+#
+#	start_errors
+#	"%pre" script returned with an error.
+#	end_errors
+#	exec /bin/bash badPreScript
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+
+# Needs to be in here in order for it to be parsed.
+%pre --interpreter=bash
+#! /bin/sh
+
+exit 1

@@ -1,0 +1,7 @@
+#
+#	start_warnings
+#	command "virtualdisk" was already specified. Using the latest value.
+#	end_warnings
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.virtualdisk.minimal.bs
+virtualdisk cos --size=4000 --onvmfs=cosvmfs

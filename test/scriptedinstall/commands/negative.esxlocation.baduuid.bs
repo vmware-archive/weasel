@@ -1,0 +1,1 @@
+esxlocation --uuid=e270687f-815f-42f2-a344-2cda73460462

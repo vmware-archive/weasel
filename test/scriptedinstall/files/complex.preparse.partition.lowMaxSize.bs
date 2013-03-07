@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	"--maxsize=" was set less than "--size=".
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.partition.lowMaxSize.bs

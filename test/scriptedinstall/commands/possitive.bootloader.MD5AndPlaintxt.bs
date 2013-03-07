@@ -1,0 +1,1 @@
+bootloader --md5pass=$1$7U8tB$KvxsVx7VskMJuUtaDG.Z01 --password=mypassword --location=mbr

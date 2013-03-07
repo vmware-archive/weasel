@@ -1,0 +1,1 @@
+part /bar --size=100 --fstype=foo --ondisk=vml.0000

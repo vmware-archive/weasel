@@ -1,0 +1,8 @@
+#
+#	start_verify
+#	userchoices.getMediaLocation()['mediaLocation'].startswith('nfs://')
+#	'jpowell-esx.eng.vmware.com' in userchoices.getMediaLocation()['mediaLocation']
+#	'/test/dir' in userchoices.getMediaLocation()['mediaLocation']
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.install.nfs.bs

@@ -1,0 +1,11 @@
+#
+#	start_verify
+#	len(userchoices.getVirtualDevices()) == 1
+#	userchoices.getVirtualDevices()[0]['device'].name == 'cos'
+#	userchoices.getVirtualDevices()[0]['device'].size == 5000
+#	userchoices.getVirtualDevices()[0]['device'].imagePath == 'cos-47b51b25-7c15-28d3-7cd0-000c2935404a'
+#	userchoices.getVirtualDevices()[0]['device'].vmfsVolume == 'Storage1'
+#	userchoices.getVirtualDevices()[0]['device'].imageName == 'cos.vmdk'
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.virtualdisk.firstvmfs.bs

@@ -1,0 +1,38 @@
+# mode: -*- doctest -*-
+
+upgrade
+install cdrom
+
+virtualdisk cos --size=5000 --onvmfs='Storage1'
+
+part / --size=2500 --grow --onvirtualdisk=cos --fstype=ext3
+part swap --size=256 --onvirtualdisk=cos --fstype=swap
+
+vmaccepteula
+
+>>> import docage
+>>> docage.setup()
+>>> import fauxroot
+>>> fauxroot.WRITTEN_FILES["/proc/cmdline"] = fauxroot.CopyOnWriteFile(
+...     "upgrade "
+...     "bootpart=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b "
+...     "rootpart=4aa8e7c6-24ef-4f3e-9986-e628f7d1d61a "
+...     "ks=file:///ks.cfg")
+>>> docage.doit(args=[])
+>>> docage.exitCode
+1
+>>> docage.printSystemLog()
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/bin/mount', '/dev/sda1', '/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b']
+['/usr/bin/umount', '/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b']
+>>> "installation aborted" in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> "installation complete" not in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> docage.printFiles([
+...     "/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b/grub/grub.conf"])
+/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b/grub/grub.conf (unmounted l 700)
+  grub.conf.esx3

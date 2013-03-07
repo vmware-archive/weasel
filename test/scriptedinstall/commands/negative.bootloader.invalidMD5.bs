@@ -1,0 +1,1 @@
+bootloader --md5pass=somelongcharacterstring11111111111 --location=mbr

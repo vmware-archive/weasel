@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	"--ondisk" or "--onvirtualdisk" required, but not found.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.partition.nodisk.bs

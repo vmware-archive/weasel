@@ -1,0 +1,10 @@
+#
+#	start_verify
+#	userchoices.getAuth()['nis'] == True
+#	userchoices.getAuth()['kerberos'] == False
+#	userchoices.getAuth()['ldap'] == False
+#	userchoices.getAuth()['nisServer'] == ''
+#	userchoices.getAuth()['nisDomain'] == ''
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs

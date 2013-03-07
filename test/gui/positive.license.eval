@@ -1,0 +1,144 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'license']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>License</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Enter license serial number'
+>>> mainwindow.kGtkLabel0eval_radioalignment37framemainwindow.get_property("label")
+'Enter a serial number later'
+>>> mainwindow.eval_radio.get_property("sensitive")
+True
+>>> mainwindow.label122.get_property("label")
+'Choose this option to evaluate this product or to configure the serial number later using vCenter Server.'
+>>> mainwindow.kGtkLabel0serial_radioalignment37framemainwindow.get_property("label")
+'Enter a serial number now:'
+>>> mainwindow.serial_radio.get_property("sensitive")
+True
+>>> mainwindow.label117.get_property("label")
+'Serial Number:'
+>>> mainwindow.serialnum0.get_property("sensitive")
+True
+>>> mainwindow.label118.get_property("label")
+'-'
+>>> mainwindow.serialnum1.get_property("sensitive")
+True
+>>> mainwindow.label119.get_property("label")
+'-'
+>>> mainwindow.serialnum2.get_property("sensitive")
+True
+>>> mainwindow.label120.get_property("label")
+'-'
+>>> mainwindow.serialnum3.get_property("sensitive")
+True
+>>> mainwindow.label121.get_property("label")
+'-'
+>>> mainwindow.serialnum4.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.eval_radio.clicked()
+>>> runner.sleep()
+>>> mainwindow.serial_radio.clicked()
+>>> runner.sleep()
+>>> mainwindow.serialnum0.set_text("t")
+>>> runner.sleep()
+>>> mainwindow.serialnum0.set_text("th")
+>>> runner.sleep()
+>>> mainwindow.serialnum0.set_text("thi")
+>>> runner.sleep()
+>>> mainwindow.serialnum0.set_text("this")
+>>> runner.sleep()
+>>> mainwindow.serialnum0.set_text("thisi")
+>>> runner.sleep()
+>>> mainwindow.serialnum1.set_text("s")
+>>> runner.sleep()
+>>> mainwindow.serialnum1.set_text("sa")
+>>> runner.sleep()
+>>> mainwindow.serialnum1.set_text("sav")
+>>> runner.sleep()
+>>> mainwindow.serialnum1.set_text("sava")
+>>> runner.sleep()
+>>> mainwindow.serialnum1.set_text("saval")
+>>> runner.sleep()
+>>> mainwindow.serialnum2.set_text("i")
+>>> runner.sleep()
+>>> mainwindow.serialnum2.set_text("id")
+>>> runner.sleep()
+>>> mainwindow.serialnum2.set_text("ids")
+>>> runner.sleep()
+>>> mainwindow.serialnum2.set_text("idse")
+>>> runner.sleep()
+>>> mainwindow.serialnum2.set_text("idser")
+>>> runner.sleep()
+>>> mainwindow.serialnum3.set_text("i")
+>>> runner.sleep()
+>>> mainwindow.serialnum3.set_text("ia")
+>>> runner.sleep()
+>>> mainwindow.serialnum3.set_text("ial")
+>>> runner.sleep()
+>>> mainwindow.serialnum3.set_text("ialn")
+>>> runner.sleep()
+>>> mainwindow.serialnum3.set_text("ialnu")
+>>> runner.sleep()
+>>> mainwindow.serialnum4.set_text("m")
+>>> runner.sleep()
+>>> mainwindow.serialnum4.set_text("mb")
+>>> runner.sleep()
+>>> mainwindow.serialnum4.set_text("mbe")
+>>> runner.sleep()
+>>> mainwindow.serialnum4.set_text("mber")
+>>> runner.sleep()
+>>> mainwindow.serialnum4.set_text("mber1")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label175.get_property("label")
+'Select an adapter for ESX to use for system tasks.'
+>>> mainwindow.CosnetworkadapterComboBox.get_property("sensitive")
+True
+>>> mainwindow.label180.get_property("label")
+'VLAN ID'
+>>> mainwindow.CosnetworkadapterVlanIDEntry.get_property("sensitive")
+True
+>>> mainwindow.label179.get_property("label")
+'VLAN Settings:'
+>>> mainwindow.kGtkLabel0CosnetworkadapterVlanCheckButtontable15alignment44framemainwindow.get_property("label")
+'This adapter requires a VLAN ID (Leave unchecked if you are not sure)'
+>>> mainwindow.CosnetworkadapterVlanCheckButton.get_property("sensitive")
+True
+>>> mainwindow.label178.get_property("label")
+'Network Adapter:'
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['/usr/sbin/check_serial', '-c', 'thisi-saval-idser-ialnu-mber1']
+['touch', '/etc/ntp.conf']

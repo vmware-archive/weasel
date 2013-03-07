@@ -1,0 +1,8 @@
+#
+#	start_errors
+#	IP string has non-numeric characters
+#	end_errors
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/negative.network.bootproto.static.badNS.bs

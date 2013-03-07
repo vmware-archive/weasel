@@ -1,0 +1,76 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+
+install cdrom
+
+reboot
+
+>>> import docage
+>>> docage.setup()
+>>> import fauxroot
+>>> fauxroot.MASKED_FILES['/mnt/source/packages.xml'] = True
+>>> import rpm
+>>> rpm.CORRUPTED_PACKAGES = ['foopkg']
+>>> fauxroot.WRITTEN_FILES["/dev/tty6"] = fauxroot.CopyOnWriteFile()
+>>> docage.doit()
+>>> docage.exitCode
+0
+>>> docage.printFiles(include=["/dev/tty6"])
+/dev/tty6 (regular f 700)
+  ...
+    0% Complete 
+    0% Complete - Unpack Drivers
+    5% Complete - Rebuilding Map File
+    6% Complete - Loading Drivers
+    6% Complete - Loading 14.foobar
+   53% Complete - Loading 71.bogusipmi
+  The script 71.bogusipmi returned status 1
+  100% Complete - Loading Drivers
+  100% Complete 
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+  warning:/ks.cfg:line 8: --enablemd5 is deprecated
+  warning:/ks.cfg:line 8: --enableshadow is deprecated
+    0% Complete 
+    0% Complete - Clearing Partitions
+    0% Complete - Clearing Partition vml.0000 (/vmfs/devices/disks/vml.0000)
+    6% Complete - Clearing Partitions
+    6% Complete - Removing Unwanted VMDK Files
+    7% Complete - Partitioning Physical Hard Drives
+    7% Complete - Partitioning vml.0000 (/vmfs/devices/disks/vml.0000)
+    7% Complete - Formatting /dev/sda1
+   10% Complete - Formatting /vmfs/devices/disks/vml.0000:4
+   14% Complete - Partitioning vml.0000 (/vmfs/devices/disks/vml.0000)
+   14% Complete - Partitioning Physical Hard Drives
+   14% Complete - Partitioning Virtual Hard Drives
+   14% Complete - Partitioning esxconsole
+   18% Complete - Formatting Virtual Devices
+   18% Complete - Formatting /dev/sdh1
+   19% Complete - Formatting /dev/sdh2
+   20% Complete - Formatting /dev/sdh4
+   21% Complete - Formatting Virtual Devices
+   21% Complete - Partitioning Virtual Hard Drives
+   21% Complete - Mounting File Systems
+   25% Complete - Copy Installer Log
+   26% Complete - Installing Packages
+   26% Complete - Installing package: foopkg (1 of 3)
+  Unpack or CPIO error installing package /mnt/sysimage/tmp/foopkg-3.2.i386.rpm
+  installation aborted
+<BLANKLINE>
+  Unpack or CPIO error installing package /mnt/sysimage/tmp/foopkg-3.2.i386.rpm
+  See /var/log/esx_install.log for more information.
+<BLANKLINE>

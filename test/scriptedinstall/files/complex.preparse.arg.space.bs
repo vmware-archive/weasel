@@ -1,0 +1,14 @@
+#
+#	start_warnings
+#	Separating option values with a space is no longer supported.
+#	Use an equal sign instead, for example, '--option=value'.
+#	end_warnings
+#	start_errors
+#	clearpart --overwritevmfs not specified and partition 3 on vml.0000 is of type VMFS
+#	end_errors
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+clearpart --drives sda
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs

@@ -1,0 +1,11 @@
+#
+#	start_errors
+#	clearpart requires one of the following arguments: --alldrives, --firstdisk, --ignoredrives=, --drives=
+#	end_errors
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/negative.clearpart.nodrives.bs

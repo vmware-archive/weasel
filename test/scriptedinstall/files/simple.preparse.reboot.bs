@@ -1,0 +1,6 @@
+#
+#	start_verify
+#	userchoices.getReboot() == True
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.reboot.bs

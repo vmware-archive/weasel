@@ -1,0 +1,1 @@
+part storage1 --size=5000 --fstype=vmfs3 --ondisk=vml.0003

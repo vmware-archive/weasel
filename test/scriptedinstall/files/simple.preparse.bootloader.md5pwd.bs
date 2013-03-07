@@ -1,0 +1,12 @@
+#
+#	start_verify
+#	userchoices.getBoot()['upgrade'] == False
+#	userchoices.getBoot()['doNotInstall'] == False
+#	userchoices.getBoot()['location'] == userchoices.BOOT_LOC_MBR
+#	userchoices.getBoot()['kernelParams'] == ''
+#	userchoices.getBoot()['password'] == '$1$7U8tB$KvxsVx7VskMJuUtaDG.Z01'
+#	userchoices.getBoot()['passwordType'] == userchoices.BOOT_PASSWORD_TYPE_MD5
+#	userchoices.getBoot()['driveOrder'] == None
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.bootloader.md5pwd.bs

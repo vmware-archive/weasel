@@ -1,0 +1,10 @@
+#
+#	start_errors
+#	Passwords must be at least 6 characters long.
+#	end_errors
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.shortPWD.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs

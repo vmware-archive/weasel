@@ -1,0 +1,15 @@
+None                    /proc                   proc    defaults        0 0
+None                    /dev/pts                devpts  defaults        0 0
+None                    /sys                    sysfs   defaults        0 0
+UUID=c959cead-b57f-4c6d-9f46-076f382516a5 /                       ext3    defaults        1 1
+UUID=32eb2ab4-af37-4844-94b8-e624dbcd78d7 /boot ext3 defaults 1 2
+
+# BEGIN migrated entries
+#   Note: Any entries in this section will be removed
+#   when cleaning out the ESX v3 installation.
+UUID=77041148-9fc9-4ad2-a336-a6349e7811cb /esx3-installation/ ext3 defaults,ro 1 1
+UUID=32eb2ab4-af37-4844-94b8-e624dbcd78d7 /esx3-installation/boot ext3 defaults 1 2
+UUID=6d54bcdd-07cc-48a5-8b9a-8beb10333f5a /esx3-installation/var/log ext3 defaults,ro 1 2
+exit14:/ /esx3-installation/mnt/exit14 nfs rsize=32768,wsize=32768,timeo=14,intr,ro 0 0
+exit15:/ /esx3-installation/mnt/exit15 nfs defaults,ro 0 0
+# END migrated entries

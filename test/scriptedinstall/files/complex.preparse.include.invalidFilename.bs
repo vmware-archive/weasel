@@ -1,0 +1,8 @@
+#
+#
+#	start_errors
+#	No such file or directory: 'invalid.file.name'
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./invalid.file.name

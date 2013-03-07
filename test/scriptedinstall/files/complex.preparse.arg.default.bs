@@ -1,0 +1,13 @@
+#
+#	start_warnings
+#	unknown argument "foobar" to command "clearpart"
+#	end_warnings
+#	start_errors
+#	clearpart --overwritevmfs not specified and partition 3 on vml.0000 is of type VMFS
+#	end_errors
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+clearpart --firstdisk foobar
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs

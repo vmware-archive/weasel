@@ -1,0 +1,3 @@
+clearpart --firstdisk --overwritevmfs
+clearpart --firstdisk=remote --overwritevmfs
+clearpart --firstdisk='WDC FKE1700UT' --overwritevmfs

@@ -1,0 +1,7 @@
+#
+#	start_warnings
+#	--server argument ignored
+#	--dir argument ignored
+#	end_warnings
+include ./scriptedinstall/files/possitive.minimal.bs
+install --server=exit14 --dir=/ url http://www.foo.com

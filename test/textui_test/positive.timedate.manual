@@ -1,0 +1,69 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['timedate'], textui.main.main)
+>>> print docage.waitAndFeed('2')
+Time/Date Settings----------------------------------------------
+Time/Date
+How do you want to configure the time and date for ESX?
+<BLANKLINE>
+ 1) Automatically by NTP server
+ 2) Manually
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+Time/Date Settings----------------------------------------------
+<BLANKLINE>
+Time/Date (Manual)
+<BLANKLINE>
+The current time is:  ...
+Do you want to change it?
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2001-09-11 00:08:15')
+Time/Date Settings----------------------------------------------
+Time/Date (Manual)
+<BLANKLINE>
+Specify the local system date and time as:
+    YYYY-MM-DD HH:MM:SS
+where:
+    YYYY-MM-DD are year, month, and day
+    HH:MM:SS are hour (0-23), minute, and second
+After you press <enter>, the installer will immediately attempt to
+update the date and time.
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+Time/Date Settings----------------------------------------------
+<BLANKLINE>
+The system clock has been updated.  The current time is:
+...
+<BLANKLINE>
+ 1) OK
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['TZ=US/Pacific', 'date', '-s', '091100082001.15']

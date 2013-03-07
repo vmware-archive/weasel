@@ -1,0 +1,2 @@
+part /foo --fstype=ext3 --size=100 --onvirtualdisk=cos
+part /bar --fstype=ext3 --size=100 --onvirtualdisk=cos

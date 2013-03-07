@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	firewallport --name is not valid. Must be less than 128 characters.
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.firewallport.invalidPortName.bs

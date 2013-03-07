@@ -1,0 +1,45 @@
+#
+#	start_verify
+#	len(userchoices.getPhysicalPartitionRequests('vml.0000')) == 3
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].mountPoint == '/boot'
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].fsType.name == 'ext3'
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].minimumSize == 1100
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].grow == False
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].mountPoint == None
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].fsType.name == 'vmfs3'
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].minimumSize == 8604
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].grow == True
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].mountPoint == None
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].fsType.name == 'vmkcore'
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].minimumSize == 110
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].grow == False
+
+#	len(userchoices.getVirtualPartitionRequests('esxconsole')) == 3
+#	userchoices.getVirtualPartitionRequests('esxconsole')[0].mountPoint == ''
+#	userchoices.getVirtualPartitionRequests('esxconsole')[0].fsType.name == 'swap'
+#	userchoices.getVirtualPartitionRequests('esxconsole')[0].minimumSize == 600
+#	userchoices.getVirtualPartitionRequests('esxconsole')[0].maximumSize == 0
+#	userchoices.getVirtualPartitionRequests('esxconsole')[0].grow == False
+#	userchoices.getVirtualPartitionRequests('esxconsole')[1].mountPoint == '/var/log'
+#	userchoices.getVirtualPartitionRequests('esxconsole')[1].fsType.name == 'ext3'
+#	userchoices.getVirtualPartitionRequests('esxconsole')[1].minimumSize == 2000
+#	userchoices.getVirtualPartitionRequests('esxconsole')[1].maximumSize == 0
+#	userchoices.getVirtualPartitionRequests('esxconsole')[1].grow == False
+#	userchoices.getVirtualPartitionRequests('esxconsole')[2].mountPoint == '/'
+#	userchoices.getVirtualPartitionRequests('esxconsole')[2].fsType.name == 'ext3'
+#	userchoices.getVirtualPartitionRequests('esxconsole')[2].minimumSize == 5000
+#	userchoices.getVirtualPartitionRequests('esxconsole')[2].maximumSize == 0
+#	userchoices.getVirtualPartitionRequests('esxconsole')[2].grow == True
+#	end_verify
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/possitive.clearpart.minimal.bs
+include ./scriptedinstall/commands/possitive.autopart.firstdisk.bs

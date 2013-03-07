@@ -1,0 +1,215 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['media'], textui.main.main)
+>>> print docage.waitAndFeed('x')
+Install Media Selection-----------------------------------------
+Choose the install media where ESX is located:
+ 1) CD-ROM or USB Storage
+ 2) Network File System (NFS)
+ 3) World Wide Web (HTTP)
+ 4) File Server (FTP)
+<BLANKLINE>
+Other actions:
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('4')
+Install Media Selection-----------------------------------------
+Choose the install media where ESX is located:
+ 1) CD-ROM or USB Storage
+ 2) Network File System (NFS)
+ 3) World Wide Web (HTTP)
+ 4) File Server (FTP)
+<BLANKLINE>
+Other actions:
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('ftp.myserver.mydomain/esx')
+Install Using FTP-----------------------------------------------
+Specify the FTP location of the ESX packages.
+(or enter '<' to go back).
+(Non-anonymous user name and password will be prompted separately.)
+<BLANKLINE>
+ftp://
+
+>>> print docage.waitAndFeed('?')
+Install Using FTP-----------------------------------------------
+Does the server require a user name and password?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Install Using FTP (Help)----------------------------------------
+A user name and password may be required in some cases.
+<BLANKLINE>
+Although the password is not visible in the installer session, it may be
+visible on the network, depending on the protocol used.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('*')
+Install Using FTP-----------------------------------------------
+Does the server require a user name and password?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Install Using FTP-----------------------------------------------
+Does the server require a user name and password?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('theuser')
+Install Using FTP (Non-Anonymous User)--------------------------
+Provide user name and password.
+<BLANKLINE>
+User name: 
+
+>>> print docage.waitAndFeed('thepassword')
+Install Using FTP (Non-Anonymous User)--------------------------
+Provide user name and password.
+<BLANKLINE>
+Password: 
+
+>>> print docage.waitAndFeed('thepassword')
+Confirm password: 
+
+>>> print docage.waitAndFeed('x')
+Install Using FTP-----------------------------------------------
+Is a proxy server needed to access the server where the ESX
+packages reside?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Install Using FTP-----------------------------------------------
+Is a proxy server needed to access the server where the ESX
+packages reside?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('proxy.mydomain.com')
+Install Using FTP (Proxy)---------------------------------------
+Specify the name of the proxy server.
+For example, proxy.mydomain.com
+(The next screen will ask for a port number.)
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('3128')
+Install Using FTP (Proxy)---------------------------------------
+Specify the port number for the proxy server.
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Install Using FTP (Proxy)---------------------------------------
+Does the proxy server require a user name and password?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('theproxyuser')
+Install Using FTP (Proxy)---------------------------------------
+Provide user name and password.
+<BLANKLINE>
+User name: 
+
+>>> print docage.waitAndFeed('abc')
+Install Using FTP (Proxy)---------------------------------------
+Provide user name and password.
+<BLANKLINE>
+Password: 
+
+>>> print docage.waitAndFeed('def')
+Confirm password: 
+
+>>> print docage.waitAndFeed('<')
+Install Using FTP (Proxy)---------------------------------------
+Password Input Error
+The two passwords entered do not match.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Install Using FTP (Proxy)---------------------------------------
+Provide user name and password.
+<BLANKLINE>
+Password: 
+
+>>> print docage.waitAndFeed('<')
+Install Using FTP (Proxy)---------------------------------------
+Specify the name of the proxy server.
+For example, proxy.mydomain.com
+(The next screen will ask for a port number.)
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Install Using FTP-----------------------------------------------
+Specify the FTP location of the ESX packages.
+(or enter '<' to go back).
+(Non-anonymous user name and password will be prompted separately.)
+<BLANKLINE>
+ftp://
+
+>>> print docage.waitAndFeed('<')
+Install Media Selection-----------------------------------------
+Choose the install media where ESX is located:
+ 1) CD-ROM or USB Storage
+ 2) Network File System (NFS)
+ 3) World Wide Web (HTTP)
+ 4) File Server (FTP)
+<BLANKLINE>
+Other actions:
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> None # auto-verification below...

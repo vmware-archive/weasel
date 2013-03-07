@@ -1,0 +1,96 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['media'], textui.main.main)
+>>> print docage.waitAndFeed('2')
+Install Media Selection-----------------------------------------
+Choose the install media where ESX is located:
+ 1) CD-ROM or USB Storage
+ 2) Network File System (NFS)
+ 3) World Wide Web (HTTP)
+ 4) File Server (FTP)
+<BLANKLINE>
+Other actions:
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('foobar.com')
+Install Using NFS-----------------------------------------------
+Specify the Network File System (NFS) server and directory path
+(or enter '<' to go back).
+<BLANKLINE>
+Server: 
+
+>>> print docage.waitAndFeed('/bazzer')
+Install Using NFS-----------------------------------------------
+Specify the Network File System (NFS) server and directory path
+(or enter '<' to go back).
+<BLANKLINE>
+Directory: 
+
+>>> print docage.waitAndFeed('<')
+Install Using NFS-----------------------------------------------
+Network Error
+There was an error trying to connect to the network server.
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Install Using NFS-----------------------------------------------
+Specify the Network File System (NFS) server and directory path
+(or enter '<' to go back).
+<BLANKLINE>
+Directory: 
+
+>>> print docage.waitAndFeed('2')
+Install Media Selection-----------------------------------------
+Choose the install media where ESX is located:
+ 1) CD-ROM or USB Storage
+ 2) Network File System (NFS)
+ 3) World Wide Web (HTTP)
+ 4) File Server (FTP)
+<BLANKLINE>
+Other actions:
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('jpowell-esx.eng.vmware.com')
+Install Using NFS-----------------------------------------------
+Specify the Network File System (NFS) server and directory path
+(or enter '<' to go back).
+<BLANKLINE>
+Server: 
+
+>>> print docage.waitAndFeed('/test/dir')
+Install Using NFS-----------------------------------------------
+Specify the Network File System (NFS) server and directory path
+(or enter '<' to go back).
+<BLANKLINE>
+Directory: 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['touch', '/etc/ntp.conf']
+['insmod', '/lib/sunrpc.ko']
+['insmod', '/lib/nfs_acl.ko']
+['insmod', '/lib/lockd.ko']
+['insmod', '/lib/nfs.ko']
+['/sbin/mount.nfs', 'foobar.com:/bazzer', '/mnt/nfs', '-v', '-o', 'nolock']
+['/sbin/umount.nfs', '/mnt/nfs', '-f']
+['/sbin/mount.nfs', 'jpowell-esx.eng.vmware.com:/test/dir', '/mnt/nfs', '-v', '-o', 'nolock']

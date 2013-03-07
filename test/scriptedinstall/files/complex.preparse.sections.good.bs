@@ -1,0 +1,14 @@
+#
+#	start_verify
+#	userchoices.getPreScripts() == [{'script':Script('\necho "Hello, World!"\n\n', '/bin/bash', False, 0, True)}]
+#	userchoices.getPostScripts() == [{'script':Script('\necho "Goodbye, World!"\n', '/bin/bash', True, 0, True)}]
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+
+%pre --interpreter=bash
+
+echo "Hello, World!"
+
+%post --interpreter=bash --ignorefailure=True
+
+echo "Goodbye, World!"

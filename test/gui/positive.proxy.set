@@ -1,0 +1,326 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'media']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Install Media</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Select the source for this ESX installation'
+>>> mainwindow.kGtkLabel0InstallUsbRadioButtonalignment1framemainwindow.get_property("label")
+'CD-ROM or USB Storage'
+>>> mainwindow.InstallUsbRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallNfsRadioButtonalignment1framemainwindow.get_property("label")
+'Network File System (NFS)'
+>>> mainwindow.InstallNfsRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallHttpRadioButtonalignment1framemainwindow.get_property("label")
+'World Wide Web (HTTP)'
+>>> mainwindow.InstallHttpRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallFtpRadioButtonalignment1framemainwindow.get_property("label")
+'File server (FTP)'
+>>> mainwindow.InstallFtpRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.InstallUsbRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.InstallHttpRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.httplabel5.get_property("label")
+'Specify the URL for the location of the ESX packages.'
+>>> mainwindow.httplabel6.get_property("label")
+'URL:'
+>>> mainwindow.HttpUrlEntry.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0HttpProxyCheckButtonalignment3framemainwindow.get_property("label")
+'Use proxy server'
+>>> mainwindow.HttpProxyCheckButton.get_property("sensitive")
+True
+>>> mainwindow.HttpProxyPasswordEntry.get_property("sensitive")
+True
+>>> mainwindow.HttpProxyUsernameEntry.get_property("sensitive")
+True
+>>> mainwindow.httplabel10.get_property("label")
+'Password:'
+>>> mainwindow.httplabel9.get_property("label")
+'User name:'
+>>> mainwindow.kGtkLabel0HttpProxyUserCheckButtonHttpProxyTablealignment4alignment3framemainwindow.get_property("label")
+'Use proxy user name and password'
+>>> mainwindow.HttpProxyUserCheckButton.get_property("sensitive")
+True
+>>> mainwindow.HttpProxyPortEntry.get_property("sensitive")
+True
+>>> mainwindow.HttpProxyEntry.get_property("sensitive")
+True
+>>> mainwindow.httplabel8.get_property("label")
+'Port:'
+>>> mainwindow.httplabel7.get_property("label")
+'HTTP Proxy:'
+>>> mainwindow.HttpUrlEntry.set_text("http://r")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://re")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://req")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requ")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requi")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requir")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://require")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires.")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires.a")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires.a.")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires.a.p")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires.a.pr")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires.a.pro")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires.a.prox")
+>>> runner.sleep()
+>>> mainwindow.HttpUrlEntry.set_text("http://requires.a.proxy")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyCheckButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.HttpProxyEntry.set_text("f")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyEntry.set_text("fo")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyEntry.set_text("foo")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyEntry.set_text("foo.")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyEntry.set_text("foo.c")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyEntry.set_text("foo.co")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyEntry.set_text("foo.com")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyPortEntry.set_text("")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyPortEntry.set_text("1")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyPortEntry.set_text("12")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyPortEntry.set_text("123")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyUserCheckButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.HttpProxyUsernameEntry.set_text("a")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyUsernameEntry.set_text("as")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyUsernameEntry.set_text("asd")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyUsernameEntry.set_text("asdf")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyPasswordEntry.set_text("a")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyPasswordEntry.set_text("as")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyPasswordEntry.set_text("asd")
+>>> runner.sleep()
+>>> mainwindow.HttpProxyPasswordEntry.set_text("asdf")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.kGtkLabel0SetupchoicebasicRadioButtonalignment44framemainwindow.get_property("label")
+'Standard setup'
+>>> mainwindow.SetupchoicebasicRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label125.get_property("label")
+'Setup ESX on a single hard drive or LUN.'
+>>> mainwindow.kGtkLabel0SetupchoiceadvancedRadioButtonalignment44framemainwindow.get_property("label")
+'Advanced setup'
+>>> mainwindow.SetupchoiceadvancedRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label126.get_property("label")
+'View and customize the individual ESX partitions.'
+>>> mainwindow.kGtkLabel0SetupchoicebootloaderCheckButtonalignment47alignment44framemainwindow.get_property("label")
+'Configure boot loader automatically (leave checked if unsure)'
+>>> mainwindow.SetupchoicebootloaderCheckButton.get_property("sensitive")
+True
+>>> mainwindow.MainBackButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.HttpProxyCheckButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_OK.get_property("label")
+'_OK'
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel0GtkFramecommon_windowGtkMessageDialog.get_property("label")
+'There was an error trying to connect to the network server.'
+>>> GtkMessageDialog.kGtkLabel1GtkFramecommon_windowGtkMessageDialog.get_property("label") #doctest: +SKIP
+''
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>Network Error</b>'
+>>> GtkMessageDialog.kGtkButtongtk_ok.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose("GtkMessageDialog")
+>>> runner.sleep()
+>>> mainwindow.MainBackButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.InstallHttpRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.InstallFtpRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.ftplabel9.get_property("label")
+'Specify the URL for the location of the ESX packages.'
+>>> mainwindow.ftplabel10.get_property("label")
+'URL:'
+>>> mainwindow.FtpUrlEntry.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0FtpNonAnonLoginCheckButtonalignment6framemainwindow.get_property("label")
+'Use non-anonymous login'
+>>> mainwindow.FtpNonAnonLoginCheckButton.get_property("sensitive")
+True
+>>> mainwindow.FtpNonAnonPasswordEntry.get_property("sensitive")
+True
+>>> mainwindow.FtpNonAnonLoginUserEntry.get_property("sensitive")
+True
+>>> mainwindow.ftplabel14.get_property("label")
+'Password:'
+>>> mainwindow.ftplabel13.get_property("label")
+'User name:'
+>>> mainwindow.kGtkLabel0FtpProxyCheckButtonalignment6framemainwindow.get_property("label")
+'Use proxy server'
+>>> mainwindow.FtpProxyCheckButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0FtpProxyUserCheckButtonFtpProxyTablealignment8alignment6framemainwindow.get_property("label")
+'Use proxy user name and password'
+>>> mainwindow.FtpProxyUserCheckButton.get_property("sensitive")
+True
+>>> mainwindow.FtpProxyPasswordEntry.get_property("sensitive")
+True
+>>> mainwindow.FtpProxyUsernameEntry.get_property("sensitive")
+True
+>>> mainwindow.ftplabel16.get_property("label")
+'Password:'
+>>> mainwindow.ftplabel15.get_property("label")
+'User name:'
+>>> mainwindow.FtpProxyPortEntry.get_property("sensitive")
+True
+>>> mainwindow.FtpProxyEntry.get_property("sensitive")
+True
+>>> mainwindow.ftplabel12.get_property("label")
+'Port:'
+>>> mainwindow.ftplabel11.get_property("label")
+'FTP Proxy:'
+>>> mainwindow.FtpProxyCheckButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.FtpProxyEntry.set_text("f")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyEntry.set_text("fo")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyEntry.set_text("foo")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyEntry.set_text("foo.")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyEntry.set_text("foo.c")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyEntry.set_text("foo.co")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyEntry.set_text("foo.com")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyPortEntry.set_text("1")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyPortEntry.set_text("12")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyPortEntry.set_text("123")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyUserCheckButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.FtpProxyUsernameEntry.set_text("a")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyUsernameEntry.set_text("as")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyUsernameEntry.set_text("asd")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyUsernameEntry.set_text("asdf")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyPasswordEntry.set_text("a")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyPasswordEntry.set_text("as")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyPasswordEntry.set_text("asd")
+>>> runner.sleep()
+>>> mainwindow.FtpProxyPasswordEntry.set_text("asdf")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainBackButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.FtpProxyCheckButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_OK.get_property("label")
+'_OK'
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel0GtkFramecommon_windowGtkMessageDialog.get_property("label")
+'There was an error trying to connect to the network server.'
+>>> GtkMessageDialog.kGtkLabel1GtkFramecommon_windowGtkMessageDialog.get_property("label") #doctest: +SKIP
+''
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>Network Error</b>'
+>>> GtkMessageDialog.kGtkButtongtk_ok.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose("GtkMessageDialog")
+>>> runner.sleep()
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['/sbin/umount.nfs', '/mnt/nfs', '-f']
+['touch', '/etc/ntp.conf']

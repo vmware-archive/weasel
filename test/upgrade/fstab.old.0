@@ -1,0 +1,13 @@
+# This is a comment
+UUID=77041148-9fc9-4ad2-a336-a6349e7811cb /                       ext3    defaults        1 1
+UUID=32eb2ab4-af37-4844-94b8-e624dbcd78d7 /boot                   ext3    defaults        1 2
+none                    /dev/pts                devpts  gid=5,mode=620  0 0
+none                    /proc                   proc    defaults        0 0
+none                    /dev/shm                tmpfs   defaults        0 0
+UUID=6d54bcdd-07cc-48a5-8b9a-8beb10333f5a /var/log                ext3    defaults        1 2
+UUID=7dd4c848-538b-4222-97a5-c3eddd0da99b swap                    swap    defaults        0 0
+# Note the missing freq/passno fields in the next line.
+exit14:/       /mnt/exit14           nfs rsize=32768,wsize=32768,timeo=14,intr
+exit15:/       /mnt/exit15           nfs
+/dev/cdrom              /mnt/cdrom              udf,iso9660 noauto,owner,kudzu,ro 0 0
+/dev/fd0                /mnt/floppy             auto    noauto,owner,kudzu 0 0

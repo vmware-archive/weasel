@@ -1,0 +1,100 @@
+# mode: -*- doctest -*-
+
+upgrade
+install cdrom
+
+virtualdisk cos --size=5000 --onvmfs='Storage1'
+
+part / --size=2500 --grow --onvirtualdisk=cos --fstype=ext3
+part swap --size=256 --onvirtualdisk=cos --fstype=swap
+
+vmaccepteula
+
+%post
+exit 1
+
+>>> import docage
+>>> docage.setup()
+>>> import fauxroot
+>>> def badScript(argv):
+...     if argv[1] == "/tmp/ks-script":
+...         return ("I'm dying!", 1)
+...     return ("", 0)
+>>> fauxroot.EXEC_FUNCTIONS["/bin/bash"] = badScript
+>>> fauxroot.WRITTEN_FILES["/proc/cmdline"] = fauxroot.CopyOnWriteFile(
+...     "upgrade "
+...     "bootpart=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b "
+...     "rootpart=4aa8e7c6-24ef-4f3e-9986-e628f7d1d61b "
+...     "ks=file:///ks.cfg")
+>>> docage.doit(args=[])
+>>> docage.exitCode
+0
+>>> docage.printSystemLog()
+['/bin/bash', '/tmp/initscripts.sh']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/bin/mount', '/dev/sda1', '/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b']
+['/usr/bin/umount', '/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b']
+['chvt', '6']
+['/usr/bin/mount', '/dev/sda2', '/mnt/by-uuid/4aa8e7c6-24ef-4f3e-9986-e628f7d1d61b']
+['/usr/sbin/vmkfstools', '-c', '5000M', '/vmfs/volumes/Storage1/cos-47b51b25-7c15-28d3-7cd0-000c2935404a/cos.vmdk']
+['/usr/sbin/vsd', '-cu', '-f', '/vmfs/volumes/Storage1/cos-47b51b25-7c15-28d3-7cd0-000c2935404a/cos.vmdk']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkswap', '-v1', '/dev/sdh1']
+['/usr/sbin/mkfs.ext2', '-L', 'esx-root', '/dev/sdh2']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh2']
+['/usr/bin/mount', '/dev/sdh2', '/mnt/sysimage']
+['/usr/bin/mount', '/dev/sda2', '/mnt/sysimage/esx3-installation']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/boot']
+['/usr/bin/mount', '-t', 'proc', '/proc', '/mnt/sysimage//proc']
+['/usr/bin/mount', '-t', 'sysfs', '/sys', '/mnt/sysimage//sys']
+['/bin/rpm', '--rebuilddb']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/esx3-installation/boot']
+['/usr/sbin/tzdata-update']
+['/usr/sbin/esxupdate', 'syncdb', '-m', '/tmp/metadata.zip']
+['touch', '/etc/ntp.conf']
+['/mnt/sysimage/usr/sbin/esxcfg-configcheck']
+['/sbin/start_udev']
+['/bin/bash', '/tmp/ks-script']
+>>> "installation aborted" in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> "installation complete" not in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> docage.printFiles(include=["/dev/tty6"])
+/dev/tty6 (regular f 700)
+  ...
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+  warning:file:///ks.cfg:line 15: interpreter not defined. Defaulting to bash
+  ...
+  not migrating fstab entry: none /dev/pts devpts gid=5,mode=620 0 0
+  not migrating fstab entry: none /proc proc defaults 0 0
+  not migrating fstab entry: none /dev/shm tmpfs defaults 0 0
+  cannot find device with UUID: 6d54bcdd-07cc-48a5-8b9a-8beb10333f5a
+  unable to mount -- UUID=6d54bcdd-07cc-48a5-8b9a-8beb10333f5a /esx3-installation/var/log ext3 defaults,ro 1 2
+  not migrating fstab entry: UUID=7dd4c848-538b-4222-97a5-c3eddd0da99b swap swap defaults 0 0
+  not migrating fstab entry: /dev/cdrom /mnt/cdrom udf,iso9660 noauto,owner,kudzu,ro 0 0
+  not migrating fstab entry: /dev/fd0 /mnt/floppy auto noauto,owner,kudzu 0 0
+  ...
+  stderr: /bin/sh: /sbin/start_udev: No such file or directory
+<BLANKLINE>
+<BLANKLINE>
+  I'm dying!
+  installation aborted
+<BLANKLINE>
+  Command '/bin/bash /tmp/ks-script' exited with status 1.
+  Output:
+    I'm dying!
+  User-supplied script failed.
+  See /var/log/esx_install.log for more information.
+<BLANKLINE>
+>>> docage.printPromptLog()
+Press <enter> to reboot...

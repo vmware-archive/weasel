@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	firewallport --open or --close must be specified.
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.firewallport.noOpenNoClose.bs

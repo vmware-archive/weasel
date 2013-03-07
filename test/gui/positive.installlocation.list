@@ -1,0 +1,62 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'installlocation']
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>ESX Storage Device</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Select a location to install ESX'
+>>> mainwindow.label121.get_property("label")
+'Select the storage device to install ESX (requires at least 9.5 GB).'
+>>> mainwindow.InstalllocationView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.InstalllocationView)
+  ['Local Storage', True, True]
+    ['ATA WDC FKE1800UT (vml.0041)', '0', '2.05 TB', 'vml.0041', False, False]
+    ['ATA WDC FKE1600 (vml.0000)', '0', '76.80 GB', 'vml.0000', True, True]
+    ['ATA WDC FKE1700UT (vml.0001)', '1', '76.80 GB', 'vml.0001', True, True]
+      ['Fake Path', False, False]
+    ['Kingston DataTraveler 2.0 (vml.0003)', '1', '512 MB', 'vml.0003', False, False]
+    ['Lexar Firefly (vml.0025)', '0', '512 MB', 'vml.0025', False, False]
+    ['IDE HD Vendor IDE HD Model (vml.0030)', '0', '76.80 GB', 'vml.0030', True, True]
+    ['Lexar Firefly2 (vml.0026)', '1', '512 MB', 'vml.0026', False, False]
+    ['Compaq CCISS Disk (vml.0010)', '', '76.80 GB', 'vml.0010', False, False]
+  ['Remote Storage', True, True]
+    ['ATA WDC FKE1800UT (vml.0040)', '2', '2.56 GB', 'vml.0040', False, False]
+      ['WWPN: 20:06:00:a0:b8:0f:a2:70 WWNN: 20:06:00:a0:b8:0f:a2:6f', False, False]
+      ['WWPN: Bo:gu:sP:at:hT:oD:ev:ic:e', False, False]
+    ['ATA WDC FKE1600 (vml.0006)', '6', '768.00 GB', 'vml.0006', True, True]
+>>> mainwindow.kGtkLabel0InstalllocationIscsiButtonhbuttonbox5alignment40framemainwindow.get_property("label")
+'Add software iSCSI storage...'
+>>> mainwindow.InstalllocationIscsiButton.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['echo', 'mkblkdevs', '|', 'nash', '--force']

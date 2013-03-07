@@ -1,0 +1,10 @@
+<ConfigRoot>
+  <ACEData id="11">
+    <ACEDataEntity>ha-folder-root</ACEDataEntity>
+    <ACEDataId>11</ACEDataId>
+    <ACEDataIsGroup>false</ACEDataIsGroup>
+    <ACEDataPropagate>true</ACEDataPropagate>
+    <ACEDataRoleId>-1</ACEDataRoleId>
+    <ACEDataUser>dcui</ACEDataUser>
+  </ACEData>
+</ConfigRoot>

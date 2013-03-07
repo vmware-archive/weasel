@@ -1,0 +1,41 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+bootloader --location=mbr --md5pass='$1$i8osW$/uZCGzymJw4FzHFFH1ftN0'
+
+install cdrom
+
+reboot
+
+dryrun
+
+%pre
+echo Gutentag
+
+%post
+echo Hi
+
+>>> import docage
+>>> import fauxroot
+>>> docage.run()
+>>> "dry run specified, stopping." in fauxroot.WRITTEN_FILES['/dev/tty6'].getvalue()
+True
+>>> docage.printSystemLog()
+['chvt', '6']
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/bin/bash', '/tmp/ks-script']
+['touch', '/etc/ntp.conf']
+['/usr/bin/eject', '/dev/cdrom']
+['/etc/init.d/iptables', 'stop']
+['/usr/bin/umount', '/mnt/sysimage/boot']
+['/usr/bin/umount', '/mnt/sysimage']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/eject']

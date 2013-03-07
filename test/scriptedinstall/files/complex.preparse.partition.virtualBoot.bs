@@ -1,0 +1,9 @@
+#
+#	start_errors
+#	cannot place "/boot" on a virtual disk.
+#	end_errors
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/negative.partition.virtualBoot.bs

@@ -1,0 +1,85 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['media'], textui.main.main)
+>>> print docage.waitAndFeed('1')
+Install Media Selection-----------------------------------------
+Choose the install media where ESX is located:
+ 1) CD-ROM or USB Storage
+ 2) Network File System (NFS)
+ 3) World Wide Web (HTTP)
+ 4) File Server (FTP)
+<BLANKLINE>
+Other actions:
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+Probing for installation media...
+CD-ROM or USB Media---------------------------------------------
+ 1) /dev/sr1
+      Contents: No packages
+      Version: (no install media found)
+ 2) /dev/sr0
+      Contents: Installation packages
+      Version: VMware ESX K/L e.x.p (0.3.00000)
+ 3) Kingston DataTraveler 2.0
+      Contents: Installation packages
+      Version: VMware ESX K/L e.x.p (0.3.00000)
+ 4) Lexar Firefly
+      Contents: esx_40.iso
+      Version: VMware ESX K/L 4.0 (0.3.00000)
+ 5) Lexar Firefly
+      Contents: esx.iso
+      Version: VMware ESX K/L e.x.p (0.3.00000)
+ 6) Lexar Firefly2
+      Contents: No packages
+      Version: (no install media found)
+[<number>: media, 'rescan', 'eject <N>', '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> import userchoices
+>>> print userchoices.getMediaDescriptor()
+/dev/sr0(iso9660) version VMware ESX K/L e.x.p (0.3.00000)
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['/usr/bin/mount', '-t', 'iso9660', '/dev/sr1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/sr0', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdd1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/media']
+['/usr/bin/mount', '-o', 'loop', '-t', 'iso9660', '/mnt/media/esx_40.iso', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/media']
+['/usr/bin/mount', '-o', 'loop', '-t', 'iso9660', '/mnt/media/esx.iso', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdn1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdn1', '/mnt/usbmedia']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/sr0', '/mnt/source']

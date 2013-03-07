@@ -1,0 +1,6 @@
+part /boot --fstype=ext3 --size=100 --onfirstdisk
+part / --fstype=ext3 --size=3000 --onfirstdisk=remote
+part swap --size=256 --grow --maxsize=512 --onfirstdisk='WDC FKE1700UT' --fstype=swap
+part /var/log --fstype=ext3 --size=500 --grow --maxsize=2000 --onfirstdisk
+part cos --size=1500 --grow --onfirstdisk --fstype=vmfs3
+part None --size=100 --onfirstdisk --fstype=vmkcore

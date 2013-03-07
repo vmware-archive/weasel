@@ -1,0 +1,264 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['-t'])
+>>> print docage.waitAndFeed('1')
+ESX 4.1 -- Virtual Infrastructure for the Enterprise------------
+Welcome to the ESX Text Installer
+Release 4.1
+<BLANKLINE>
+This wizard will guide you through the installation of ESX.
+<BLANKLINE>
+ESX installs on most systems, but only systems on VMware's Hardware
+Compatibility Guide (HCG) are supported. Please consult VMware's HCG on
+vmware.com.
+<BLANKLINE>
+ 1) Continue
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Keyboard--------------------------------------------------------
+Which keyboard model is attached to this computer?
+<BLANKLINE>
+Current choice:  U.S. English
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('accept')
+End User License Agreement--------------------------------------
+    To continue with the installation, please read and accept the
+    end user license agreement.
+<BLANKLINE>
+VMWARE MASTER END USER LICENSE AGREEMENT
+<BLANKLINE>
+NOTICE:  BY DOWNLOADING AND INSTALLING, COPYING OR OTHERWISE USING THE
+SOFTWARE, YOU AGREE TO BE BOUND BY THE TERMS OF THIS VMWARE MASTER END USER
+LICENSE AGREEMENT ("EULA").  IF YOU DO NOT AGREE TO THE TERMS OF THIS EULA,
+YOU MAY NOT DOWNLOAD, INSTALL, COPY OR USE THE SOFTWARE, AND YOU MAY RETURN
+THE UNUSED SOFTWARE TO THE VENDOR FROM WHICH YOU ACQUIRED IT WITHIN THIRTY
+(30) DAYS AND REQUEST A REFUND OF THE LICENSE FEE, IF ANY, ALREADY PAID
+UPON SHOWING PROOF OF PAYMENT.  "YOU" MEANS THE NATURAL PERSON OR THE
+ENTITY THAT IS AGREEING TO BE BOUND BY THIS EULA, THEIR EMPLOYEES AND THIRD
+PARTY CONTRACTORS THAT PROVIDE SERVICES TO YOU.  YOU SHALL BE LIABLE FOR
+ANY FAILURE BY SUCH EMPLOYEES AND THIRD PARTY CONTRACTORS TO COMPLY WITH
+THE TERMS OF THIS AGREEMENT.
+<BLANKLINE>
+1.      DEFINITIONS
+<BLANKLINE>
+1.1     "Designated Administrative Access" means that access to the
+standard user interfaces of a given instance of the Software (designated in
+['accept': accept license, <enter>: more, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('2')
+Custom Drivers--------------------------------------------------
+Choose whether to install any custom drivers for this ESX installation.
+<BLANKLINE>
+Do you want to install any custom drivers?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Custom Drivers--------------------------------------------------
+Going to Load Drivers
+<BLANKLINE>
+The installer will now load any drivers required for ESX.  Once this
+step is completed, additional custom drivers cannot be loaded.
+<BLANKLINE>
+Load system drivers now?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+License---------------------------------------------------------
+Do you want to enter a serial number now or later?
+<BLANKLINE>
+ 1) Enter a serial number now
+ 2) Enter a serial number later and use evaluation mode
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Adapter---------------------------------------------
+Select an adapter for ESX to use for system tasks.
+(Choose option 2 (Change) to change either the current adapter choice
+or the VLAN ID.)
+<BLANKLINE>
+Current choice:
+    afakenic: Acme Ethernet Corp: Fake NIC 2000
+    (00:50:56:C0:00:01) [connected]
+  VLAN ID: None
+<BLANKLINE>
+ 1) Keep 
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Settings--------------------------------------------
+Choose how network settings should be configured (DHCP or Static IP).
+<BLANKLINE>
+Current choice: DHCP
+ 1) Keep automatic DHCP settings
+ 2) Change to static IP network settings
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Disk Setup------------------------------------------------------
+Specify the type of setup for this installation.
+ 1) Basic Setup
+    Set up ESX on a single hard drive or LUN.
+ 2) Advanced Setup
+    View and customize the individual ESX partitions.
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+ESX Storage Device----------------------------------------------
+  1) ATA WDC FKE1600 (vml.0000)                                  76.80 GB
+  2) ATA WDC FKE1700UT (vml.0001)                                76.80 GB
+  3) ATA WDC FKE1600 (vml.0006)                                 768.00 GB
+  4) IDE HD Vendor IDE... (vml.0030)                             76.80 GB
+[<number>: storage, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('1')
+ESX Storage Device----------------------------------------------
+ARE YOU TRYING TO PERFORM AN UPGRADE?
+<BLANKLINE>
+The selected storage device contains an existing ESX installation and
+datastore. Continuing installation on this storage device will RESULT IN
+DATA LOSS, causing any ESX settings and virtual machines to be lost.
+<BLANKLINE>
+To UPGRADE the existing installation without incurring data loss, use
+the vSphere Host Update Utility installed along with vSphere Client or
+use vCenter Update Manager.
+<BLANKLINE>
+ 1) OK
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Timezone--------------------------------------------------------
+Which timezone should this computer use?
+<BLANKLINE>
+Current choice:  UTC-08:00 US/Pacific (San Francisco, USA)
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+Time/Date Settings----------------------------------------------
+Time/Date
+How do you want to configure the time and date for ESX?
+<BLANKLINE>
+ 1) Automatically by NTP server
+ 2) Manually
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Time/Date Settings----------------------------------------------
+<BLANKLINE>
+Time/Date (Manual)
+<BLANKLINE>
+The current time is:  ...
+Do you want to change it?
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('foobar')
+Administrator Password------------------------------------------
+Set the administrator (root) password for ESX
+(or enter '<' to go back).
+<BLANKLINE>
+Passwords must be at least 6 characters long.
+<BLANKLINE>
+Password: 
+
+>>> print docage.waitAndFeed('foobar')
+Confirm password: 
+
+>>> import rpm
+>>> rpm.CORRUPTED_PACKAGES = ["foopkg"]
+>>> print docage.waitAndFeed('1')
+Review----------------------------------------------------------
+ License:                             Evaluation mode
+ Keyboard:                            U.S. English
+ Custom Drivers:                      (none)    
+ ESX Storage Device:                  
+     Name:                            vml.0000  
+     Boot Loader Location:            Master Boot Record
+ Datastore:                           
+     Name:                            (auto-generated)
+     Type:                            New       
+     Storage Device:                  vml.0000  
+     Service Console Partitions:      vmkcore       110 MB                      
+                                      vmfs3       75.59 GB                      
+                                      swap          600 MB                      
+                                      ext3         5.00 GB  /                   
+                                      ext3         1.10 GB  /boot               
+                                      ext3         2.00 GB  /var/log            
+ Networking for Service Console:      
+     Network Adapter:                 Acme Ethernet Corp: Fake NIC 2000
+     VLAN ID:                         (none)    
+     Network Settings:                Set automatically using DHCP
+[1: start the install, <enter>: forward, '<': back, '!': cancel, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+An error has occurred during your ESX installation.-------------
+Unpack or CPIO error installing package /mnt/sysimage/tmp/foopkg-3.2.i386.rpm
+<BLANKLINE>
+See /var/log/esx_install.log for more information.
+<BLANKLINE>
+ 1) Reboot
+ 2) Debug
+<BLANKLINE>
+> 
+
+>>> print docage.wait()
+<BLANKLINE>

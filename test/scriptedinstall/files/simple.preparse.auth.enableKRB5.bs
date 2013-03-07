@@ -1,0 +1,17 @@
+#
+#	start_warnings
+#	--disablemd5 is deprecated
+#	--disableshadow is deprecated
+#	end_warnings
+#	start_verify
+#	userchoices.getAuth()['nis'] == True
+#	userchoices.getAuth()['kerberos'] == True
+#	userchoices.getAuth()['ldap'] == False
+#	userchoices.getAuth()['nisServer'] == ''
+#	userchoices.getAuth()['nisDomain'] == ''
+#	userchoices.getAuth()['kerberosRealm'] == ''
+#	userchoices.getAuth()['kerberosKDC'] == ''
+#	userchoices.getAuth()['kerberosServer'] == ''
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/possitive.auth.enableKRB5.bs

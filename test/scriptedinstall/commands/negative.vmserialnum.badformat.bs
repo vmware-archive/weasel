@@ -1,0 +1,1 @@
+vmserialnum --esx=0thi-0is0a-valid-seria-lnumb

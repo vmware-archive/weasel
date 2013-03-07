@@ -1,0 +1,7 @@
+#
+#	start_warnings
+#	invalid timezone "invalid" was specified. Using default.
+#	end_warnings
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.timezone.invalidzone.bs

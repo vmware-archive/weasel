@@ -1,0 +1,83 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+
+firewallport --close --port=700 --proto=tcp --dir=in --name=foo
+firewallport --open --port=1 --proto=tcp --dir=in --name=foo
+
+install cdrom
+
+reboot
+
+>>> import docage
+>>> docage.run()
+>>> docage.printFiles(["/dev/tty6"])
+/dev/tty6 (regular f 700)
+  ...
+  The script 71.bogusipmi returned status 1
+  ...
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+  ...
+  Hostname (localhost) did not get saved in /etc/sysconfig/network
+  ...
+  already closed
+<BLANKLINE>
+  installation aborted
+<BLANKLINE>
+  Command '/usr/sbin/esxcfg-firewall --openPort 1,tcp,in,foo' exited with status 1.
+<BLANKLINE>
+  Could not open port 1 in the firewall.
+  See /var/log/esx_install.log for more information.
+<BLANKLINE>
+>>> docage.printSystemLog()
+['chvt', '6']
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['touch', '/etc/ntp.conf']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkfs.ext2', '/dev/sda1']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sda1']
+['/usr/sbin/vmkfstools', '-C', 'vmfs3', '-b', '1m', '-S', 'datastore1', '/vmfs/devices/disks/vml.0000:4']
+['/usr/sbin/vmkfstools', '-c', '7604M', '/vmfs/volumes/datastore1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['/usr/sbin/vsd', '-cu', '-f', '/vmfs/volumes/datastore1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkswap', '-v1', '/dev/sdh1']
+['/usr/sbin/mkfs.ext2', '/dev/sdh2']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh2']
+['/usr/sbin/mkfs.ext2', '-L', 'esx-root', '/dev/sdh4']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh4']
+['/usr/bin/mount', '/dev/sdh4', '/mnt/sysimage']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/boot']
+['/usr/bin/mount', '/dev/sdh2', '/mnt/sysimage/var/log']
+['/usr/bin/mount', '-t', 'proc', '/proc', '/mnt/sysimage//proc']
+['/usr/bin/mount', '-t', 'sysfs', '/sys', '/mnt/sysimage//sys']
+['/bin/rpm', '--rebuilddb']
+['/sbin/chkconfig', 'netfs', 'off']
+['/sbin/chkconfig', 'nfslock', 'off']
+['/sbin/chkconfig', 'portmap', 'off']
+['/sbin/chkconfig', 'iptables', 'off']
+['/sbin/chkconfig', 'sshd', 'on']
+['/usr/sbin/esxupdate', 'syncdb', '-m', '/tmp/metadata.zip']
+['/mnt/sysimage/usr/sbin/esxcfg-configcheck']
+['/usr/sbin/esxcfg-firewall', '--closePort', '700,tcp,in']
+['/usr/sbin/esxcfg-firewall', '--openPort', '1,tcp,in,foo']

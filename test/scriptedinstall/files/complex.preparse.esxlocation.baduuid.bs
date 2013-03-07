@@ -1,0 +1,7 @@
+#
+#	start_errors
+#       /boot partition already specified
+#	esxlocation partition with UUID 'e270687f-815f-42f2-a344-2cda73460462' not found
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.esxlocation.baduuid.bs

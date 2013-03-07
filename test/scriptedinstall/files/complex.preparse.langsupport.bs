@@ -1,0 +1,7 @@
+#
+#	start_warnings
+#	command "langsupport" is currently unused.
+#	end_warnings
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.langsupport.bs

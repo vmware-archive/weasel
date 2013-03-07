@@ -1,0 +1,1 @@
+part /tmp --size=100 --fstype=ext3 --ondisk=vml.0000

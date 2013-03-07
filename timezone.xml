@@ -1,0 +1,1491 @@
+<?xml version="1.0" encoding="utf-8"?><timezone_list version="1.0">
+  <mappos>0,0</mappos>
+  <!--
+  <offset name="UTC-12:00">
+    <mappos>575,6</mappos>
+    <city>
+      <mappos>5,5</mappos>
+      <name>International Date Line West</name>
+    </city>
+  </offset>
+  -->
+  <!--
+    <offset name="UTC-12:00"> 
+    <mappos>575,6</mappos>
+  </offset>
+  -->
+  <offset name="UTC-11:00">
+    <mappos>21,6</mappos>
+	<city>
+	  <name>Pago Pago, Samoa</name>
+      <mappos>589,214</mappos>
+      <offsetname>Samoa Standard Time — No Daylight Saving</offsetname>
+      <zone>Pacific/Pago_Pago</zone>
+	</city>
+  <city>
+        <zone>Pacific/Apia</zone></city><city>
+        <zone>Pacific/Midway</zone></city><city>
+        <zone>Pacific/Niue</zone></city><city>
+        <zone>Pacific/Samoa</zone></city><city>
+        <zone>US/Samoa</zone></city>
+  </offset>
+  <offset name="UTC-10:00">
+    <mappos>21,6</mappos>
+	<city>
+	  <name>Adak, USA</name>
+	  <mappos>578,100</mappos>
+	  <offsetname>Hawaii-Aleutian Time — Observes Daylight Saving</offsetname>
+	  <zone>America/Adak</zone>
+	</city>
+	<city>
+	  <name>Honolulu, USA</name>
+	  <mappos>42,159</mappos>
+	  <offsetname>Hawaii Standard Time — No Daylight Saving</offsetname>
+	  <zone>Pacific/Honolulu</zone>
+	</city>
+	<city>
+	  <name>Papeete, French Polynesia</name>
+	  <mappos>56,222</mappos>
+	  <offsetname>Tahiti Time — No Daylight Saving</offsetname>
+	  <zone>Pacific/Tahiti</zone>
+	</city>
+  <city>
+        <zone>Pacific/Fakaofo</zone></city><city>
+        <zone>Pacific/Johnston</zone></city><city>
+        <zone>Pacific/Rarotonga</zone></city><city>
+        <zone>US/Hawaii</zone></city>
+        <city>
+        <zone>America/Atka</zone></city><city>
+        <zone>US/Aleutian</zone></city>
+  </offset>
+  <offset name="UTC-09:00">
+    <mappos>21,6</mappos>
+	<city>
+	  <name>Anchorage, Alaska</name>
+	  <mappos>52,81</mappos>
+	  <offsetname>Alaska Time — No Daylight Saving</offsetname>
+	  <zone>America/Anchorage</zone>
+	</city>
+  <city>
+        <zone>Pacific/Gambier</zone></city>
+        <city>
+        <zone>America/Juneau</zone></city><city>
+        <zone>America/Nome</zone></city><city>
+        <zone>America/Yakutat</zone></city><city>
+        <zone>US/Alaska</zone></city>
+  </offset>
+  <offset name="UTC-08:00">
+    <mappos>66,6</mappos>
+	<city>
+	  <name>Whitehorse, Canada</name>
+	  <mappos>83,84</mappos>
+	  <offsetname>Pacific Time — Observes Daylight Saving</offsetname>
+	  <zone>America/Whitehorse</zone>
+	</city>
+	<city>
+	  <name>Vancouver, Canada</name>
+	  <mappos>94,106</mappos>
+	  <offsetname>Pacific Time — Observes Daylight Saving</offsetname>
+	  <zone>America/Vancouver</zone>
+	</city>
+	<!--
+	<city>
+	  <name>Seattle, USA</name>
+	  <mappos>97,115</mappos>
+	  <offsetname>Pacific Time — Observes Daylight Saving</offsetname>
+	  <zone>US/Pacific</zone>
+	</city>
+	-->
+	<city default="1">
+	  <name>San Francisco, USA</name>
+      <mappos>97,127</mappos>
+      <offsetname>Pacific Time — Observes Daylight Saving</offsetname>
+      <zone>US/Pacific</zone>
+    </city>
+	<city>
+	  <name>Los Angeles, USA</name>
+	  <mappos>103,135</mappos>
+	  <offsetname>Pacific Time — Observes Daylight Saving</offsetname>
+	  <zone>America/Los_Angeles</zone>
+	</city>
+  <city>
+        <zone>Pacific/Pitcairn</zone></city>
+        <city>
+        <zone>America/Dawson</zone></city><city>
+        <zone>America/Ensenada</zone></city><city>
+        <zone>America/Tijuana</zone></city><city>
+        <zone>Canada/Pacific</zone></city><city>
+        <zone>Canada/Yukon</zone></city><city>
+        <zone>Mexico/BajaNorte</zone></city>
+  </offset>
+  <offset name="UTC-07:00">
+    <mappos>73,6</mappos>
+    <city>
+      <name>Calgary, Canada</name>
+      <mappos>110,104</mappos>
+      <offsetname>Mountain Time — Observes Daylight Saving</offsetname>
+      <zone>Canada/Mountain</zone>
+    </city>
+    <city>
+      <name>Phoenix, USA</name>
+      <mappos>115,137</mappos>
+      <offsetname>Mountain Standard Time — No Daylight Saving</offsetname>
+      <zone>US/Arizona</zone>
+    </city>
+	<city>
+      <name>Salt Lake City, USA</name>
+      <mappos>116,124</mappos>
+      <offsetname>Mountain Time — Observes Daylight Saving</offsetname>
+      <zone>US/Mountain</zone>
+    </city>
+	<city>
+      <name>Denver, USA</name>
+      <mappos>125,130</mappos>
+      <offsetname>Mountain Time — Observes Daylight Saving</offsetname>
+      <zone>America/Denver</zone>
+    </city>
+  <city>
+        <zone>America/Dawson_Creek</zone></city><city>
+        <zone>America/Hermosillo</zone></city><city>
+        <zone>America/Phoenix</zone></city>
+        <city>
+        <zone>America/Boise</zone></city><city>
+        <zone>America/Cambridge_Bay</zone></city><city>
+        <zone>America/Chihuahua</zone></city><city>
+        <zone>America/Edmonton</zone></city><city>
+        <zone>America/Inuvik</zone></city><city>
+        <zone>America/Mazatlan</zone></city><city>
+        <zone>America/Shiprock</zone></city><city>
+        <zone>America/Yellowknife</zone></city><city>
+        <zone>Mexico/BajaSur</zone></city><city>
+        <zone>Navajo</zone></city>
+  </offset>
+  <offset name="UTC-06:00">
+    <mappos>114,6</mappos>
+	<city>
+	  <name>Winnipeg, Canada</name>
+	  <mappos>139,105</mappos>
+      <offsetname>Central Time — Observes Daylight Saving</offsetname>
+      <zone>America/Winnipeg</zone>
+	</city>
+	<city>
+	  <name>Chicago, USA</name>
+	  <mappos>149,123</mappos>
+      <offsetname>Central Time — Observes Daylight Saving</offsetname>
+      <zone>America/Chicago</zone>
+	</city>
+	<!--
+	<city>
+	  <name>St. Louis, USA</name>
+	  <mappos>145,130</mappos>
+      <offsetname>Central Time — Observes Daylight Saving</offsetname>
+      <zone>US/Central</zone>
+	</city>
+	-->
+	<city>
+	  <name>Dallas, USA</name>
+	  <mappos>136,140</mappos>
+      <offsetname>Central Time — Observes Daylight Saving</offsetname>
+      <zone>US/Central</zone>
+	</city>
+	<city>
+	  <name>Mexico City, Mexico</name>
+	  <mappos>133,161</mappos>
+      <offsetname>Central Time — Observes Daylight Saving</offsetname>
+      <zone>America/Mexico_City</zone>
+	</city>
+	<city>
+	  <name>Guatemala, Guatemala</name>
+	  <mappos>144,166</mappos>
+      <offsetname>Central Standard Time — No Daylight Saving</offsetname>
+      <zone>America/Guatemala</zone>
+	</city>
+	<city>
+	  <name>Managua, Nicaragua</name>
+	  <mappos>154,175</mappos>
+      <offsetname>Central Standard Time — No Daylight Saving</offsetname>
+      <zone>America/Managua</zone>
+	</city>
+	<!--
+	<city>
+	  <name>Belize City, Belize</name>
+	  <mappos>150,162</mappos>
+      <offsetname>Central Standard Time — No Daylight Saving</offsetname>
+      <zone>America/Belize</zone>
+	</city>
+	-->
+	<!--
+	<city>
+	  <name>San Salvador, El Salvador</name>
+	  <mappos>149,170</mappos>
+      <offsetname>Central Standard Time — No Daylight Saving</offsetname>
+      <zone>America/El_Salvador</zone>
+	</city>
+	-->
+	<!--
+	<city>
+	  <name>Tegucigalpa, Honduras</name>
+	  <mappos>156,168</mappos>
+      <offsetname>Central Standard Time — No Daylight Saving</offsetname>
+      <zone>America/Tegucigalpa</zone>
+	</city>
+	-->
+	<!--
+	<city>
+	  <name>San Jose, Costa Rica</name>
+	  <mappos>159,179</mappos>
+      <offsetname>Central Standard Time — No Daylight Saving</offsetname>
+      <zone>America/Costa_Rica</zone>
+	</city>
+	-->
+  <city>
+        <zone>America/Belize</zone></city><city>
+        <zone>America/Costa_Rica</zone></city><city>
+        <zone>America/El_Salvador</zone></city><city>
+        <zone>America/Regina</zone></city><city>
+        <zone>America/Swift_Current</zone></city><city>
+        <zone>America/Tegucigalpa</zone></city><city>
+        <zone>Canada/East-Saskatchewan</zone></city><city>
+        <zone>Canada/Saskatchewan</zone></city><city>
+        <zone>Pacific/Easter</zone></city><city>
+        <zone>Pacific/Galapagos</zone></city>
+        <city>
+        <zone>America/Cancun</zone></city><city>
+        <zone>America/Indiana/Knox</zone></city><city>
+        <zone>America/Knox_IN</zone></city><city>
+        <zone>America/Menominee</zone></city><city>
+        <zone>America/Merida</zone></city><city>
+        <zone>America/Monterrey</zone></city><city>
+        <zone>America/North_Dakota/Center</zone></city><city>
+        <zone>America/North_Dakota/New_Salem</zone></city><city>
+        <zone>America/Rainy_River</zone></city><city>
+        <zone>America/Rankin_Inlet</zone></city><city>
+        <zone>Canada/Central</zone></city><city>
+        <zone>US/Indiana-Starke</zone></city><city>
+        <zone>America/Indiana/Tell_City</zone></city><city>
+        <zone>Chile/EasterIsland</zone></city><city>
+        <zone>Mexico/General</zone></city>
+  </offset>
+  <offset name="UTC-05:00">
+    <mappos>147,6</mappos>
+        <city>
+         <name>Waterloo, Canada</name>
+         <mappos>162,120</mappos>
+      <offsetname>Eastern Time — Observes Daylight Saving</offsetname>
+      <zone>Canada/Eastern</zone>
+        </city>
+	<city>
+	  <name>Ottawa, Canada</name>
+	  <mappos>170,115</mappos>
+      <offsetname>Eastern Time — Observes Daylight Saving</offsetname>
+      <zone>Canada/Eastern</zone>
+	</city>
+	<!--
+	<city>
+	  <name>Cleveland, USA</name>
+	  <mappos>163, 125</mappos>
+      <offsetname>Eastern Time — Observes Daylight Saving</offsetname>
+      <zone>US/Eastern</zone>
+	</city>
+	-->
+	<city>
+	  <name>New York, USA</name>
+	  <mappos>173,125</mappos>
+      <offsetname>Eastern Time — Observes Daylight Saving</offsetname>
+      <zone>America/New_York</zone>
+	</city>
+	<city>
+	  <name>Atlanta, USA</name>
+	  <mappos>159,137</mappos>
+      <offsetname>Eastern Time — Observes Daylight Saving</offsetname>
+      <zone>US/Eastern</zone>
+	</city>
+	<city>
+	  <name>Miami, USA</name>
+	  <mappos>164,150</mappos>
+      <offsetname>Eastern Time — Observes Daylight Saving</offsetname>
+      <zone>US/Eastern</zone>
+	</city>
+	<city>
+	  <name>Havana, Cuba</name>
+	  <mappos>163,158</mappos>
+      <offsetname>Cuba Time — Observes Daylight Saving</offsetname>
+      <zone>America/Havana</zone>
+	</city>
+	<city>
+	  <name>Port-au-Prince, Haiti</name>
+	  <mappos>175,160</mappos>
+      <offsetname>Eastern Standard Time — No Daylight Saving</offsetname>
+      <zone>America/Port-au-Prince</zone>
+	</city>
+	<city>
+	  <name>Kingston, Jamaica</name>
+	  <mappos>168,166</mappos>
+      <offsetname>Eastern Standard Time — No Daylight Saving</offsetname>
+      <zone>America/Jamaica</zone>
+	</city>
+	<city>
+	  <name>Panama, Panama</name>
+	  <mappos>164,179</mappos>
+      <offsetname>Eastern Standard Time — No Daylight Saving</offsetname>
+      <zone>America/Panama</zone>
+	</city>
+	<city>
+	  <name>Quito, Ecuador</name>
+	  <mappos>166,194</mappos>
+      <offsetname>Ecuador Time — No Daylight Saving</offsetname>
+      <zone>America/Guayaquil</zone>
+	</city>
+	<city>
+	  <name>Bogota, Colombia</name>
+	  <mappos>175,186</mappos>
+      <offsetname>Colombia Time — No Daylight Saving</offsetname>
+      <zone>America/Bogota</zone>
+	</city>
+	<city>
+	  <name>Lima, Peru</name>
+	  <mappos>172,213</mappos>
+      <offsetname>Peru Time — No Daylight Saving</offsetname>
+      <zone>America/Lima</zone>
+	</city>
+  <city>
+        <zone>America/Atikokan</zone></city><city>
+        <zone>America/Cayman</zone></city><city>
+        <zone>America/Coral_Harbour</zone></city><city>
+        <zone>America/Detroit</zone></city><city>
+        <zone>America/Fort_Wayne</zone></city><city>
+        <zone>America/Grand_Turk</zone></city><city>
+        <zone>America/Indiana/Indianapolis</zone></city><city>
+        <zone>America/Indiana/Marengo</zone></city><city>
+        <zone>America/Indiana/Petersburg</zone></city><city>
+        <zone>America/Indiana/Vevay</zone></city><city>
+        <zone>America/Indiana/Vincennes</zone></city><city>
+        <zone>America/Indianapolis</zone></city><city>
+        <zone>America/Iqaluit</zone></city><city>
+        <zone>America/Kentucky/Louisville</zone></city><city>
+        <zone>America/Kentucky/Monticello</zone></city><city>
+        <zone>America/Louisville</zone></city><city>
+        <zone>America/Montreal</zone></city><city>
+        <zone>America/Nassau</zone></city><city>
+        <zone>America/Nipigon</zone></city><city>
+        <zone>America/Pangnirtung</zone></city><city>
+        <zone>America/Thunder_Bay</zone></city><city>
+        <zone>America/Toronto</zone></city><city>
+        <zone>US/East-Indiana</zone></city><city>
+        <zone>US/Michigan</zone></city><city>
+        <zone>America/Indiana/Winamac</zone></city><city>
+        <zone>America/Resolute</zone></city><city>
+        <zone>Cuba</zone></city>
+  </offset>
+  <offset name="UTC-04:00">
+    <mappos>161,6</mappos>
+	<city>
+	  <name>Halifax, Canada</name>
+	  <mappos>191,116</mappos>
+      <offsetname>Atlantic Time — No Daylight Saving</offsetname>
+      <zone>America/Halifax</zone>
+	</city>
+	<city>
+	  <name>Qaanaaq, Greenland</name>
+	  <mappos>182,33</mappos>
+      <offsetname>Atlantic Time — No Daylight Saving</offsetname>
+      <zone>America/Thule</zone>
+	</city>
+	<city>
+	  <name>Caracas, Venezuela</name>
+	  <mappos>185,178</mappos>
+      <offsetname>Venezuela Time — No Daylight Saving</offsetname>
+      <zone>America/Caracas</zone>
+	</city>
+	<city>
+	  <name>Cuiaba, Brazil</name>
+	  <mappos>203,218</mappos>
+      <offsetname>Amazon Time — Observes Daylight Saving</offsetname>
+      <zone>America/Cuiaba</zone>
+	</city>
+	<city>
+	  <name>Manaus, Brazil</name>
+	  <mappos>197,197</mappos>
+      <offsetname>Amazon Time — No Daylight Saving</offsetname>
+      <zone>America/Manaus</zone>
+	</city>
+	<city>
+	  <name>Georgetown, Guyana</name>
+	  <mappos>197,182</mappos>
+      <offsetname>Guyana Time — No Daylight Saving</offsetname>
+      <zone>America/Guyana</zone>
+	</city>
+	<city>
+	  <name>La Paz, Bolivia</name>
+	  <mappos>187,218</mappos>
+      <offsetname>Bolivia Time — No Daylight Saving</offsetname>
+      <zone>America/La_Paz</zone>
+	</city>
+	<city>
+	  <name>Asuncion, Paraguay</name>
+	  <mappos>201,233</mappos>
+      <offsetname>Paraguay Time — Observes Daylight Saving</offsetname>
+      <zone>America/Asuncion</zone>
+	</city>
+	<city>
+	  <name>Santiago, Chile</name>
+	  <mappos>177,245</mappos>
+      <offsetname>Chile Time — Observes Daylight Saving</offsetname>
+      <zone>America/Santiago</zone>
+	</city>
+  <city>
+        <zone>America/Anguilla</zone></city><city>
+        <zone>America/Antigua</zone></city><city>
+        <zone>America/Aruba</zone></city><city>
+        <zone>America/Barbados</zone></city><city>
+        <zone>America/Blanc-Sablon</zone></city><city>
+        <zone>America/Boa_Vista</zone></city><city>
+        <zone>America/Campo_Grande</zone></city><city>
+        <zone>America/Curacao</zone></city><city>
+        <zone>America/Dominica</zone></city><city>
+        <zone>America/Grenada</zone></city><city>
+        <zone>America/Guadeloupe</zone></city><city>
+        <zone>America/Martinique</zone></city><city>
+        <zone>America/Montserrat</zone></city><city>
+        <zone>America/Port_of_Spain</zone></city><city>
+        <zone>America/Porto_Velho</zone></city><city>
+        <zone>America/Puerto_Rico</zone></city><city>
+        <zone>America/Santo_Domingo</zone></city><city>
+        <zone>America/St_Kitts</zone></city><city>
+        <zone>America/St_Lucia</zone></city><city>
+        <zone>America/St_Thomas</zone></city><city>
+        <zone>America/St_Vincent</zone></city><city>
+        <zone>America/Tortola</zone></city><city>
+        <zone>America/Virgin</zone></city><city>
+        <zone>Antarctica/Palmer</zone></city><city>
+        <zone>Atlantic/Stanley</zone></city>
+        <city>
+        <zone>America/Glace_Bay</zone></city><city>
+        <zone>America/Goose_Bay</zone></city><city>
+        <zone>America/Moncton</zone></city><city>
+        <zone>Atlantic/Bermuda</zone></city><city>
+        <zone>Canada/Atlantic</zone></city><city>
+        <zone>America/Marigot</zone></city><city>
+        <zone>America/St_Barthelemy</zone></city><city>
+        <zone>Brazil/West</zone></city><city>
+        <zone>Chile/Continental</zone></city><city>
+        <zone>America/Eirunepe</zone></city><city>
+        <zone>America/Porto_Acre</zone></city><city>
+        <zone>America/Rio_Branco</zone></city><city>
+        <zone>Brazil/Acre</zone></city>
+  </offset>
+  <offset name="UTC-03:00">
+    <mappos>173,6</mappos>
+	<city>
+	  <name>Nuuk, Greenland</name>
+	  <mappos>210,72</mappos>
+      <offsetname>Western Greenland Time — Observes Daylight Saving</offsetname>
+      <zone>America/Godthab</zone>
+	</city>
+	<city>
+	  <name>Paramaribo, Suriname</name>
+	  <mappos>206,186</mappos>
+      <offsetname>Suriname Time — No Daylight Saving</offsetname>
+      <zone>America/Paramaribo</zone>
+	</city>
+	<city>
+	  <name>Cayenne, French Guiana</name>
+	  <mappos>211,190</mappos>
+      <offsetname>French Guiana Time — No Daylight Saving</offsetname>
+      <zone>America/Cayenne</zone>
+	</city>
+	<city>
+	  <name>Belem, Brazil</name>
+	  <mappos>219,197</mappos>
+      <offsetname>Brazil Time — No Daylight Saving</offsetname>
+      <zone>America/Belem</zone>
+	</city>
+	<city>
+	  <name>Recife, Brazil</name>
+	  <mappos>231,205</mappos>
+      <offsetname>Brazil Time — No Daylight Saving</offsetname>
+      <zone>America/Recife</zone>
+	</city>
+	<city>
+	  <name>Brasilia, Brazil</name>
+	  <mappos>220,216</mappos>
+      <offsetname>Brazil Time — Observes Daylight Saving</offsetname>
+      <zone>America/Sao_Paulo</zone>
+	</city>
+	<city>
+	  <name>Sao Paulo, Brazil</name>
+	  <mappos>216,230</mappos>
+      <offsetname>Brazil Time — Observes Daylight Saving</offsetname>
+      <zone>America/Sao_Paulo</zone>
+	</city>
+	<city>
+	  <name>Montevideo, Uruguay</name>
+	  <mappos>205,248</mappos>
+      <offsetname>Uruguay Time — Observes Daylight Saving</offsetname>
+      <zone>America/Montevideo</zone>
+	</city>
+	<city>
+	  <name>Buenos Aires, Argentina</name>
+	  <mappos>195,250</mappos>
+      <offsetname>Argentine Time — No Daylight Saving</offsetname>
+      <zone>America/Buenos_Aires</zone>
+	</city>
+	<city>
+	  <name>Rothera, Antarctica</name>
+	  <mappos>218,295</mappos>
+      <offsetname>Rothera Time — No Daylight Saving</offsetname>
+      <zone>Antarctica/Rothera</zone>
+	</city>
+  <city>
+        <zone>America/Araguaina</zone></city><city>
+        <zone>America/Argentina/Buenos_Aires</zone></city><city>
+        <zone>America/Argentina/Catamarca</zone></city><city>
+        <zone>America/Argentina/ComodRivadavia</zone></city><city>
+        <zone>America/Argentina/Cordoba</zone></city><city>
+        <zone>America/Argentina/Jujuy</zone></city><city>
+        <zone>America/Argentina/La_Rioja</zone></city><city>
+        <zone>America/Argentina/Mendoza</zone></city><city>
+        <zone>America/Argentina/Rio_Gallegos</zone></city><city>
+        <zone>America/Argentina/San_Juan</zone></city><city>
+        <zone>America/Argentina/Tucuman</zone></city><city>
+        <zone>America/Argentina/Ushuaia</zone></city><city>
+        <zone>America/Bahia</zone></city><city>
+        <zone>America/Catamarca</zone></city><city>
+        <zone>America/Cordoba</zone></city><city>
+        <zone>America/Fortaleza</zone></city><city>
+        <zone>America/Jujuy</zone></city><city>
+        <zone>America/Maceio</zone></city><city>
+        <zone>America/Mendoza</zone></city><city>
+        <zone>America/Rosario</zone></city><city>
+        <zone>America/Miquelon</zone></city><city>
+        <zone>Brazil/East</zone></city><city>
+        <zone>America/Argentina/Salta</zone></city><city>
+        <zone>America/Argentina/San_Luis</zone></city><city>
+        <zone>America/Santarem</zone></city>
+  </offset>
+  <offset name="UTC-02:00">
+    <mappos>225,6</mappos>
+	<city>
+	  <name>Grytviken, South Georgia</name>
+	  <mappos>232,288</mappos>
+	  <offsetname>South Georgia Standard Time — No Daylight Saving</offsetname>
+	  <zone>Atlantic/South_Georgia</zone>
+	</city>
+  <city>
+        <zone>America/Noronha</zone></city>
+        <city><zone>Brazil/DeNoronha</zone></city>
+  </offset>
+  <offset name="UTC-01:00">
+    <mappos>238,6</mappos>
+	<city>
+	  <name>Ittoqqortoormiit, Greenland</name>
+	  <mappos>255,54</mappos>
+	  <offsetname>Eastern Greenland Time — Observes Daylight Saving</offsetname>
+	  <zone>America/Scoresbysund</zone>
+	</city>
+	<city>
+	  <name>Azores, Portugal</name>
+	  <mappos>248,129</mappos>
+	  <offsetname>Azores Time — Observes Daylight Saving</offsetname>
+	  <zone>Atlantic/Azores</zone>
+	</city>
+  <city>
+        <zone>Atlantic/Cape_Verde</zone></city>
+  </offset>
+  <offset name="UTC+00:00">
+    <mappos>249,6</mappos>
+	<city>
+	  <name>Reykjavik, Iceland</name>
+	  <mappos>256,73</mappos>
+	  <offsetname>Greenwich Mean Time — No Daylight Saving</offsetname>
+	  <zone>Atlantic/Reykjavik</zone>
+	</city>
+	<city>
+	  <name>London, England</name>
+	  <mappos>288,102</mappos>
+	  <offsetname>Greenwich Mean Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/London</zone>
+	</city>
+	<city>
+	  <name>Dublin, Ireland</name>
+	  <mappos>279,100</mappos>
+	  <offsetname>Greenwich Mean Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Dublin</zone>
+	</city>
+	<city>
+	  <name>Lisbon, Portugal</name>
+	  <mappos>276,128</mappos>
+	  <offsetname>Western European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Lisbon</zone>
+	</city>
+	<city>
+	  <name>Casablanca, Morocco</name>
+	  <mappos>278,139</mappos>
+	  <offsetname>Western European Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Casablanca</zone>
+	</city>
+	<city>
+	  <name>Dakar, Senegal</name>
+	  <mappos>265,171</mappos>
+	  <offsetname>Greenwich Mean Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Dakar</zone>
+	</city>
+	<city>
+	  <name>Bamako, Mali</name>
+	  <mappos>277,175</mappos>
+	  <offsetname>Greenwich Mean Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Bamako</zone>
+	</city>
+	<city>
+	  <name>Accra, Ghana</name>
+	  <mappos>287,183</mappos>
+	  <offsetname>Greenwich Mean Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Accra</zone>
+	</city>
+  <city>
+        <zone>Africa/Abidjan</zone></city><city>
+        <zone>Africa/Banjul</zone></city><city>
+        <zone>Africa/Bissau</zone></city><city>
+        <zone>Africa/Conakry</zone></city><city>
+        <zone>Africa/El_Aaiun</zone></city><city>
+        <zone>Africa/Freetown</zone></city><city>
+        <zone>Africa/Lome</zone></city><city>
+        <zone>Africa/Monrovia</zone></city><city>
+        <zone>Africa/Nouakchott</zone></city><city>
+        <zone>Africa/Ouagadougou</zone></city><city>
+        <zone>Africa/Sao_Tome</zone></city><city>
+        <zone>Africa/Timbuktu</zone></city><city>
+        <zone>America/Danmarkshavn</zone></city><city>
+        <zone>Atlantic/St_Helena</zone></city><city>
+        <zone>Atlantic/Canary</zone></city><city>
+        <zone>Atlantic/Faeroe</zone></city><city>
+        <zone>Atlantic/Madeira</zone></city><city>
+        <zone>Europe/Belfast</zone></city><city>
+        <zone>Europe/Guernsey</zone></city><city>
+        <zone>Europe/Isle_of_Man</zone></city><city>
+        <zone>Europe/Jersey</zone></city><city>
+        <zone>Atlantic/Faroe</zone></city><city>
+        <zone>UTC</zone></city><city>
+        <zone>Eire</zone></city><city>
+        <zone>GMT</zone></city><city>
+        <zone>Greenwich</zone></city><city>
+        <zone>Iceland</zone></city><city>
+        <zone>Portugal</zone></city><city>
+        <zone>Zulu</zone></city>
+  </offset>
+  <offset name="UTC+01:00">
+    <mappos>275,6</mappos>
+	<city>
+	  <name>Oslo, Norway</name>
+	  <mappos>306,83</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Oslo</zone>
+	</city>
+	<city>
+	  <name>Stockholm, Sweden</name>
+	  <mappos>316,87</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Stockholm</zone>
+	</city>
+	<city>
+	  <name>Berlin, Germany</name>
+	  <mappos>311,102</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Berlin</zone>
+	</city>
+	<city>
+	  <name>Paris, France</name>
+	  <mappos>294,109</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Berlin</zone>
+	</city>
+	<city>
+	  <name>Madrid, Spain</name>
+	  <mappos>285,126</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Madrid</zone>
+	</city>
+	<!--
+	<city>
+	  <name>Vienna, Austria</name>
+	  <mappos>316,110</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Vienna</zone>
+	</city>
+	-->
+	<city>
+	  <name>Rome, Italy</name>
+	  <mappos>312,122</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Rome</zone>
+	</city>
+	<!-->
+	<city>
+	  <name>Tirane, Albania</name>
+	  <mappos>322,121</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Tirane</zone>
+	</city>
+	-->
+	<city>
+	  <name>Algiers, Algeria</name>
+	  <mappos>295,134</mappos>
+	  <offsetname>Central European Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Algiers</zone>
+	</city>
+	<city>
+	  <name>Tunis, Tunisia</name>
+	  <mappos>305,133</mappos>
+	  <offsetname>Central European Time — Observes Daylight Saving</offsetname>
+	  <zone>Africa/Tunis</zone>
+	</city>
+	<city>
+	  <name>Lagos, Nigeria</name>
+	  <mappos>297,181</mappos>
+	  <offsetname>West African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Lagos</zone>
+	</city>
+	<city>
+	  <name>N'Djamena, Chad</name>
+	  <mappos>312,171</mappos>
+	  <offsetname>West African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Ndjamena</zone>
+	</city>
+	<city>
+	  <name>Kinshasa, Democratic Republic of the Congo</name>
+	  <mappos>315,199</mappos>
+	  <offsetname>West African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Kinshasa</zone>
+	</city>
+	<city>
+	  <name>Luanda, Angola</name>
+	  <mappos>312,209</mappos>
+	  <offsetname>West African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Luanda</zone>
+	</city>
+	<city>
+	  <name>Windhoek, Namibia</name>
+	  <mappos>316,229</mappos>
+	  <offsetname>West African Time — Observes Daylight Saving</offsetname>
+	  <zone>Africa/Windhoek</zone>
+	</city>
+  <city>
+        <zone>Africa/Bangui</zone></city><city>
+        <zone>Africa/Brazzaville</zone></city><city>
+        <zone>Africa/Douala</zone></city><city>
+        <zone>Africa/Libreville</zone></city><city>
+        <zone>Africa/Malabo</zone></city><city>
+        <zone>Africa/Niamey</zone></city><city>
+        <zone>Africa/Porto-Novo</zone></city>
+        <city>
+        <zone>Africa/Ceuta</zone></city><city>
+        <zone>Arctic/Longyearbyen</zone></city><city>
+        <zone>Atlantic/Jan_Mayen</zone></city><city>
+        <zone>Europe/Amsterdam</zone></city><city>
+        <zone>Europe/Andorra</zone></city><city>
+        <zone>Europe/Belgrade</zone></city><city>
+        <zone>Europe/Bratislava</zone></city><city>
+        <zone>Europe/Brussels</zone></city><city>
+        <zone>Europe/Budapest</zone></city><city>
+        <zone>Europe/Copenhagen</zone></city><city>
+        <zone>Europe/Gibraltar</zone></city><city>
+        <zone>Europe/Ljubljana</zone></city><city>
+        <zone>Europe/Luxembourg</zone></city><city>
+        <zone>Europe/Malta</zone></city><city>
+        <zone>Europe/Monaco</zone></city><city>
+        <zone>Europe/Paris</zone></city><city>
+        <zone>Europe/Podgorica</zone></city><city>
+        <zone>Europe/Prague</zone></city><city>
+        <zone>Europe/San_Marino</zone></city><city>
+        <zone>Europe/Sarajevo</zone></city><city>
+        <zone>Europe/Skopje</zone></city><city>
+        <zone>Europe/Tirane</zone></city><city>
+        <zone>Europe/Vaduz</zone></city><city>
+        <zone>Europe/Vatican</zone></city><city>
+        <zone>Europe/Vienna</zone></city><city>
+        <zone>Europe/Warsaw</zone></city><city>
+        <zone>Europe/Zagreb</zone></city><city>
+        <zone>Europe/Zurich</zone></city><city>
+        <zone>Poland</zone></city>
+  </offset>
+  <offset name="UTC+02:00">
+    <mappos>304,6</mappos>
+	<city>
+	  <name>Helsinki, Finland</name>
+	  <mappos>329,83</mappos>
+	  <offsetname>Eastern European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Helsinki</zone>
+	</city>
+	<city>
+	  <name>Kiev, Ukraine</name>
+	  <mappos>338,104</mappos>
+	  <offsetname>Eastern European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Kiev</zone>
+	</city>
+	<city>
+	  <name>Athens, Greece</name>
+	  <mappos>327,129</mappos>
+	  <offsetname>Eastern European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Athens</zone>
+	</city>
+	<city>
+	  <name>Istanbul, Turkey</name>
+	  <mappos>335,124</mappos>
+	  <offsetname>Eastern European Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Istanbul</zone>
+	</city>
+	<city>
+	  <name>Damascus, Syria</name>
+	  <mappos>349,134</mappos>
+	  <offsetname>Eastern European Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Damascus</zone>
+	</city>
+	<city>
+	  <name>Amman, Jordan</name>
+	  <mappos>349,144</mappos>
+	  <offsetname>Eastern European Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Amman</zone>
+	</city>
+	<city>
+	  <name>Jerusalem, Israel</name>
+	  <mappos>344,139</mappos>
+	  <offsetname>Israel Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Jerusalem</zone>
+	</city>
+	<city>
+	  <name>Tripoli, Libya</name>
+	  <mappos>311,141</mappos>
+	  <offsetname>Eastern European Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Tripoli</zone>
+	</city>
+	<city>
+	  <name>Cairo, Egypt</name>
+	  <mappos>335,147</mappos>
+	  <offsetname>Eastern European Time — Observes Daylight Saving</offsetname>
+	  <zone>Africa/Cairo</zone>
+	</city>
+	<city>
+	  <name>Lubumbashi, Democratic Republic of the Congo</name>
+	  <mappos>334,214</mappos>
+	  <offsetname>Central African Time (No Daylight Saving Time)</offsetname>
+	  <zone>Africa/Lubumbashi</zone>
+	</city>
+	<city>
+	  <name>Gaborone, Botswana</name>
+	  <mappos>335,233</mappos>
+	  <offsetname>Central African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Gaborone</zone>
+	</city>
+	<city>
+	  <name>Cape Town, South Africa</name>
+	  <mappos>322,248</mappos>
+	  <offsetname>South Africa Standard Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Johannesburg</zone>
+	</city>
+  <city>
+        <zone>Africa/Blantyre</zone></city><city>
+        <zone>Africa/Bujumbura</zone></city><city>
+        <zone>Africa/Harare</zone></city><city>
+        <zone>Africa/Kigali</zone></city><city>
+        <zone>Africa/Lusaka</zone></city><city>
+        <zone>Africa/Maputo</zone></city><city>
+        <zone>Africa/Maseru</zone></city><city>
+        <zone>Africa/Mbabane</zone></city><city>
+        <zone>Asia/Beirut</zone></city><city>
+        <zone>Asia/Gaza</zone></city><city>
+        <zone>Asia/Istanbul</zone></city><city>
+        <zone>Asia/Nicosia</zone></city><city>
+        <zone>Asia/Tel_Aviv</zone></city><city>
+        <zone>Europe/Bucharest</zone></city><city>
+        <zone>Europe/Chisinau</zone></city><city>
+        <zone>Europe/Kaliningrad</zone></city><city>
+        <zone>Europe/Mariehamn</zone></city><city>
+        <zone>Europe/Minsk</zone></city><city>
+        <zone>Europe/Nicosia</zone></city><city>
+        <zone>Europe/Riga</zone></city><city>
+        <zone>Europe/Simferopol</zone></city><city>
+        <zone>Europe/Sofia</zone></city><city>
+        <zone>Europe/Tallinn</zone></city><city>
+        <zone>Europe/Tiraspol</zone></city><city>
+        <zone>Europe/Uzhgorod</zone></city><city>
+        <zone>Europe/Vilnius</zone></city><city>
+        <zone>Europe/Zaporozhye</zone></city><city>
+        <zone>Egypt</zone></city><city>
+        <zone>Israel</zone></city><city>
+        <zone>Libya</zone></city><city>
+        <zone>Turkey</zone></city>
+  </offset>
+  <offset name="UTC+03:00">
+    <mappos>324,6</mappos>
+	<city>
+	  <name>Moscow, Russia</name>
+	  <mappos>350,95</mappos>
+	  <offsetname>Moscow Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Moscow</zone>
+	</city>
+	<city>
+	  <name>Tehran, Iran</name>
+	  <mappos>371,136</mappos>
+	  <offsetname>Iran Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Tehran</zone>
+	</city>
+	<city>
+	  <name>Baghdad, Iraq</name>
+	  <mappos>360,142</mappos>
+	  <offsetname>Arabian Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Baghdad</zone>
+	</city>
+	<city>
+	  <name>Kuwait City, Kuwait</name>
+	  <mappos>365,149</mappos>
+	  <offsetname>Arabian Standard Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Kuwait</zone>
+	</city>
+	<city>
+	  <name>Riyadh, Saudi Arabia</name>
+	  <mappos>364,158</mappos>
+	  <offsetname>Arabian Standard Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Riyadh</zone>
+	</city>
+	<city>
+	  <name>Khartoum, Sudan</name>
+	  <mappos>341,168</mappos>
+	  <offsetname>East African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Khartoum</zone>
+	</city>
+	<city>
+	  <name>Addis Ababa, Ethiopia</name>
+	  <mappos>351,180</mappos>
+	  <offsetname>East African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Addis_Ababa</zone>
+	</city>
+	<!--
+	<city>
+	  <name>Kampala, Uganda</name>
+	  <mappos>343,188</mappos>
+	  <offsetname>East African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Kampala</zone>
+	</city>
+	-->
+	<city>
+	  <name>Nairobi, Kenya</name>
+	  <mappos>348,195</mappos>
+	  <offsetname>East African Time — No Daylight Saving</offsetname>
+	  <zone>Africa/Nairobi</zone>
+	</city>
+	<city>
+	  <name>Antananarivo, Madagascar</name>
+	  <mappos>365,223</mappos>
+	  <offsetname>East African Time — No Daylight Saving</offsetname>
+	  <zone>Indian/Antananarivo</zone>
+	</city>
+  <city>
+        <zone>Africa/Asmera</zone></city><city>
+        <zone>Africa/Dar_es_Salaam</zone></city><city>
+        <zone>Africa/Djibouti</zone></city><city>
+        <zone>Africa/Kampala</zone></city><city>
+        <zone>Africa/Mogadishu</zone></city><city>
+        <zone>Antarctica/Syowa</zone></city><city>
+        <zone>Asia/Aden</zone></city><city>
+        <zone>Asia/Bahrain</zone></city><city>
+        <zone>Asia/Qatar</zone></city><city>
+        <zone>Indian/Comoro</zone></city><city>
+        <zone>Indian/Mayotte</zone></city><city>
+        <zone>Europe/Volgograd</zone></city><city>
+        <zone>Africa/Asmara</zone></city>
+  </offset>
+  <offset name="UTC+04:00">
+    <mappos>355,6</mappos>
+	<city>
+	  <name>Izhevsk, Russia</name>
+	  <mappos>373,90</mappos>
+	  <offsetname>Samara Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Samara</zone>
+	</city>
+	<city>
+	  <name>Samara, Russia</name>
+	  <mappos>368,101</mappos>
+	  <offsetname>Samara Time — Observes Daylight Saving</offsetname>
+	  <zone>Europe/Samara</zone>
+	</city>
+	<city>
+	  <name>Baku, Azerbaijan</name>
+	  <mappos>366,125</mappos>
+	  <offsetname>Azerbaijan Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Baku</zone>
+	</city>
+	<city>
+	  <name>Kabul, Afghanistan</name>
+	  <mappos>396,138</mappos>
+	  <offsetname>Afghanistan Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Kabul</zone>
+	</city>
+	<city>
+	  <name>Abu Dhabi, United Arab Emirates</name>
+	  <mappos>378,155</mappos>
+	  <offsetname>Gulf Standard Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Dubai</zone>
+	</city>
+	<city>
+	  <name>Victoria, Seychelles</name>
+	  <mappos>365,209</mappos>
+	  <offsetname>Seychelles Time — No Daylight Saving</offsetname>
+	  <zone>Indian/Mahe</zone>
+	</city>
+	<city>
+	  <name>Port Louis, Mauritius</name>
+	  <mappos>382,225</mappos>
+	  <offsetname>Mauritius Time — No Daylight Saving</offsetname>
+	  <zone>Indian/Mauritius</zone>
+	</city>
+  <city>
+        <zone>Asia/Muscat</zone></city><city>
+        <zone>Asia/Tbilisi</zone></city><city>
+        <zone>Indian/Reunion</zone></city><city>
+        <zone>Asia/Yerevan</zone></city>
+  </offset>
+  <offset name="UTC+05:00">
+    <mappos>363,6</mappos>
+	<city>
+	  <name>Yekaterinburg, Russia</name>
+	  <mappos>385,92</mappos>
+	  <offsetname>Yekaterinburg Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Yekaterinburg</zone>
+	</city>
+	<city>
+	  <name>Aqtobe, Kazakhstan</name>
+	  <mappos>380,101</mappos>
+	  <offsetname>Aqtobe Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Aqtobe</zone>
+	</city>
+	<city>
+	  <name>Tashkent, Uzbekistan</name>
+	  <mappos>396,126</mappos>
+	  <offsetname>Uzbekistan Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Tashkent</zone>
+	</city>
+	<city>
+	  <name>Ashgabat, Turkmenistan</name>
+	  <mappos>384,129</mappos>
+	  <offsetname>Turkmenistan Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Ashgabat</zone>
+	</city>
+	<city>
+	  <name>Islamabad, Pakistan</name>
+	  <mappos>406,136</mappos>
+	  <offsetname>Pakistan Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Karachi</zone>
+	</city>
+	<city>
+	  <name>Kathmandu, Nepal</name>
+	  <mappos>421,149</mappos>
+	  <offsetname>Nepal Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Katmandu</zone>
+	</city>
+	<city>
+	  <name>Colombo, Sri Lanka</name>
+	  <mappos>417,181</mappos>
+	  <offsetname>Sri Lanka Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Colombo</zone>
+	</city>
+  <city>
+        <zone>Asia/Aqtau</zone></city><city>
+        <zone>Asia/Ashkhabad</zone></city><city>
+        <zone>Asia/Dushanbe</zone></city><city>
+        <zone>Asia/Oral</zone></city><city>
+        <zone>Asia/Samarkand</zone></city><city>
+        <zone>Indian/Kerguelen</zone></city><city>
+        <zone>Indian/Maldives</zone></city>
+  </offset>
+  <offset name="UTC+06:00">
+    <mappos>385,6</mappos>
+	<city>
+	  <name>Omsk, Russia</name>
+	  <mappos>405,94</mappos>
+	  <offsetname>Omsk Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Omsk</zone>
+	</city>
+	<city>
+	  <name>Novosibirsk, Russia</name>
+	  <mappos>424,100</mappos>
+	  <offsetname>Novosibirsk Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Novosibirsk</zone>
+	</city>
+	<city>
+	  <name>Qyzylorda, Kazakhstan</name>
+	  <mappos>404,120</mappos>
+	  <offsetname>Qyzylorda Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Qyzylorda</zone>
+	</city>
+	<city>
+	  <name>Almaty, Kazakhstan</name>
+	  <mappos>414,121</mappos>
+	  <offsetname>Alma-Ata Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Almaty</zone>
+	</city>
+	<city>
+	  <name>Dhaka, Bangladesh</name>
+	  <mappos>432,154</mappos>
+	  <offsetname>Bangladesh Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Dhaka</zone>
+	</city>
+	<city>
+	  <name>Yangon, Myanmar</name>
+	  <mappos>441,166</mappos>
+	  <offsetname>Myanmar Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Rangoon</zone>
+	</city>
+	<city>
+	  <name>Vostok, Antarctica</name>
+	  <mappos>433,295</mappos>
+      <offsetname>Vostok Time — No Daylight Saving</offsetname>
+      <zone>Antarctica/Vostok</zone>
+	</city>
+  <city>
+        <zone>Antarctica/Mawson</zone></city><city>
+        <zone>Asia/Bishkek</zone></city><city>
+        <zone>Asia/Dacca</zone></city><city>
+        <zone>Asia/Thimbu</zone></city><city>
+        <zone>Asia/Thimphu</zone></city><city>
+        <zone>Indian/Chagos</zone></city>
+  </offset>
+  <offset name="UTC+07:00">
+    <mappos>414,6</mappos>
+	<city>
+	  <name>Krasnoyarsk, Russia</name>
+	  <mappos>437,79</mappos>
+	  <offsetname>Krasnoyarsk Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Krasnoyarsk</zone>
+	</city>
+	<city>
+	  <name>Bangkok, Thailand</name>
+	  <mappos>450,171</mappos>
+	  <offsetname>Indochina Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Bangkok</zone>
+	</city>
+	<city>
+	  <name>Ho Chi Minh City, Vietnam</name>
+	  <mappos>459,176</mappos>
+	  <offsetname>Indochina Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Saigon</zone>
+	</city>
+	<city>
+	  <name>Jakarta, Indonesia</name>
+	  <mappos>460,203</mappos>
+	  <offsetname>West Indonesia Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Jakarta</zone>
+	</city>
+	<city>
+	  <name>Davis, Antarctica</name>
+	  <mappos>456,295</mappos>
+      <offsetname>Davis Time — No Daylight Saving</offsetname>
+      <zone>Antarctica/Davis</zone>
+	</city>
+  <city>
+        <zone>Asia/Hovd</zone></city><city>
+        <zone>Asia/Phnom_Penh</zone></city><city>
+        <zone>Asia/Pontianak</zone></city><city>
+        <zone>Asia/Vientiane</zone></city><city>
+        <zone>Indian/Christmas</zone></city>
+  </offset>
+  <offset name="UTC+08:00">
+    <mappos>407,6</mappos>
+	<city>
+	  <name>Irkutsk, Russia</name>
+	  <mappos>453,101</mappos>
+	  <offsetname>Irkutsk Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Irkutsk</zone>
+	</city>
+	<city>
+	  <name>Hong Kong, China</name>
+	  <mappos>470,158</mappos>
+	  <offsetname>Hong Kong Time (No Daylight Saving Time)</offsetname>
+	  <zone>Asia/Hong_Kong</zone>
+	</city>
+	<city>
+	  <name>Shanghai, China</name>
+	  <mappos>481,142</mappos>
+	  <offsetname>China Standard Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Shanghai</zone>
+	</city>
+	<city>
+	  <name>Makassar, Indonesia</name>
+	  <mappos>479,201</mappos>
+	  <offsetname>Central Indonesia Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Makassar</zone>
+	</city>
+	<city>
+	  <name>Kuala Lumpur, Malaysia</name>
+	  <mappos>451,184</mappos>
+	  <offsetname>Malaysia Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Kuala_Lumpur</zone>
+	</city>
+	<city>
+	  <name>Manila, Philippines</name>
+	  <mappos>481,172</mappos>
+	  <offsetname>Philippines Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Manila</zone>
+	</city>
+	<city>
+	  <name>Singapore City, Singapore</name>
+	  <mappos>457,191</mappos>
+	  <offsetname>Singapore Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Singapore</zone>
+	</city>
+	<city>
+	  <name>Perth, Australia</name>
+	  <mappos>474,246</mappos>
+	  <offsetname>Western Time — Observes Daylight Saving</offsetname>
+	  <zone>Australia/Perth</zone>
+	</city>
+  <city>
+        <zone>Antarctica/Casey</zone></city><city>
+        <zone>Asia/Brunei</zone></city><city>
+        <zone>Asia/Chongqing</zone></city><city>
+        <zone>Asia/Chungking</zone></city><city>
+        <zone>Asia/Harbin</zone></city><city>
+        <zone>Asia/Kashgar</zone></city><city>
+        <zone>Asia/Kuching</zone></city><city>
+        <zone>Asia/Macao</zone></city><city>
+        <zone>Asia/Macau</zone></city><city>
+        <zone>Asia/Taipei</zone></city><city>
+        <zone>Asia/Ujung_Pandang</zone></city><city>
+        <zone>Asia/Ulaanbaatar</zone></city><city>
+        <zone>Asia/Ulan_Bator</zone></city><city>
+        <zone>Asia/Urumqi</zone></city><city>
+        <zone>Australia/West</zone></city><city>
+        <zone>Singapore</zone></city><city>
+        <zone>Asia/Choibalsan</zone></city>
+  </offset>
+  <offset name="UTC+09:00">
+    <mappos>457,6</mappos>
+	<city>
+	  <name>Jayapura, Indonesia</name>
+	  <mappos>511,199</mappos>
+	  <offsetname>East Indonesia Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Jayapura</zone>
+	</city>
+	<city>
+	  <name>Seoul, South Korea</name>
+	  <mappos>491,131</mappos>
+	  <offsetname>Korea Standard Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Seoul</zone>
+	</city>
+	<city>
+	  <name>Tokyo, Japan</name>
+	  <mappos>509,135</mappos>
+	  <offsetname>Japan Standard Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Tokyo</zone>
+	</city>
+	<city>
+	  <name>Yakutsk, Russia</name>
+	  <mappos>484,85</mappos>
+	  <offsetname>Yakutsk Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Yakutsk</zone>
+	</city>
+	<city>
+	  <name>Adelaide, Australia</name>
+	  <mappos>509,250</mappos>
+	  <offsetname>Central Time — Observes Daylight Saving</offsetname>
+	  <zone>Australia/Adelaide</zone>
+	</city>
+	<city>
+	  <name>Darwin, Australia</name>
+	  <mappos>498,215</mappos>
+	  <offsetname>Central Standard Time — No Daylight Saving</offsetname>
+	  <zone>Australia/Darwin</zone>
+	</city>
+  <city>
+        <zone>Asia/Dili</zone></city><city>
+        <zone>Asia/Pyongyang</zone></city><city>
+        <zone>Japan</zone></city><city>
+        <zone>Pacific/Palau</zone></city>
+  </offset>
+  <offset name="UTC+10:00">
+    <mappos>490,6</mappos>
+	<city>
+	  <name>Vladivostok, Russia</name>
+	  <mappos>502,119</mappos>
+	  <offsetname>Vladivostok Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Vladivostok</zone>
+	</city>
+	<city>
+	  <name>Sydney, Australia</name>
+	  <mappos>528,247</mappos>
+	  <offsetname>Eastern Time — Observes Daylight Saving</offsetname>
+	  <zone>Australia/Sydney</zone>
+	</city>
+	<city>
+	  <name>Brisbane, Australia</name>
+	  <mappos>531,237</mappos>
+	  <offsetname>Eastern Standard Time — No Daylight Saving</offsetname>
+	  <zone>Australia/Brisbane</zone>
+	</city>
+	<city>
+	  <name>Hobart, Australia</name>
+	  <mappos>522,265</mappos>
+	  <offsetname>Eastern Time — Observes Daylight Saving</offsetname>
+	  <zone>Australia/Hobart</zone>
+	</city>
+	<city>
+	  <name>Agana, Guam</name>
+	  <mappos>519,172</mappos>
+	  <offsetname>Chamorro Standard Time — No Daylight Saving</offsetname>
+	  <zone>Pacific/Guam</zone>
+	</city>
+	<city>
+	  <name>Port Moresby, Papua New Guinea</name>
+	  <mappos>524,208</mappos>
+	  <offsetname>Papua New Guinea Time — No Daylight Saving</offsetname>
+	  <zone>Pacific/Port_Moresby</zone>
+	</city>
+  <city>
+        <zone>Antarctica/DumontDUrville</zone></city><city>
+        <zone>Australia/ACT</zone></city><city>
+        <zone>Australia/Canberra</zone></city><city>
+        <zone>Australia/Currie</zone></city><city>
+        <zone>Australia/Lindeman</zone></city><city>
+        <zone>Australia/Melbourne</zone></city><city>
+        <zone>Australia/NSW</zone></city><city>
+        <zone>Australia/Queensland</zone></city><city>
+        <zone>Australia/Tasmania</zone></city><city>
+        <zone>Australia/Victoria</zone></city><city>
+        <zone>Pacific/Saipan</zone></city><city>
+        <zone>Pacific/Truk</zone></city><city>
+        <zone>Pacific/Yap</zone></city><city>
+        <zone>Asia/Sakhalin</zone></city>
+  </offset>
+  <offset name="UTC+11:00">
+    <mappos>510,6</mappos>
+	<city>
+	  <name>Magadan, Russia</name>
+	  <mappos>529,84</mappos>
+	  <offsetname>Magadan Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Magadan</zone>
+	</city>
+	<city>
+	  <name>Norfolk, Australia</name>
+	  <mappos>544,245</mappos>
+	  <offsetname>Norfolk Time — No Daylight Saving</offsetname>
+	  <zone>Pacific/Norfolk</zone>
+	</city>
+	<city>
+	  <name>Honiara, Solomon Islands</name>
+	  <mappos>544,208</mappos>
+	  <offsetname>Solomon Island Time — No Daylight Saving</offsetname>
+	  <zone>Pacific/Guadalcanal</zone>
+	</city>
+  <city>
+        <zone>Pacific/Efate</zone></city><city>
+        <zone>Pacific/Kosrae</zone></city><city>
+        <zone>Pacific/Noumea</zone></city><city>
+        <zone>Pacific/Ponape</zone></city>
+  </offset>
+  <offset name="UTC+12:00">
+    <mappos>536,6</mappos>
+	<city>
+	  <name>Anadyr, Russia</name>
+	  <mappos>572,70</mappos>
+	  <offsetname>Anadyr Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Anadyr</zone>
+	</city>
+	<city>
+	  <name>Petropavlovsk-Kamchatsky, Russia</name>
+	  <mappos>542,98</mappos>
+	  <offsetname>Petropavlovsk-Kamchatski Time — Observes Daylight Saving</offsetname>
+	  <zone>Asia/Kamchatka</zone>
+	</city>
+	<city>
+	  <name>Auckland, New Zealand</name>
+	  <mappos>567,255</mappos>
+	  <offsetname>New Zealand Time — Observes Daylight Saving</offsetname>
+	  <zone>Pacific/Auckland</zone>
+	</city>
+	<city>
+	  <name>Suva, Fiji</name>
+	  <mappos>573,221</mappos>
+	  <offsetname>Fiji Time — No Daylight Saving</offsetname>
+	  <zone>Pacific/Fiji</zone>
+	</city>
+	<city>
+	  <name>South Pole, Antarctica</name>
+	  <mappos>570,294</mappos>
+	  <offsetname>New Zealand Time — Observes Daylight Saving</offsetname>
+	  <zone>Antarctica/South_Pole</zone>
+	</city>
+  <city>
+        <zone>Antarctica/McMurdo</zone></city><city>
+        <zone>Pacific/Funafuti</zone></city><city>
+        <zone>Pacific/Kwajalein</zone></city><city>
+        <zone>Pacific/Majuro</zone></city><city>
+        <zone>Pacific/Nauru</zone></city><city>
+        <zone>Pacific/Tarawa</zone></city><city>
+        <zone>Pacific/Wake</zone></city><city>
+        <zone>Pacific/Wallis</zone></city>
+  </offset>
+  <offset name="UTC+13:00">
+    <mappos>577,6</mappos>
+	<city>
+	  <name>Nuku'alofa, Tonga</name>
+	  <mappos>582,228</mappos>
+	  <offsetname>Tonga Time — No Daylight Saving</offsetname>
+	  <zone>Pacific/Tongatapu</zone>
+	</city>
+  <city>
+        <zone>Pacific/Enderbury</zone></city>
+</offset>
+<offset name="UTC+09:30">
+       <city>
+        <zone>Australia/Broken_Hill</zone></city>
+       <city>
+        <zone>Australia/North</zone></city>
+        </offset>
+<offset name="UTC+09:30"><city>
+        <zone>Australia/South</zone></city>
+        </offset>
+<offset name="UTC+09:30"><city>
+        <zone>Australia/Yancowinna</zone></city>
+        </offset>
+<offset name="UTC-03:30">
+    <city>
+	  <name>St. John's, Canada</name>
+	  <mappos>205,108</mappos>
+	  <showasmapoffset>UTC-03:00</showasmapoffset>
+      <offsetname>Newfoundland Time — Observes Daylight Saving</offsetname>
+      <zone>America/St_Johns</zone>
+    </city>
+    <city>
+        <zone>Canada/Newfoundland</zone>
+    </city>
+</offset>
+<offset name="UTC+05:30">
+	<city>
+	  <name>Mumbai, India</name>
+	  <mappos>408,165</mappos>
+	  <offsetname>India Standard Time — No Daylight Saving</offsetname>
+	  <zone>Asia/Kolkata</zone>
+	  <showasmapoffset>UTC+05:00</showasmapoffset>
+	</city>
+</offset>
+<offset name="UTC-09:30"><city>
+        <zone>Pacific/Marquesas</zone></city>
+        </offset>
+<offset name="UTC+06:30"><city>
+        <zone>Indian/Cocos</zone></city>
+        </offset>
+<offset name="UTC+12:45"><city>
+        <zone>Pacific/Chatham</zone></city>
+</offset>
+<offset name="UTC+14:00"><city>
+        <zone>Pacific/Kiritimati</zone></city>
+</offset>
+<offset name="UTC+10:30"><city>
+        <zone>Australia/LHI</zone></city>
+        </offset>
+<offset name="UTC+10:30"><city>
+        <zone>Australia/Lord_Howe</zone></city>
+        </offset>
+<offset name="UTC+08:45">
+        <city><zone>Australia/Eucla</zone></city>
+</offset>
+</timezone_list>

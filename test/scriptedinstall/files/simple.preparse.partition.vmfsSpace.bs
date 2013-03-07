@@ -1,0 +1,48 @@
+#
+#	start_verify
+#	len(userchoices.getPhysicalPartitionRequests('vml.0000')) == 7
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].mountPoint == '/boot'
+#	isinstance(userchoices.getPhysicalPartitionRequests('vml.0000')[0].fsType, fsset.getSupportedFileSystems()['ext3'])
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].minimumSize == 100
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[0].grow == False
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].mountPoint == '/'
+#	isinstance(userchoices.getPhysicalPartitionRequests('vml.0000')[1].fsType, fsset.getSupportedFileSystems()['ext3'])
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].minimumSize == 3000
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[1].grow == False
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].mountPoint == None
+#	isinstance(userchoices.getPhysicalPartitionRequests('vml.0000')[2].fsType, fsset.getSupportedFileSystems()['swap'])
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].minimumSize == 256
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].maximumSize == 512
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[2].grow == True
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[3].mountPoint == '/var/log'
+#	isinstance(userchoices.getPhysicalPartitionRequests('vml.0000')[3].fsType, fsset.getSupportedFileSystems()['ext3'])
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[3].minimumSize == 500
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[3].maximumSize == 2000
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[3].grow == True
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[4].mountPoint == None
+#	isinstance(userchoices.getPhysicalPartitionRequests('vml.0000')[4].fsType, fsset.getSupportedFileSystems()['vmfs3'])
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[4].minimumSize == 1500
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[4].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[4].grow == True
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[5].mountPoint == None
+#	isinstance(userchoices.getPhysicalPartitionRequests('vml.0000')[5].fsType, fsset.getSupportedFileSystems()['vmkcore'])
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[5].minimumSize == 100
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[5].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[5].grow == False
+
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[6].mountPoint == None
+#	isinstance(userchoices.getPhysicalPartitionRequests('vml.0000')[6].fsType, fsset.getSupportedFileSystems()['vmfs3'])
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[6].fsType.volumeName == 'foo bar'
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[6].minimumSize == 256
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[6].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[6].grow == False
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.partition.vmfsSpace.bs

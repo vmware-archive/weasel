@@ -1,0 +1,300 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['partsetupchoice'], textui.main.main)
+>>> print docage.waitAndFeed('2')
+Disk Setup------------------------------------------------------
+Specify the type of setup for this installation.
+ 1) Basic Setup
+    Set up ESX on a single hard drive or LUN.
+ 2) Advanced Setup
+    View and customize the individual ESX partitions.
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('0')
+ESX Storage Device----------------------------------------------
+  1) ATA WDC FKE1600 (vml.0000)                                  76.80 GB
+  2) ATA WDC FKE1700UT (vml.0001)                                76.80 GB
+  3) ATA WDC FKE1800UT (vml.0040)                                 2.56 GB
+  4) ATA WDC FKE1600 (vml.0006)                                 768.00 GB
+  5) IDE HD Vendor IDE... (vml.0030)                             76.80 GB
+  6) Compaq CCISS Disk (vml.0010)                                76.80 GB
+[<number>: storage, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('<')
+ESX Storage Device (Update)-------------------------------------
+Number 0 is out of range.  Expecting a value between 1 and 6.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+ESX Storage Device----------------------------------------------
+  1) ATA WDC FKE1600 (vml.0000)                                  76.80 GB
+  2) ATA WDC FKE1700UT (vml.0001)                                76.80 GB
+  3) ATA WDC FKE1800UT (vml.0040)                                 2.56 GB
+  4) ATA WDC FKE1600 (vml.0006)                                 768.00 GB
+  5) IDE HD Vendor IDE... (vml.0030)                             76.80 GB
+  6) Compaq CCISS Disk (vml.0010)                                76.80 GB
+[<number>: storage, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('1')
+ESX Storage Device----------------------------------------------
+ARE YOU TRYING TO PERFORM AN UPGRADE?
+<BLANKLINE>
+The selected storage device contains an existing ESX installation and
+datastore. Continuing installation on this storage device will RESULT IN
+DATA LOSS, causing any ESX settings and virtual machines to be lost.
+<BLANKLINE>
+To UPGRADE the existing installation without incurring data loss, use
+the vSphere Host Update Utility installed along with vSphere Client or
+use vCenter Update Manager.
+<BLANKLINE>
+ 1) OK
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Datastore-------------------------------------------------------
+Specify a datastore for ESX to use.
+<BLANKLINE>
+A datastore is a vmfs partition that ESX uses to store virtual machines.
+(Additional datastores can be created after ESX is installed by using
+vSphere Client.)
+<BLANKLINE>
+ 1) Create new datastore
+ 2) Use existing datastore 
+ <) Back 
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Datastore-------------------------------------------------------
+Create new datastore:
+Create on same device as ESX?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Datastore-------------------------------------------------------
+Volume name: Storage1
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+Service Console Virtual Disk Image------------------------------
+The service console contains the partitions below.  You can edit them and
+also create new partitions.
+    volume:  Storage1
+    type    size        mountpoint
+    swap    600 MB      (no mount point)
+    ext3    2.00 GB     /var/log
+    ext3    5.00 GB     /
+<BLANKLINE>
+Do you want to change the partition layout?
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Service Console Virtual Disk Image------------------------------
+Type of partition change:
+ 1) Create a new partition
+ 2) Edit an existing partition
+ 3) Delete an existing partition
+ 4) Reset (discard modifications)
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('3')
+Service Console Virtual Disk Image (Partition Setup)------------
+Select the file system type:
+ 1) ext3                            
+ 2) swap                            
+<BLANKLINE>
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Service Console Virtual Disk Image (Choose File System Type)----
+You have made an invalid file system selection.
+Input was beyond the bounds of selection list.
+Select a file system from the list provided.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Service Console Virtual Disk Image (Partition Setup)------------
+Select the file system type:
+ 1) ext3                            
+ 2) swap                            
+<BLANKLINE>
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('/')
+Service Console Virtual Disk Image (Partition Setup)------------
+Enter the new mount point.
+(For example: /, /home, /tmp, /usr, /var.  Name must start with "/".)
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Service Console Virtual Disk Image (Partition Setup)------------
+Mount Point Error
+The mount point you have specified for this partition already exists.
+Choose a different mount point.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('/foobar')
+Service Console Virtual Disk Image (Partition Setup)------------
+Enter the new mount point.
+(For example: /, /home, /tmp, /usr, /var.  Name must start with "/".)
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('80GB')
+Service Console Virtual Disk Image------------------------------
+Specify the partition size.  (Max: 66.99 GB)
+For example: 9.0 GB, 256 MB
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Service Console Virtual Disk Image------------------------------
+Partition Error
+There is not enough room to add the requested partition.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('800')
+Service Console Virtual Disk Image------------------------------
+Specify the partition size.  (Max: 66.99 GB)
+For example: 9.0 GB, 256 MB
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+Service Console Virtual Disk Image------------------------------
+You have entered an invalid file system size input.
+Failed to parse quantity and units.
+Try again.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('800 MB')
+Service Console Virtual Disk Image------------------------------
+Specify the partition size.  (Max: 66.99 GB)
+For example: 9.0 GB, 256 MB
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Service Console Virtual Disk Image------------------------------
+Summary
+Mount point: /foobar
+File system type: ext3
+Size: 800 MB
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Service Console Virtual Disk Image------------------------------
+The service console contains the partitions below.  You can edit them and
+also create new partitions.
+    volume:  Storage1
+    type    size        mountpoint
+    swap    600 MB      (no mount point)
+    ext3    2.00 GB     /var/log
+    ext3    800 MB      /foobar
+    ext3    5.00 GB     /
+<BLANKLINE>
+Do you want to change the partition layout?
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+Bootloader Options----------------------------------------------
+Do you want to specify kernel arguments for the GRUB bootloader?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+Bootloader Options----------------------------------------------
+Do you want to provide a bootloader password for your system?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/bin/mount', '/dev/sda1', '/mnt/testdir']
+['/usr/bin/umount', '/mnt/testdir']

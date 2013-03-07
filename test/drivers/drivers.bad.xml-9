@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ascii"?>
+<driver_disk version="1.1">
+ <driverlist>
+   <driver>
+    <name>VMware-esx-drivers-scsi-mptspi</name>
+    <version>4.0.22vmw-00000</version>
+    <filename>VMware-esx-drivers-scsi-mptspi-4.0.22vmw-00000.x86_64.rpm</filename>
+    <description>VMware ESX LSI Logic SCSI Driver</description>
+
+    <kernel_module>usr/lib/vmware/vmkmod/mptspi.o</kernel_module>
+    <pci_snippet>etc/vmware/pciid/mptspi.xml</pci_snippet>
+   </driver>
+   <driver>
+    <name>VMware-esx-drivers-net-e1000</name>
+    <version>7.6.15.5-00000</version>
+    <filename>VMware-esx-drivers-net-e1000-7.6.15.5-00000.x86_64.rpm</filename>
+    <description>VMware ESX Intel E1000 Network Driver</description>
+    <kernel_module>usr/lib/vmware/vmkmod/e1000.o</kernel_module>
+    <pci_snippet>etc/vmware/pciid/e1000.xml</pci_snippet>
+    <remove_file>/foo/bar/baz</remove_file>
+    <remove_file>/foo/bar/boo</remove_file>
+   </driver>
+   <driver>
+    <name>VMware-esx-drivers-net-e1000</name>
+    <version>7.6.15.5-00000</version>
+    <filename>VMware-esx-drivers-net-e1000-7.6.15.5-00000.x86_64.rpm</filename>
+    <description>VMware ESX Intel E1000 Network Driver</description>
+    <kernel_module>usr/lib/vmware/vmkmod/e1000.o</kernel_module>
+    <pci_snippet>etc/vmware/pciid/e1000.xml</pci_snippet>
+    <remove_file>/foo/bar/baz</remove_file>
+    <remove_file>/foo/bar/boo</remove_file>
+   </driver>
+ </driverlist>
+</driver_disk>
+

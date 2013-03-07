@@ -1,0 +1,8 @@
+#
+#	start_errors
+#	crypted password is not valid.
+#	end_errors
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/negative.rootpw.invalidCrypt.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs

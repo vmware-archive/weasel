@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ascii"?>
+<driver_disk version="1.1">
+ <driver>
+  <name>VMware-esx-drivers-scsi-mptspi</name>
+  <version>4.0.22vmw-00000</version>
+  <description>VMware ESX LSI Logic SCSI Driver</description>
+  <filename>VMware-esx-drivers-scsi-mptspi-4.0.22vmw-00000.x86_64.rpm</filename>
+  <kernel_module>usr/lib/vmware/vmkmod/mptspi.o</kernel_module>
+  <pci_snippet>etc/vmware/pciid/mptspi.xml</pci_snippet>
+ </driver>
+ <driver>
+  <name>VMware-esx-drivers-net-e1000</name>
+  <version>7.6.15.5-00000</version>
+  <description>VMware ESX Intel E100 Network Driver</description>
+  <filename>VMware-esx-drivers-net-e1000-7.6.15.5-00000.x86_64.rpm</filename>
+  <kernel_module>usr/lib/vmware/vmkmod/e1000.o</kernel_module>
+  <pci_snippet>etc/vmware/pciid/e1000.xml</pci_snippet>
+ </driver>
+</driver_disk>
+

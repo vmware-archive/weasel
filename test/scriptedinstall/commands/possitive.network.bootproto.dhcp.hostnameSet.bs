@@ -1,0 +1,1 @@
+network --device=vmnic32 --bootproto=dhcp --hostname=localhost

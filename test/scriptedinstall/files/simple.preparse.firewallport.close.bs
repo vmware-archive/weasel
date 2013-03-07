@@ -1,0 +1,12 @@
+#
+#	start_verify
+#	len(userchoices.getPortRules()) == 1
+#	userchoices.getPortRules()[0]['state'] == userchoices.PORT_STATE_CLOSED
+#	userchoices.getPortRules()[0]['number'] == 2
+#	userchoices.getPortRules()[0]['protocol'] == userchoices.PORT_PROTO_UDP
+#	userchoices.getPortRules()[0]['direction'] == userchoices.PORT_DIRECTION_OUT
+#	userchoices.getPortRules()[0]['name'] == 'bar'
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.firewallport.close.bs

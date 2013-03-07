@@ -1,0 +1,9 @@
+#
+#       start_errors
+#       argument "nfs" requires argument: "--dir"
+#       end_errors
+#       start_warnings
+#       argument "--dir" to command "install" set but an invalid value was specified
+#       end_warnings 
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.install.baddir.bs

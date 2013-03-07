@@ -1,0 +1,8 @@
+#
+#	start_errors
+#	"--nisserver=" Hostname labels must not start or end with a hyphen.
+#	end_errors
+#
+
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/negative.auth.badNIS.bs

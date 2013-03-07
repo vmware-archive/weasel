@@ -1,0 +1,10 @@
+<ConfigRoot>
+  <ConfigEntry id="0000">
+    <objID>16</objID>
+    <vmxCfgPath>/home/vmware/TestVM/TestVM.vmx</vmxCfgPath>
+  </ConfigEntry>
+  <ConfigEntry id="0001">
+    <objID>32</objID>
+    <vmxCfgPath>/root/AnotherVM/AnotherVM.vmx</vmxCfgPath>
+  </ConfigEntry>
+</ConfigRoot>

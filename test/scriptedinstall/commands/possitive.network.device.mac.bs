@@ -1,0 +1,1 @@
+network --bootproto=dhcp --device=00:50:56:C0:00:00

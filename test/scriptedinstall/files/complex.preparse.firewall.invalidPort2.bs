@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	invalid firewall port "1234567" specified. Must be between 1 and 65535.
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.firewallport.invalidPort2.bs

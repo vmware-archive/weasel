@@ -1,0 +1,26 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'timezone']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarText.get_property("label")
+'Select the time zone for ESX'
+>>> drawing_event(mainwindow.TimezoneDrawingArea, gtk.gdk.BUTTON_PRESS, 406.000000, 170.000000)
+>>> runner.sleep()
+>>> drawing_event(mainwindow.TimezoneDrawingArea, gtk.gdk.BUTTON_RELEASE, 406.000000, 170.000000)
+>>> runner.sleep()
+>>> mainwindow.tz_entry.get_text()
+'Asia/Kolkata'
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> import userchoices
+>>> userchoices.getTimezone()['tzName']
+u'Asia/Kolkata'
+>>> userchoices.getTimezone()['offset']
+u'UTC+05:30'
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...

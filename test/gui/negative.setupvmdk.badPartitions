@@ -1,0 +1,231 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'setupchoice']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Setup Type</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Specify the type of setup for this installation'
+>>> mainwindow.SetupchoicebasicRadioButton.get_property("label")
+'Standard setup'
+>>> mainwindow.SetupchoicebasicRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label125.get_property("label")
+'Setup ESX on a single hard drive or LUN.'
+>>> mainwindow.SetupchoiceadvancedRadioButton.get_property("label")
+'Advanced setup'
+>>> mainwindow.SetupchoiceadvancedRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label126.get_property("label")
+'View and customize the individual ESX partitions.'
+>>> mainwindow.SetupchoicebootloaderCheckButton.get_property("label")
+'Configure boot loader automatically (leave checked if unsure)'
+>>> mainwindow.SetupchoicebootloaderCheckButton.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.SetupchoicebasicRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.SetupchoiceadvancedRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label122.get_property("label")
+'ESX can be installed on a different device from where virtual machines are stored.'
+>>> mainwindow.label121.get_property("label")
+'ESX requires at least 1.25 GB.  If the service console is installed on the same device as ESX, at least 9.5 GB is required.'
+>>> mainwindow.EsxlocationView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.EsxlocationView)
+  ['Local Storage', True, True]
+    ['ATA WDC FKE1800UT (vml.0041)', '0', '2.05 TB', 'vml.0041', False, False]
+    ['ATA WDC FKE1600 (vml.0000)', '0', '76.80 GB', 'vml.0000', True, True]
+    ['ATA WDC FKE1700UT (vml.0001)', '1', '76.80 GB', 'vml.0001', True, True]
+      ['Fake Path', False, False]
+    ['Kingston DataTraveler 2.0 (vml.0003)', '1', '512 MB', 'vml.0003', False, False]
+    ['Lexar Firefly (vml.0025)', '0', '512 MB', 'vml.0025', False, False]
+    ['IDE HD Vendor IDE HD Model (vml.0030)', '0', '76.80 GB', 'vml.0030', True, True]
+    ['Lexar Firefly2 (vml.0026)', '1', '512 MB', 'vml.0026', False, False]
+    ['Compaq CCISS Disk (vml.0010)', '', '76.80 GB', 'vml.0010', True, True]
+  ['Remote Storage', True, True]
+    ['ATA WDC FKE1800UT (vml.0040)', '2', '2.56 GB', 'vml.0040', True, True]
+      ['WWPN: 20:06:00:a0:b8:0f:a2:70 WWNN: 20:06:00:a0:b8:0f:a2:6f', False, False]
+      ['WWPN: Bo:gu:sP:at:hT:oD:ev:ic:e', False, False]
+    ['ATA WDC FKE1600 (vml.0006)', '6', '768.00 GB', 'vml.0006', True, True]
+>>> mainwindow.kGtkLabel0hbuttonbox1hbuttonbox1alignment40framemainwindow.get_property("label")
+'Add software iSCSI storage...'
+>>> mainwindow.hbuttonbox1.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_OK.get_property("label")
+'_OK'
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkLabel_Cancel.get_property("label")
+'_Cancel'
+>>> GtkMessageDialog.kGtkButtongtk_cancel.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkButtongtk_cancel.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>Existing ESX And Datastore</b>'
+>>> GtkMessageDialog.kGtkButtongtk_ok.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose('GtkMessageDialog')
+>>> runner.sleep()
+>>> mainwindow.label181.get_property("label")
+'A datastore is a vmfs partition that ESX uses to store virtual machines.  '
+>>> mainwindow.label192.get_property("label")
+'Additional datastores can be created after ESX is installed by using vSphere Client.'
+>>> mainwindow.DatastorecreateRadioButton.get_property("label")
+'Create new datastore'
+>>> mainwindow.DatastorecreateRadioButton.get_property("sensitive")
+True
+>>> mainwindow.DatastorenameEntry.get_property("sensitive")
+True
+>>> mainwindow.DatastoredeviceEntry.get_property("sensitive")
+False
+>>> mainwindow.label183.get_property("label")
+'Name:'
+>>> mainwindow.DatastoredeviceButton.get_property("label")
+'Select device...'
+>>> mainwindow.DatastoredeviceButton.get_property("sensitive")
+False
+>>> mainwindow.DatastoredeviceLabel.get_property("label")
+'Device:  '
+>>> mainwindow.kGtkLabel0DatastoreCheckButtonDatastorecreateTablealignment46alignment45framemainwindow.get_property("label")
+'Create on the same device as ESX'
+>>> mainwindow.DatastoreCheckButton.get_property("sensitive")
+True
+>>> mainwindow.DatastoreexistingRadioButton.get_property("label")
+'Use existing datastore'
+>>> mainwindow.DatastoreexistingRadioButton.get_property("sensitive")
+True
+>>> mainwindow.DatastorepartitionEntry.get_property("sensitive")
+True
+>>> mainwindow.DatastorepartitionButton.get_property("label")
+'Select partition...'
+>>> mainwindow.DatastorepartitionButton.get_property("sensitive")
+True
+>>> mainwindow.label184.get_property("label")
+'Partition:'
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label185.get_property("label")
+'The service console allows you to access and to configure ESX.'
+>>> mainwindow.label186.get_property("label")
+'It will be stored on the datastore that was selected in the previous step.'
+>>> mainwindow.label187.get_property("label")
+'Service Console Size: '
+>>> mainwindow.SetupvmdksizeLabel.get_property("label")
+'7.60 GB'
+>>> mainwindow.label189.get_property("label")
+'The service console contains the partitions listed below.  Partitions can be created or edited.'
+>>> mainwindow.SetupvmdkTreeView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.SetupvmdkTreeView)
+  ['', 'swap', '600 MB']
+  ['/var/log', 'ext3', '2.00 GB']
+  ['/', 'ext3', '5.00 GB']
+>>> mainwindow.kGtkLabelNe_w___.get_property("label")
+'Ne_w...'
+>>> mainwindow.SetupvmdkNewButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel_Edit___.get_property("label")
+'_Edit...'
+>>> mainwindow.SetupvmdkEditButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel_Delete.get_property("label")
+'_Delete'
+>>> mainwindow.SetupvmdkDeleteButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel_Reset.get_property("label")
+'_Reset'
+>>> mainwindow.SetupvmdkResetButton.get_property("sensitive")
+True
+>>> mainwindow.SetupvmdkNewButton.clicked()
+>>> runner.sleep()
+>>> partition = runner.waitopen("partition")
+>>> partition.kGtkLabel_b___b_.get_property("label")
+'<b></b>'
+>>> partition.PartitionminsizeEntry.get_property("sensitive")
+True
+>>> partition.SetupvmdkmaxsizeLabel.get_property("label")
+'66.99 GB'
+>>> partition.label194.get_property("label")
+'Size:'
+>>> partition.label193.get_property("label")
+'Maximum Size:'
+>>> partition.label192.get_property("label")
+'File System Type:'
+>>> partition.label191.get_property("label")
+'Mount Point:'
+>>> partition.kGtkLabel_OK.get_property("label")
+'_OK'
+>>> partition.PartitionOkButton.get_property("sensitive")
+True
+>>> partition.kGtkLabel_Cancel.get_property("label")
+'_Cancel'
+>>> partition.PartitionCancelButton.get_property("sensitive")
+True
+>>> partition.kGtkEntry0PartitionMountpointComboBoxEntrytable2alignment50kGtkFrame1common_windowpartitioncommon_windowpartition.set_text("/")
+>>> runner.sleep()
+>>> partition.kGtkEntry0PartitionMountpointComboBoxEntrytable2alignment50kGtkFrame1common_windowpartitioncommon_windowpartition.set_text("/e")
+>>> runner.sleep()
+>>> partition.kGtkEntry0PartitionMountpointComboBoxEntrytable2alignment50kGtkFrame1common_windowpartitioncommon_windowpartition.set_text("/et")
+>>> runner.sleep()
+>>> partition.kGtkEntry0PartitionMountpointComboBoxEntrytable2alignment50kGtkFrame1common_windowpartitioncommon_windowpartition.set_text("/etc")
+>>> runner.sleep()
+>>> partition.PartitionOkButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_OK.get_property("label")
+'_OK'
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel0GtkFramecommon_windowGtkMessageDialog.get_property("label")
+"The '/etc' directory can not be on a separate partition. Choose a different mount point for this partition."
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>Mount Point Error</b>'
+>>> GtkMessageDialog.kGtkButtongtk_ok.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose('GtkMessageDialog')
+>>> runner.sleep()
+>>> partition.PartitionCancelButton.clicked()
+>>> runner.sleep()
+>>> partition.delete()
+>>> runner.waitclose('partition')
+>>> runner.sleep()
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...

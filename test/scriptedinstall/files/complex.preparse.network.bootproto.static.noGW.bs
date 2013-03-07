@@ -1,0 +1,23 @@
+#
+#	start_verify
+#	userchoices.getCosNetwork()['gateway'] == '192.168.0.254'
+#	userchoices.getCosNetwork()['nameserver1'] == '10.20.147.1'
+#	userchoices.getCosNetwork()['nameserver2'] == None
+#	userchoices.getCosNetwork()['hostname'] == 'test.host.com'
+#	len(userchoices.getCosNICs()) == 1
+#	userchoices.getCosNICs()[0]['device'].name == 'vmnic32'
+#	userchoices.getCosNICs()[0]['bootProto'] == userchoices.NIC_BOOT_STATIC
+#	userchoices.getCosNICs()[0]['vlanID'] == None
+#	userchoices.getCosNICs()[0]['ip'] == '192.168.0.1'
+#	userchoices.getCosNICs()[0]['netmask'] == '255.255.255.0'
+#	end_verify
+#	start_warnings
+#	bootproto was set to static but "--gateway=" was not set. Setting gateway to 192.168.0.254.
+#	end_warnings
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.clearpart.minimal.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.static.noGW.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs

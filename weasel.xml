@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<weasel_config version="1.0">
+   <depot>
+      <package_group>esx</package_group>
+      <package_group>esx-32</package_group>
+      <package_group>third-party-cim</package_group>
+      <package_group>inbox-cim</package_group>
+      <package_group>gobuild</package_group>
+      <package_group>rhel-32</package_group>
+      <package_group>24-drivers</package_group>
+   </depot>
+</weasel_config>

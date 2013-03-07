@@ -1,0 +1,12 @@
+#
+#	start_warnings:
+#	--nisdomain was specified but --enablenis was not specified. Turning on NIS.
+#	end_warnings
+#	start_verify
+#	userchoices.getAuth()['nis'] == True
+#	userchoices.getAuth()['nisDomain'] == 'mydomain.com'
+#	end_verify
+#
+
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/possitive.auth.noNIS.bs

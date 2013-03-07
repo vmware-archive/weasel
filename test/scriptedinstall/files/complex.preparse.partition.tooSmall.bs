@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	The "/tmp" partition needs to be at least 960 megabytes in size.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.partition.tooSmall.bs

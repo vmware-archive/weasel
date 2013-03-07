@@ -1,0 +1,96 @@
+#! /usr/bin/env python
+
+###############################################################################
+# Copyright (c) 2008-2009 VMware, Inc.
+#
+# This file is part of Weasel.
+#
+# Weasel is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation version 2 and no later version.
+#
+# Weasel is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+# version 2 for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51
+# Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+
+import os
+import sys
+import atexit
+
+TEST_DIR = os.path.dirname(__file__)
+
+sys.path.append(TEST_DIR)
+
+def usage(args):
+    print "usage: %s <test-name> <test/skip_to_step.py|weasel.py> [arg1 ...]" % args[0]
+    print
+    print "Tool for recording GUI events in caged weasel."
+    print
+    print "Required arguments:"
+    print "  test-name     The name of the test.  The test script will be saved"
+    print "                under the test/gui directory."
+    print "  skip_to_step.py|weasel.py"
+    print "                The main program to run and capture GUI events."
+    print
+    print "Environment variables:"
+    print "  KIWI_VERIFY   A comma-separated list of GTK properties that should"
+    print "                be verified in the generated script.  By default,"
+    print "                all the properties are verified automatically."
+    print "                Properties that are not verified are still added to"
+    print "                the script, but the doctest SKIP option is used to"
+    print "                avoid executing the test.  Valid property names are:"
+    print "                label, sensitive, is-focus."
+    print
+    print "Examples:"
+    print "  To record a test for the license screen:"
+    print "    $ %s positive.license.eval test/skip_to_step.py license" % args[0]
+    print "  To record an end-to-end test:"
+    print "    $ %s positive.install.advanced weasel.py --nox" % args[0]
+
+def dump(scriptName):
+    if not os.path.exists(scriptName):
+        return
+        
+    scriptFile = open(scriptName, "a")
+
+    scriptFile.write(">>> mainwindow.delete() # XXX hack\n")
+    scriptFile.write(">>> None # auto-verification below...\n")
+
+    import fauxroot
+    if fauxroot.SYSTEM_LOG:
+        scriptFile.write(">>> import fauxroot\n")
+        scriptFile.write(">>> for cmd in fauxroot.SYSTEM_LOG:\n")
+        scriptFile.write("...     print cmd\n")
+        
+        for cmd in fauxroot.SYSTEM_LOG:
+            scriptFile.write("%s\n" % repr(cmd))
+
+    scriptFile.close()
+
+def main(args):
+    if len(args) < 2:
+        usage(args)
+        sys.exit(1)
+
+    kiwiMain = os.path.join(TEST_DIR, "kiwi/ui/test/main.py")
+    scriptName = os.path.join(TEST_DIR, "gui", args[1])
+
+    sys.argv = [kiwiMain,
+                "--record", scriptName,
+                "--",
+                os.path.join(TEST_DIR, "caged_weasel.py"),
+                ] + args[2:]
+
+    atexit.register(lambda: dump(scriptName))
+    
+    execfile(kiwiMain, globals())
+    
+if __name__ == "__main__":
+    main(sys.argv)

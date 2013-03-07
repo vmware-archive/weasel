@@ -1,0 +1,1 @@
+install url http://www.aserver.com:902

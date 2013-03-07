@@ -1,0 +1,7 @@
+part /boot --fstype=ext3 --size=100 --ondisk=sda
+part / --fstype=ext3 --size=3000 --ondisk=vml.0000
+part swap --size=256 --grow --maxsize=512 --ondrive=vml.0000 --fstype=swap
+part /var/log --fstype=ext3 --size=500 --grow --maxsize=2000 --ondisk=vml.0000
+part cos --size=1500 --grow --ondisk=vml.0000 --fstype=vmfs3
+part None --size=100 --ondisk=vml.0000 --fstype=vmkcore
+

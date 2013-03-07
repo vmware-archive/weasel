@@ -1,0 +1,12 @@
+#
+#	start_verify
+#	len(userchoices.getPortRules()) == 1
+#	userchoices.getPortRules()[0]['state'] == userchoices.PORT_STATE_OPEN
+#	userchoices.getPortRules()[0]['number'] == 1
+#	userchoices.getPortRules()[0]['protocol'] == userchoices.PORT_PROTO_TCP
+#	userchoices.getPortRules()[0]['direction'] == userchoices.PORT_DIRECTION_IN
+#	userchoices.getPortRules()[0]['name'] == 'foo'
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.firewallport.open.bs

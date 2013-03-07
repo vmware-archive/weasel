@@ -1,0 +1,7 @@
+#
+#	start_verify
+#	userchoices.getTimezone()['tzName'] == 'America/Los_Angeles'
+#	userchoices.getTimezone()['isUTC'] == True
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.timezone.bs

@@ -1,0 +1,1 @@
+clearpart  --drives=cciss/c0d0

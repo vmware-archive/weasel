@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	/etc cannot be on a separate partition.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.partition.badMountpoint.bs

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ascii"?>
+<driver_disk version="1.1">
+ <driverlist>
+   <driver>
+    <name>Test-driver</name>
+    <version>0.0.0</version>
+    <filename>rpms/Test-driver-0.0.0.test.rpm</filename>
+    <description>Test driver</description>
+   </driver>
+ </driverlist>
+</driver_disk>
+

@@ -1,0 +1,10 @@
+#
+#	start_warnings
+#	command "keyboard" was already specified. Using the latest value.
+#	end_warnings
+#	start_verify
+#	userchoices.getKeyboard()['keytable'] == 'us'
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+keyboard uk
+keyboard us

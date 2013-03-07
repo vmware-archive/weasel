@@ -1,0 +1,363 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['cosnetworkadapter'], textui.main.main)
+>>> print docage.waitAndFeed('1')
+COS Network Adapter---------------------------------------------
+Select an adapter for ESX to use for system tasks.
+(Choose option 2 (Change) to change either the current adapter choice
+or the VLAN ID.)
+<BLANKLINE>
+Current choice:
+    afakenic: Acme Ethernet Corp: Fake NIC 2000
+    (00:50:56:C0:00:01) [connected]
+  VLAN ID: None
+<BLANKLINE>
+ 1) Keep 
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+COS Network Settings--------------------------------------------
+Choose how network settings should be configured (DHCP or Static IP).
+<BLANKLINE>
+Current choice: DHCP
+ 1) Keep automatic DHCP settings
+ 2) Change to static IP network settings
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('192.168.0.255')
+COS Network Configuration---------------------------------------
+Enter the IP Address
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+IP Address
+Current choice: 192.168.0.255
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Subnet Mask
+Current choice: 255.255.255.0
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Gateway
+Current choice: 192.168.0.254
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('')
+COS Network Configuration---------------------------------------
+Enter the Primary DNS
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Primary DNS
+Current choice: None
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('')
+COS Network Configuration---------------------------------------
+Enter the Secondary DNS
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Secondary DNS
+Current choice: None
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('foo')
+COS Network Configuration---------------------------------------
+Enter the Hostname
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Hostname
+Current choice: foo
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Current choices:
+IP Address:     192.168.0.255
+Subnet Mask:    255.255.255.0
+Gateway:        192.168.0.254
+Primary DNS:    (Not assigned)
+Secondary DNS:  (Not assigned)
+Hostname:       foo
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+COS Network Configuration---------------------------------------
+IP address corresponds to the broadcast address.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+COS Network Configuration---------------------------------------
+Current choices:
+IP Address:     192.168.0.255
+Subnet Mask:    255.255.255.0
+Gateway:        192.168.0.254
+Primary DNS:    (Not assigned)
+Secondary DNS:  (Not assigned)
+Hostname:       foo
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('192.168.0.252')
+COS Network Configuration---------------------------------------
+IP Address
+Current choice: 192.168.0.255
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+IP Address
+Current choice: 192.168.0.255
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Subnet Mask
+Current choice: 255.255.255.0
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+COS Network Configuration---------------------------------------
+Gateway
+Current choice: 192.168.0.254
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('10.20.111.11')
+COS Network Configuration---------------------------------------
+Enter the Gateway
+Current choice: 192.168.0.254
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Gateway
+Current choice: 10.20.111.11
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('')
+COS Network Configuration---------------------------------------
+Enter the Primary DNS
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('')
+COS Network Configuration---------------------------------------
+Primary DNS
+Current choice: None
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Primary DNS
+Current choice: None
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('')
+COS Network Configuration---------------------------------------
+Enter the Secondary DNS
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Secondary DNS
+Current choice: None
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Hostname
+Current choice: foo
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Current choices:
+IP Address:     192.168.0.255
+Subnet Mask:    255.255.255.0
+Gateway:        10.20.111.11
+Primary DNS:    (Not assigned)
+Secondary DNS:  (Not assigned)
+Hostname:       foo
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('<')
+COS Network Configuration---------------------------------------
+IP address corresponds to the broadcast address.
+<BLANKLINE>
+ <) Back
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('!')
+COS Network Configuration---------------------------------------
+Current choices:
+IP Address:     192.168.0.255
+Subnet Mask:    255.255.255.0
+Gateway:        10.20.111.11
+Primary DNS:    (Not assigned)
+Secondary DNS:  (Not assigned)
+Hostname:       foo
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+Exit installation-----------------------------------------------
+Do you really want to exit installation and reboot?
+<BLANKLINE>
+ 1) Yes
+ 2) No
+<BLANKLINE>
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['touch', '/etc/ntp.conf']
+['/etc/init.d/iptables', 'stop']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/eject']

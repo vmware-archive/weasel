@@ -1,0 +1,10 @@
+#
+#	start_warnings
+#	duplicate argument "--drives" specified for command "clearpart".
+#	end_warnings
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+clearpart --drives=vml.0000 --drives=vml.0001 --overwritevmfs

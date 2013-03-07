@@ -1,0 +1,20 @@
+#
+#	start_verify
+#	userchoices.getCosNetwork()['gateway'] == None
+#	userchoices.getCosNetwork()['nameserver1'] == None
+#	userchoices.getCosNetwork()['nameserver2'] == None
+#	userchoices.getCosNetwork()['hostname'] == None
+#	len(userchoices.getCosNICs()) == 1
+#	userchoices.getCosNICs()[0]['device'].name == 'Vulcan mind-meld wireless terabit'
+#	userchoices.getCosNICs()[0]['bootProto'] == userchoices.NIC_BOOT_DHCP
+#	userchoices.getCosNICs()[0]['vlanID'] == None
+#	userchoices.getCosNICs()[0]['ip'] == None
+#	userchoices.getCosNICs()[0]['netmask'] == None
+#	end_verify
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/possitive.clearpart.minimal.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.network.noDevice.bs

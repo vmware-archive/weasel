@@ -1,0 +1,10 @@
+#
+#	start_errors
+#	autopart partitions conflict with other partition requests.
+#	end_errors
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/possitive.esxlocation.firstdisk.bs
+include ./scriptedinstall/commands/possitive.autopart.firstdisk.bs

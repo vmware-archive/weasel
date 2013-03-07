@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<mouse_list version="1.0">
+  <mouse supported="0">
+   <type>geniusnm</type>
+   <make>Genius</make>
+   <model>NetMouse (serial)</model>
+   <gpm_protocol>ms3</gpm_protocol>
+   <x_protocol>IntelliMouse</x_protocol>
+   <input_protocol>ms3</input_protocol>
+   <device>ttyS</device>
+   <emulate3>1</emulate3>
+   <supported>0</supported>
+  </mouse>
+  <mouse supported="1">
+   <type>genericwheelusb</type>
+   <make>Generic</make>
+   <model>Wheel Mouse (USB)</model>
+   <gpm_protocol>imps2</gpm_protocol>
+   <x_protocol>IMPS/2</x_protocol>
+   <input_protocol>None</input_protocol>
+   <device>input/mice</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="1">
+   <type>genericps/2</type>
+   <make>Generic</make>
+   <model>2 Button Mouse (PS/2)</model>
+   <gpm_protocol>imps2</gpm_protocol>
+   <x_protocol>IMPS/2</x_protocol>
+   <input_protocol>None</input_protocol>
+   <device>input/mice</device>
+   <emulate3>1</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>mmseries</type>
+   <make>MM</make>
+   <model>MM Series (serial)</model>
+   <gpm_protocol>MMSeries</gpm_protocol>
+   <x_protocol>MMSeries</x_protocol>
+   <input_protocol>bare</input_protocol>
+   <device>ttyS</device>
+   <emulate3>1</emulate3>
+   <supported>0</supported>
+  </mouse>
+  <mouse supported="0">
+   <type>ascii</type>
+   <make>ASCII</make>
+   <model>MieMouse (serial)</model>
+   <gpm_protocol>ms3</gpm_protocol>
+   <x_protocol>IntelliMouse</x_protocol>
+   <input_protocol>ms3</input_protocol>
+   <device>ttyS</device>
+   <emulate3>0</emulate3>
+   <supported>0</supported>
+  </mouse>
+  <mouse supported="0">
+   <type>generic</type>
+   <make>Generic</make>
+   <model>2 Button Mouse (serial)</model>
+   <gpm_protocol>Microsoft</gpm_protocol>
+   <x_protocol>Microsoft</x_protocol>
+   <input_protocol>bare</input_protocol>
+   <device>ttyS</device>
+   <emulate3>1</emulate3>
+   <supported>0</supported>
+  </mouse>
+  <mouse supported="0">
+   <type>sun</type>
+   <make>Sun</make>
+   <model>Mouse</model>
+   <gpm_protocol>sun</gpm_protocol>
+   <x_protocol>sun</x_protocol>
+   <input_protocol>sun</input_protocol>
+   <device>sunmouse</device>
+   <emulate3>0</emulate3>
+   <supported>0</supported>
+  </mouse>
+  <mouse supported="1">
+   <type>generic3usb</type>
+   <make>Generic</make>
+   <model>3 Button Mouse (USB)</model>
+   <gpm_protocol>imps2</gpm_protocol>
+   <x_protocol>IMPS/2</x_protocol>
+   <input_protocol>None</input_protocol>
+   <device>input/mice</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="1">
+   <type>genericusb</type>
+   <make>Generic</make>
+   <model>2 Button Mouse (USB)</model>
+   <gpm_protocol>imps2</gpm_protocol>
+   <x_protocol>IMPS/2</x_protocol>
+   <input_protocol>None</input_protocol>
+   <device>input/mice</device>
+   <emulate3>1</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>synaptics</type>
+   <make>Synaptics</make>
+   <model>Synaptics Touchpad</model>
+   <gpm_protocol>imps2</gpm_protocol>
+   <x_protocol>IMPS/2</x_protocol>
+   <input_protocol>None</input_protocol>
+   <device>input/mice</device>
+   <emulate3>1</emulate3>
+   <supported>0</supported>
+  </mouse>
+  <mouse supported="1">
+   <type>genericwheelps/2</type>
+   <make>Generic</make>
+   <model>Wheel Mouse (PS/2)</model>
+   <gpm_protocol>imps2</gpm_protocol>
+   <x_protocol>IMPS/2</x_protocol>
+   <input_protocol>None</input_protocol>
+   <device>input/mice</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="1">
+   <type>generic3ps/2</type>
+   <make>Generic</make>
+   <model>3 Button Mouse (PS/2)</model>
+   <gpm_protocol>imps2</gpm_protocol>
+   <x_protocol>IMPS/2</x_protocol>
+   <input_protocol>None</input_protocol>
+   <device>input/mice</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>msintelli</type>
+   <make>Microsoft</make>
+   <model>IntelliMouse (serial)</model>
+   <gpm_protocol>ms3</gpm_protocol>
+   <x_protocol>IntelliMouse</x_protocol>
+   <input_protocol>ms3</input_protocol>
+   <device>ttyS</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>mmhittab</type>
+   <make>MM</make>
+   <model>MM HitTablet (serial)</model>
+   <gpm_protocol>MMHitTab</gpm_protocol>
+   <x_protocol>MMHittab</x_protocol>
+   <input_protocol>bare</input_protocol>
+   <device>ttyS</device>
+   <emulate3>1</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>logimman+</type>
+   <make>Logitech</make>
+   <model>MouseMan+/FirstMouse+ (serial)</model>
+   <gpm_protocol>pnp</gpm_protocol>
+   <x_protocol>IntelliMouse</x_protocol>
+   <input_protocol>ms3</input_protocol>
+   <device>ttyS</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>logitechcc</type>
+   <make>Logitech</make>
+   <model>CC Series (serial)</model>
+   <gpm_protocol>logim</gpm_protocol>
+   <x_protocol>MouseMan</x_protocol>
+   <input_protocol>mman</input_protocol>
+   <device>ttyS</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>logitech</type>
+   <make>Logitech</make>
+   <model>C7 Mouse (serial, old C7 type)</model>
+   <gpm_protocol>Logitech</gpm_protocol>
+   <x_protocol>Logitech</x_protocol>
+   <input_protocol>mman</input_protocol>
+   <device>ttyS</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>logimman</type>
+   <make>Logitech</make>
+   <model>MouseMan/FirstMouse (serial)</model>
+   <gpm_protocol>MouseMan</gpm_protocol>
+   <x_protocol>MouseMan</x_protocol>
+   <input_protocol>mman</input_protocol>
+   <device>ttyS</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>msnew</type>
+   <make>Microsoft</make>
+   <model>Rev 2.1A or higher (serial)</model>
+   <gpm_protocol>pnp</gpm_protocol>
+   <x_protocol>Auto</x_protocol>
+   <input_protocol>ms</input_protocol>
+   <device>ttyS</device>
+   <emulate3>1</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>mousesystems</type>
+   <make>Mouse Systems</make>
+   <model>Mouse (serial)</model>
+   <gpm_protocol>MouseSystems</gpm_protocol>
+   <x_protocol>MouseSystems</x_protocol>
+   <input_protocol>msc</input_protocol>
+   <device>ttyS</device>
+   <emulate3>1</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>thinking</type>
+   <make>Kensington</make>
+   <model>Thinking Mouse (serial)</model>
+   <gpm_protocol>Microsoft</gpm_protocol>
+   <x_protocol>ThinkingMouse</x_protocol>
+   <input_protocol>bare</input_protocol>
+   <device>ttyS</device>
+   <emulate3>1</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>generic3</type>
+   <make>Generic</make>
+   <model>3 Button Mouse (serial)</model>
+   <gpm_protocol>Microsoft</gpm_protocol>
+   <x_protocol>Microsoft</x_protocol>
+   <input_protocol>ms</input_protocol>
+   <device>ttyS</device>
+   <emulate3>0</emulate3>
+  </mouse>
+  <mouse supported="0">
+   <type>microsoft</type>
+   <make>Microsoft</make>
+   <model>Compatible Mouse (serial)</model>
+   <gpm_protocol>Microsoft</gpm_protocol>
+   <x_protocol>Microsoft</x_protocol>
+   <input_protocol>bare</input_protocol>
+   <device>ttyS</device>
+   <emulate3>1</emulate3>
+  </mouse>
+</mouse_list>
+

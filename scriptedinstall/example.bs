@@ -1,0 +1,10 @@
+
+install cdrom
+
+%packages
+pkg1
+pkg2
+
+%post
+echo "Hello, World!"
+

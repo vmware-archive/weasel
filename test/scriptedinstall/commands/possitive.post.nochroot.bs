@@ -1,0 +1,2 @@
+%post --nochroot --interpreter=bash
+echo Hello World

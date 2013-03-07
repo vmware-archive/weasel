@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	No matching licenses for serial number.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.vmserialnum.badkey.bs

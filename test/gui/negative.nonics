@@ -1,0 +1,81 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'weasel.py', '--nox']
+>>> import vmkctl
+>>> vmkctl.VMKCTL_NET_CONFIG['pnics'] = [] # NO NICs !!!
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Title</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Text description field.'
+>>> mainwindow.label95.get_property("label")
+'This wizard will guide you through the installation of ESX.'
+>>> mainwindow.label96.get_property("label")
+'To continue, click Next.'
+>>> mainwindow.label93.get_property("label")
+'<b><span size="18000">Welcome to the ESX Installer</span></b>'
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.EulaCheckButton.get_property("label")
+'I accept the terms of the license agreement'
+>>> mainwindow.EulaCheckButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label1.get_property("label")
+'Do you want to install custom drivers?'
+>>> mainwindow.label2.get_property("label")
+'Click "Add..." to eject the installation media and select drivers for installation.'
+>>> mainwindow.kGtkLabelAdd___.get_property("label")
+'Add...'
+>>> mainwindow.kGtkLabelRemove.get_property("label")
+'Remove'
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_Yes.get_property("label")
+'_Yes'
+>>> GtkMessageDialog.kGtkLabel_No.get_property("label")
+'_No'
+>>> GtkMessageDialog.kGtkButtongtk_no.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>Load Drivers</b>'
+>>> GtkMessageDialog.kGtkButtongtk_yes.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose("GtkMessageDialog")
+>>> runner.sleep()
+>>> mainwindow.DriverloadLabel.get_property("label")
+'Status:'
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> exception = runner.waitopen("exception")
+>>> scrolledWin = exception.exceptionExpander.get_child()
+>>> scrolledWin.get_child_visible()
+False
+>>> exception.kGtkLabelReboot.get_property("label")
+'Reboot'
+>>> exception.ExceptionRebootButton.get_property("sensitive")
+True
+>>> exception.kGtkLabelDebug.get_property("label")
+'Debug'
+>>> exception.ExceptionDebugButton.get_property("sensitive")
+True
+>>> exception.ExceptionDebugButton.get_property("is-focus")
+True
+>>> exception.ExceptionHeading.get_property("label")
+'<b>An error has occurred during your ESX installation.</b>'
+>>> exception.ExceptionDescription.get_property("label")
+'No network adapters were detected. Either no network adapters are physically connected to the system, or a suitable driver could not be located. A third party driver may be required.\n\nESX cannot be installed without a valid network adapter. Ensure that there is at least one network adapter physically connected to the system before attempting installation again. If the problem persists, consult the VMware Knowledge Base.\n\nThe system must be restarted.'
+>>> exception.kGtkLabel0kGtkEventBox0common_windowexceptioncommon_windowexception.get_property("label")
+'<b>Installation Error</b>'
+>>> exception.ExceptionRebootButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.delete() # XXX hack

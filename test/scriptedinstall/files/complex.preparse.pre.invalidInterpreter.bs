@@ -1,0 +1,8 @@
+#
+#	start_errors
+#	interpreter "zshell" not found.
+#	end_errors
+#	
+include ./scriptedinstall/files/possitive.minimal.bs
+%pre --interpreter=zshell
+echo "Hello"

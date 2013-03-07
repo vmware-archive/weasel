@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ascii"?>
+<driver_disk version="1.1">
+ <driverlist>
+  <driver>
+   <name>VMware-esx-drivers-scsi-mptspi</name>
+   <version>4.0.22vmw-00000</version>
+   <filename>VMware-esx-drivers-scsi-mptspi-4.0.22vmw-00000.x86_64.rpm</filename>
+   <kernel_module>usr/lib/vmware/vmkmod/mptspi.o</kernel_module>
+   <pci_snippet>etc/vmware/pciid/mptspi.xml</pci_snippet>
+  </driver>
+ </driverlist>
+ <driverlist>
+  <driver>
+   <name>VMware-esx-drivers-scsi-mptspi</name>
+   <version>4.0.22vmw-00000</version>
+   <filename>VMware-esx-drivers-scsi-mptspi-4.0.22vmw-00000.x86_64.rpm</filename>
+   <kernel_module>usr/lib/vmware/vmkmod/mptspi.o</kernel_module>
+   <pci_snippet>etc/vmware/pciid/mptspi.xml</pci_snippet>
+  </driver>
+ </driverlist>
+</driver_disk>
+

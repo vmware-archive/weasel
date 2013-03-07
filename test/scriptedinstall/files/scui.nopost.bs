@@ -1,0 +1,31 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+
+install cdrom
+
+reboot
+
+%post --interpreter=bash
+>>> import docage
+>>> docage.run()
+>>> # print docage.newStdout.getvalue()
+>>> docage.printFiles(["/etc/ntp.conf",
+...                    "/mnt/sysimage/etc/adjtime",
+...                    "/mnt/sysimage/etc/sysconfig/clock"])
+/etc/ntp.conf (regular f 700)
+/mnt/sysimage/etc/adjtime (unmounted f 700)
+  0.0 0 0.0
+  0
+  UTC
+<BLANKLINE>
+/mnt/sysimage/etc/sysconfig/clock (unmounted f 700)
+  ZONE=US/Pacific
+  UTC=true
+  ARC=false
+<BLANKLINE>

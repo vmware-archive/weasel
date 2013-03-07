@@ -1,0 +1,64 @@
+# mode: -*- doctest -*-
+
+clearpart --firstdisk=foobar --overwritevmfs
+autopart --firstdisk=foobar
+vmaccepteula
+rootpw mypassword
+network --bootproto dhcp --device vmnic32
+auth --enablemd5 --enableshadow
+bootloader --location mbr --md5pass '$1$i8osW$/uZCGzymJw4FzHFFH1ftN0'
+
+install cdrom
+
+reboot
+
+%pre
+echo Gutentag
+
+%post
+echo Hi
+
+>>> import docage
+>>> import fauxroot
+>>> docage.run()
+>>> "installation aborted" in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> "installation complete" not in fauxroot.WRITTEN_FILES['/var/log/weasel.log'].getvalue()
+True
+>>> docage.printSystemLog()
+['chvt', '6']
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/bin/bash', '/tmp/ks-script']
+['/etc/init.d/iptables', 'stop']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/eject']
+>>> docage.printFiles(include=["/dev/tty6"])
+/dev/tty6 (regular f 700)
+  \033[H\033[JLoading system drivers...
+    0% Complete 
+    0% Complete - Unpack Drivers
+    5% Complete - Rebuilding Map File
+    6% Complete - Loading Drivers
+    6% Complete - Loading 14.foobar
+   53% Complete - Loading 71.bogusipmi
+  The script 71.bogusipmi returned status 1
+  100% Complete - Loading Drivers
+  100% Complete 
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+<BLANKLINE>
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Lun at /vmfs/devices/disks/vml.0666 is a pseudo lun.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+  Could not get driver name for /dev/cciss/c0d1
+  /ks.cfg:line 17: interpreter not defined. Defaulting to bash
+  error:/ks.cfg:line 3: clearpart --firstdisk specified, but no suitable disk was found.
+  installation aborted
+<BLANKLINE>

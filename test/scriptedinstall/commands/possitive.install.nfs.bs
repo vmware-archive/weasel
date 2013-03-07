@@ -1,0 +1,2 @@
+install  nfs --server=jpowell-esx.eng.vmware.com --dir=/test/dir
+

@@ -1,0 +1,218 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['cosnetworkadapter'], textui.main.main)
+>>> print docage.waitAndFeed('2')
+COS Network Adapter---------------------------------------------
+Select an adapter for ESX to use for system tasks.
+(Choose option 2 (Change) to change either the current adapter choice
+or the VLAN ID.)
+<BLANKLINE>
+Current choice:
+    afakenic: Acme Ethernet Corp: Fake NIC 2000
+    (00:50:56:C0:00:01) [connected]
+  VLAN ID: None
+<BLANKLINE>
+ 1) Keep 
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('3')
+COS Network Adapter---------------------------------------------
+    Select an adapter for ESX to use for system tasks.
+    Current choice:
+        afakenic: Acme Ethernet Corp: Fake NIC 2000
+        (00:50:56:C0:00:01) [connected]
+<BLANKLINE>
+ 1. e1000: vmnic32
+    (00:50:56:C0:00:00) [connected]
+ 2. afakenic: Acme Ethernet Corp: Fake NIC 2000
+    (00:50:56:C0:00:01) [connected]
+ 3. tfakenic: Tennessee TTT144: Gigabit catfish backbone
+    (00:50:56:C0:00:02) [not connected]
+ 4. vfakenic: Vulcan mind-meld wireless terabit
+    (00:50:56:C0:00:03) [connected]
+[<number>: adapter choice, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Adapter---------------------------------------------
+Does this adapter require a VLAN ID?
+(Choose option 2 (No) if you are not sure.)
+    Current choice:  No    ID: None
+<BLANKLINE>
+ 1) Yes
+ 2) No
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('23')
+COS Network Adapter---------------------------------------------
+Enter the VLAN ID.  (an integer in the range of 0-4095)
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Adapter---------------------------------------------
+Select an adapter for ESX to use for system tasks.
+(Choose option 2 (Change) to change either the current adapter choice
+or the VLAN ID.)
+<BLANKLINE>
+Current choice:
+    tfakenic: Tennessee TTT144: Gigabit catfish backbone
+    (00:50:56:C0:00:02) [not connected]
+  VLAN ID: 23
+<BLANKLINE>
+ 1) Keep (not connected)
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('2')
+COS Network Settings--------------------------------------------
+Choose how network settings should be configured (DHCP or Static IP).
+<BLANKLINE>
+Current choice: DHCP
+ 1) Keep automatic DHCP settings
+ 2) Change to static IP network settings
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('192.168.1.123')
+COS Network Configuration---------------------------------------
+Enter the IP Address
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+IP Address
+Current choice: 192.168.1.123
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Subnet Mask
+Current choice: 255.255.255.0
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Gateway
+Current choice: 192.168.1.254
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('192.168.1.11')
+COS Network Configuration---------------------------------------
+Enter the Primary DNS
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Primary DNS
+Current choice: 192.168.1.11
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('192.168.1.12')
+COS Network Configuration---------------------------------------
+Enter the Secondary DNS
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Secondary DNS
+Current choice: 192.168.1.12
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('myhost.mydomain.com')
+COS Network Configuration---------------------------------------
+Enter the Hostname
+Current choice: None
+<BLANKLINE>
+['<': back, '?': help]
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Hostname
+Current choice: myhost.mydomain.com
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('1')
+COS Network Configuration---------------------------------------
+Current choices:
+IP Address:     192.168.1.123
+Subnet Mask:    255.255.255.0
+Gateway:        192.168.1.254
+Primary DNS:    192.168.1.11
+Secondary DNS:  192.168.1.12
+Hostname:       myhost.mydomain.com
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+<BLANKLINE>
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['touch', '/etc/ntp.conf']

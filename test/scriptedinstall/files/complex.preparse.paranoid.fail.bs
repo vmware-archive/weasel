@@ -1,0 +1,13 @@
+#
+#	start_warnings
+#	authconfig option not specified. Using default settings
+#	network command not specified. Defaulting to DHCP.
+#	end_warnings
+#	start_errors
+#	got warnings during paranoid mode
+#	end_errors
+include ./scriptedinstall/commands/possitive.clearpart.minimal.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+vmaccepteula
+paranoid

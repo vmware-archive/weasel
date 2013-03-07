@@ -1,0 +1,6 @@
+#
+#	start_warnings
+#	mount point was specified for type "swap".
+#	end_warnings
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.partition.notMountable.bs

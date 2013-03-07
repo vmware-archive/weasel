@@ -1,0 +1,8 @@
+#
+#	start_errors
+#	bootproto --device= specified, but "eth0" was not found on the system.
+#	end_errors
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/negative.network.invalidDevice.bs

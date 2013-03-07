@@ -1,0 +1,6 @@
+#
+#	start_verify
+#	userchoices.getPostScripts() == [{'script':Script('echo Hello World\n', '/bin/bash', False, 0, False)}]
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.post.nochroot.bs

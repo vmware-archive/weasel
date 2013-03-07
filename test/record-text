@@ -1,0 +1,139 @@
+#! /usr/bin/env python
+
+###############################################################################
+# Copyright (c) 2008-2009 VMware, Inc.
+#
+# This file is part of Weasel.
+#
+# Weasel is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation version 2 and no later version.
+#
+# Weasel is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+# version 2 for more details.
+#
+# You should have received a copy of the GNU General Public License along with
+# this program; if not, write to the Free Software Foundation, Inc., 51
+# Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+
+import os
+import sys
+import atexit
+
+TEST_DIR = os.path.dirname(__file__)
+
+sys.path.append(TEST_DIR)
+sys.path.append(os.path.join(TEST_DIR, ".."))
+
+def usage(args):
+    print "usage: %s <test-path> [arg1 ...]" % args[0]
+    print
+    print "Tool for recording text input/output in caged weasel."
+    print
+    print "Required arguments:"
+    print "  test-path     The path of the test file to create."
+    print
+    print "Examples:"
+    print "  To record a test for the license screen:"
+    print "    $ %s test/textui/positive.license.eval test/skip_to_step.py " \
+        "-t license" % args[0]
+    print "  To record an end-to-end test:"
+    print "    $ %s test/textui/positive.install.advanced weasel.py -t" \
+        % args[0]
+
+HEADER = """\
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(%s%s)
+"""
+
+class TextRecorder:
+    def __init__(self, recording):
+        self.recording = recording
+        self.savedOutput = ""
+
+        import textui.textengine
+
+        self.oldConsInput = textui.textengine._cons_input
+        textui.textengine._cons_input = self._recordInput
+        textui.textengine._password_cons_input = self._recordInput
+        
+        textui.textengine._cons_output = self._recordOutput
+
+    def _formatOutput(self):
+        retval = ""
+        for line in self.savedOutput.split('\n'):
+            if line == "":
+                retval += "<BLANKLINE>\n"
+            else:
+                retval += "%s\n" % line
+        self.savedOutput = ""
+
+        return retval
+        
+    def _recordInput(self, prompt):
+        self.savedOutput += prompt
+
+        retval = self.oldConsInput(prompt)
+        
+        self.recording.write(">>> print docage.waitAndFeed(%s)\n%s\n" % (
+                repr(retval), self._formatOutput()))
+
+        return retval
+
+    def _recordOutput(self, *args):
+        outstr = "%s" % args
+        if outstr[-1] != '\n':
+            outstr += '\n'
+
+        print outstr,
+
+        self.savedOutput += outstr
+
+    def finish(self):
+        self.recording.write(">>> print docage.wait()\n%s\n" %
+                             self._formatOutput())
+        
+        self.recording.write(">>> None # auto-verification below...\n")
+
+        import fauxroot
+        if fauxroot.SYSTEM_LOG:
+            self.recording.write(">>> import fauxroot\n")
+            self.recording.write(">>> for cmd in fauxroot.SYSTEM_LOG:\n")
+            self.recording.write("...     print cmd\n")
+        
+            for cmd in fauxroot.SYSTEM_LOG:
+                self.recording.write("%s\n" % repr(cmd))
+
+def main(args):
+    if len(args) < 2:
+        usage(args)
+        sys.exit(1)
+
+    mainFunc = ""
+    argsStart = 3
+    if args[2] == "test/skip_to_step.py":
+        mainFunc = ", textui.main.main"
+        argsStart = 4
+    recording = open(args[1], "w")
+    recording.write(HEADER % (repr(args[argsStart:]), mainFunc))
+
+    tr = TextRecorder(recording)
+
+    try:
+        sys.argv = [""] + args[2:]
+        execfile(os.path.join(TEST_DIR, "caged_weasel.py"), globals())
+    finally:
+        tr.finish()
+        recording.close()
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

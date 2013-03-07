@@ -1,0 +1,2 @@
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs

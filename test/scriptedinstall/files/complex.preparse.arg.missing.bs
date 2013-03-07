@@ -1,0 +1,15 @@
+#
+#	start_warnings
+#	argument "--drives" to command "clearpart" is missing a value.
+#	end_warnings
+#	start_errors
+#	clearpart requires one of the following arguments: --alldrives, --firstdisk, --ignoredrives=, --drives=
+#	clearpart --overwritevmfs not specified and partition 3 on vml.0000 is of type VMFS
+#	clearpart --overwritevmfs not specified and partition 1 on vml.0001 is of type VMFS
+#	end_errors
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+clearpart --drives
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs

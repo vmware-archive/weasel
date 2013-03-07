@@ -1,0 +1,17 @@
+#
+#	start_verify
+#	userchoices.getPreScripts() == [{'script':Script('echo "hi"\n', '/bin/bash', False, 0, True)}]
+#	userchoices.getPostScripts() == [{'script':Script('why do\nyou \ntaunt \nme\n\n', '/usr/bin/python', True, 5, False)}]
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+
+
+
+%pre --interpreter=bash
+echo "hi"
+%post --interpreter=python --timeout=5
+why do
+you 
+taunt 
+me
+

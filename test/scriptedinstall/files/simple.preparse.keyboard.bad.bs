@@ -1,0 +1,9 @@
+#
+#	start_warnings
+#	invalid keyboard type "badkeyboardname" was specified. Using default.
+#	end_warnings
+#	start_verify
+#	userchoices.getKeyboard() == {}
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.keyboard.bs

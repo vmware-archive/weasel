@@ -1,0 +1,1 @@
+network --device=vmnic32 --bootproto=dhcp --ip=192.168.0.1

@@ -1,0 +1,24 @@
+#
+#	start_warnings
+#	mount point was specified for type "vmkcore".
+#	end_warnings
+#	start_verify
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[5].mountPoint == None
+#	isinstance(userchoices.getPhysicalPartitionRequests('vml.0000')[5].fsType, fsset.getSupportedFileSystems()['vmkcore'])
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[5].minimumSize == 256
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[5].maximumSize == 0
+#	userchoices.getPhysicalPartitionRequests('vml.0000')[5].grow	== False
+#	end_verify
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+
+clearpart --drives=vml.0000 --overwritevmfs
+part /boot --fstype=ext3 --size=100 --ondisk=vml.0000
+part / --fstype=ext3 --size=3000 --ondisk=vml.0000
+part swap --size=256 --grow --maxsize=512 --ondrive=vml.0000 --fstype=swap
+part /var/log --fstype=ext3 --size=500 --grow --maxsize=2000 --ondisk=vml.0000
+part cos --size=1500 --grow --ondisk=vml.0000 --fstype=vmfs3
+
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/negative.partition.vmkcore.mount.bs

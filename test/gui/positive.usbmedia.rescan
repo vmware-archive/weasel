@@ -1,0 +1,167 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'media']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Install Media</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Select the source for this ESX installation'
+>>> mainwindow.InstallUsbRadioButton.get_property("label")
+'CD-ROM or USB Storage'
+>>> mainwindow.InstallUsbRadioButton.get_property("sensitive")
+True
+>>> mainwindow.InstallNfsRadioButton.get_property("label")
+'Network File System (NFS)'
+>>> mainwindow.InstallNfsRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallHttpRadioButtonalignment1framemainwindow.get_property("label")
+'World Wide Web (HTTP)'
+>>> mainwindow.InstallHttpRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallFtpRadioButtonalignment1framemainwindow.get_property("label")
+'File server (FTP)'
+>>> mainwindow.InstallFtpRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.UsbMediaView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.UsbMediaView)
+  ['/dev/sr1', 'No packages', '(no install media found)', '#ff0000']
+  ['/dev/sr0', 'Installation packages', 'VMware ESX K/L e.x.p (0.3.00000)', '#000000']
+  ['Kingston DataTraveler 2.0', 'Installation packages', 'VMware ESX K/L e.x.p (0.3.00000)', '#000000']
+  ['Lexar Firefly', 'esx_40.iso', 'VMware ESX K/L 4.0 (0.3.00000)', '#000000']
+  ['Lexar Firefly', 'esx.iso', 'VMware ESX K/L e.x.p (0.3.00000)', '#000000']
+  ['Lexar Firefly2', 'No packages', '(no install media found)', '#ff0000']
+>>> mainwindow.kGtkLabelEject.get_property("label")
+'Eject'
+>>> mainwindow.UsbEject.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelRescan.get_property("label")
+'Rescan'
+>>> mainwindow.UsbRescan.get_property("sensitive")
+True
+>>> mainwindow.UsbMediaView.set_cursor((1,))
+>>> runner.sleep()
+>>> import fauxconfig
+>>> fauxconfig.PARTITION_CONTENTS["/dev/sr1"]["packages.xml"] = (
+...     fauxconfig.PACKAGES_XML_CONTENTS)
+>>> mainwindow.UsbRescan.clicked()
+>>> runner.sleep()
+>>> print flatten_tree(mainwindow.UsbMediaView)
+  ['/dev/sr1', 'Installation packages', 'VMware ESX K/L e.x.p (0.3.00000)', '#000000']
+  ['/dev/sr0', 'Installation packages', 'VMware ESX K/L e.x.p (0.3.00000)', '#000000']
+  ['Kingston DataTraveler 2.0', 'Installation packages', 'VMware ESX K/L e.x.p (0.3.00000)', '#000000']
+  ['Lexar Firefly', 'esx_40.iso', 'VMware ESX K/L 4.0 (0.3.00000)', '#000000']
+  ['Lexar Firefly', 'esx.iso', 'VMware ESX K/L e.x.p (0.3.00000)', '#000000']
+  ['Lexar Firefly2', 'No packages', '(no install media found)', '#ff0000']
+>>> mainwindow.UsbMediaView.set_cursor((0,))
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.SetupchoicebasicRadioButton.get_property("label")
+'Standard setup'
+>>> mainwindow.SetupchoicebasicRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label125.get_property("label")
+'Setup ESX on a single hard drive or LUN.'
+>>> mainwindow.SetupchoiceadvancedRadioButton.get_property("label")
+'Advanced setup'
+>>> mainwindow.SetupchoiceadvancedRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label126.get_property("label")
+'View and customize the individual ESX partitions.'
+>>> mainwindow.kGtkLabel0SetupchoicebootloaderCheckButtonalignment47alignment44framemainwindow.get_property("label")
+'Configure boot loader automatically (leave checked if unsure)'
+>>> mainwindow.SetupchoicebootloaderCheckButton.get_property("sensitive")
+True
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['/usr/bin/mount', '-t', 'iso9660', '/dev/sr1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/sr0', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdd1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/media']
+['/usr/bin/mount', '-o', 'loop', '-t', 'iso9660', '/mnt/media/esx_40.iso', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/media']
+['/usr/bin/mount', '-o', 'loop', '-t', 'iso9660', '/mnt/media/esx.iso', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdn1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdn1', '/mnt/usbmedia']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/sr1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/sr0', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdd1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/media']
+['/usr/bin/mount', '-o', 'loop', '-t', 'iso9660', '/mnt/media/esx_40.iso', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdg1', '/mnt/media']
+['/usr/bin/mount', '-o', 'loop', '-t', 'iso9660', '/mnt/media/esx.iso', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdn1', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/mount', '-t', 'ext3', '/dev/sdn1', '/mnt/usbmedia']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/sr1', '/mnt/source']

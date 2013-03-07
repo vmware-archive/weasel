@@ -1,0 +1,1 @@
+clearpart --drives=sda --overwritevmfs

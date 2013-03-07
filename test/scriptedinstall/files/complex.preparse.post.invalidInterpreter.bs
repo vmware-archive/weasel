@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	interpreter "zshell" not found.
+#	end_errors
+#	
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.post.invalidInterpreter.bs

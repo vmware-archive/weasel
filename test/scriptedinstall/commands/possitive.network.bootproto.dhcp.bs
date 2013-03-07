@@ -1,0 +1,1 @@
+network --bootproto=dhcp --device=vmnic32

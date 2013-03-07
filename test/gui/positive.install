@@ -1,0 +1,632 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'weasel.py', '--nox']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Title</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Text description field.'
+>>> mainwindow.label95.get_property("label")
+'This wizard will guide you through the installation of ESX.'
+>>> mainwindow.label96.get_property("label")
+'To continue, click Next.'
+>>> mainwindow.label93.get_property("label")
+'<b><span size="18000">Welcome to the ESX Installer</span></b>'
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+False
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.kGtkLabel0EulaCheckButtonalignment12framemainwindow.get_property("label")
+'I accept the terms of the license agreement'
+>>> mainwindow.EulaCheckButton.get_property("sensitive")
+True
+>>> mainwindow.EulaCheckButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.KeyboardTreeView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.KeyboardTreeView)
+  ['Belgian (be-latin1)']
+  ['Brazilian (ABNT2)']
+  ['Croatian']
+  ['Czechoslovakian']
+  ['Czechoslovakian (qwertz)']
+  ['Danish']
+  ['Danish (latin1)']
+  ['Dutch']
+  ['Dvorak']
+  ['Estonian']
+  ['Finnish']
+  ['Finnish (latin1)']
+  ['French (latin1)']
+  ['French (latin9)']
+  ['French (pc)']
+  ['German']
+  ['German (latin1 w/ no deadkeys)']
+  ['German (latin1)']
+  ['Greek']
+  ['Icelandic']
+  ['Italian']
+  ['Italian (IBM)']
+  ['Italian (it2)']
+  ['Japanese']
+  ['Latin American']
+  ['Macedonian']
+  ['Norwegian']
+  ['Polish']
+  ['Portuguese']
+  ['Romanian']
+  ['Russian']
+  ['Russian (Microsoft)']
+  ['Russian (cp1251)']
+  ['Slovenian']
+  ['Spanish']
+  ['Swedish']
+  ['Swiss French (latin1)']
+  ['Swiss German (latin1)']
+  ['Turkish']
+  ['U.S. English']
+  ['U.S. International']
+  ['Ukrainian']
+  ['United Kingdom']
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label1.get_property("label")
+'Do you want to install custom drivers?'
+>>> mainwindow.kGtkLabelNo.get_property("label")
+'No'
+>>> mainwindow.CustomdriversNoRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelYes.get_property("label")
+'Yes'
+>>> mainwindow.CustomdriversYesRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label2.get_property("label")
+'Click "Add..." to eject the installation media and select drivers for installation.'
+>>> mainwindow.CustomdriversTreeView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.CustomdriversTreeView)
+(empty)
+>>> mainwindow.kGtkLabelAdd___.get_property("label")
+'Add...'
+>>> mainwindow.CustomdriversAddButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelRemove.get_property("label")
+'Remove'
+>>> mainwindow.CustomdriversRemoveButton.get_property("sensitive")
+False
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_Yes.get_property("label")
+'_Yes'
+>>> GtkMessageDialog.kGtkButtongtk_yes.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkLabel_No.get_property("label")
+'_No'
+>>> GtkMessageDialog.kGtkButtongtk_no.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkButtongtk_no.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel0GtkFramecommon_windowGtkMessageDialog.get_property("label")
+'The install wizard will load any drivers required for ESX. Once this step is completed, additional custom drivers cannot be loaded.\n\nLoad the system drivers?'
+>>> GtkMessageDialog.kGtkLabel1GtkFramecommon_windowGtkMessageDialog.get_property("label") #doctest: +SKIP
+''
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>Load Drivers</b>'
+>>> GtkMessageDialog.kGtkButtongtk_yes.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose("GtkMessageDialog")
+>>> runner.sleep()
+>>> mainwindow.DriverloadLabel.get_property("label")
+'Status:'
+>>> mainwindow.DriverloadStatusLabel.get_property("label") #doctest: +SKIP
+''
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.kGtkLabel0serial_radioalignment37framemainwindow.get_property("label")
+'Enter a serial number now:'
+>>> mainwindow.serial_radio.get_property("sensitive")
+True
+>>> mainwindow.label117.get_property("label")
+'Serial Number:'
+>>> mainwindow.serialnum0.get_property("sensitive")
+True
+>>> mainwindow.label118.get_property("label")
+'-'
+>>> mainwindow.serialnum1.get_property("sensitive")
+True
+>>> mainwindow.label119.get_property("label")
+'-'
+>>> mainwindow.serialnum2.get_property("sensitive")
+True
+>>> mainwindow.label120.get_property("label")
+'-'
+>>> mainwindow.serialnum3.get_property("sensitive")
+True
+>>> mainwindow.label121.get_property("label")
+'-'
+>>> mainwindow.serialnum4.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0eval_radioalignment37framemainwindow.get_property("label")
+'Enter a serial number later'
+>>> mainwindow.eval_radio.get_property("sensitive")
+True
+>>> mainwindow.label122.get_property("label")
+'Choose this option to evaluate this product or to configure the serial number later using vCenter Server.'
+>>> mainwindow.serial_radio.clicked()
+>>> runner.sleep()
+>>> mainwindow.eval_radio.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label175.get_property("label")
+'Select an adapter for ESX to use for system tasks.'
+>>> mainwindow.CosnetworkadapterComboBox.get_property("sensitive")
+True
+>>> mainwindow.label180.get_property("label")
+'VLAN ID'
+>>> mainwindow.CosnetworkadapterVlanIDEntry.get_property("sensitive")
+True
+>>> mainwindow.label179.get_property("label")
+'VLAN Settings:'
+>>> mainwindow.kGtkLabel0CosnetworkadapterVlanCheckButtontable15alignment44framemainwindow.get_property("label")
+'This adapter requires a VLAN ID (Leave unchecked if you are not sure)'
+>>> mainwindow.CosnetworkadapterVlanCheckButton.get_property("sensitive")
+True
+>>> mainwindow.label178.get_property("label")
+'Network Adapter:'
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label179.get_property("label")
+'Network Adapter:'
+>>> mainwindow.CosnetworkNetworkAdapterLabel.get_property("label")
+'vmnic32'
+>>> mainwindow.kGtkLabel0CosnetworkDHCPRadioButtonalignment18frame2alignment17framemainwindow.get_property("label")
+'Set automatically using DHCP'
+>>> mainwindow.CosnetworkDHCPRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0radiobutton2alignment18frame2alignment17framemainwindow.get_property("label")
+'Use the following network settings:'
+>>> mainwindow.radiobutton2.get_property("sensitive")
+True
+>>> mainwindow.label192.get_property("label")
+'Enter a fully qualified host name (e.g. host.example.com)'
+>>> mainwindow.CosnetworkHostnameEntry.get_property("sensitive")
+True
+>>> mainwindow.SecondaryNS.get_property("sensitive")
+True
+>>> mainwindow.PrimaryNS.get_property("sensitive")
+True
+>>> mainwindow.label191.get_property("label")
+'Host name:'
+>>> mainwindow.label190.get_property("label")
+'Secondary DNS:'
+>>> mainwindow.label189.get_property("label")
+'Primary DNS:'
+>>> mainwindow.label186.get_property("label")
+'Gateway:'
+>>> mainwindow.label187.get_property("label")
+'Subnet Mask:'
+>>> mainwindow.label188.get_property("label")
+'IP Address:'
+>>> mainwindow.SubnetMask.get_property("sensitive")
+True
+>>> mainwindow.Gateway.get_property("sensitive")
+True
+>>> mainwindow.IPAddress.get_property("sensitive")
+True
+>>> mainwindow.label24.get_property("label")
+'Adapter Settings'
+>>> mainwindow.kGtkLabel0activate_buttonhbuttonbox1alignment17framemainwindow.get_property("label")
+'Test these settings'
+>>> mainwindow.activate_button.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.kGtkLabel0SetupchoicebasicRadioButtonalignment44framemainwindow.get_property("label")
+'Standard setup'
+>>> mainwindow.SetupchoicebasicRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label125.get_property("label")
+'Setup ESX on a single hard drive or LUN.'
+>>> mainwindow.kGtkLabel0SetupchoiceadvancedRadioButtonalignment44framemainwindow.get_property("label")
+'Advanced setup'
+>>> mainwindow.SetupchoiceadvancedRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label126.get_property("label")
+'View and customize the individual ESX partitions.'
+>>> mainwindow.kGtkLabel0SetupchoicebootloaderCheckButtonalignment47alignment44framemainwindow.get_property("label")
+'Configure boot loader automatically (leave checked if unsure)'
+>>> mainwindow.SetupchoicebootloaderCheckButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label121.get_property("label")
+'Select the storage device to install ESX (requires at least 9.5 GB).'
+>>> mainwindow.InstalllocationView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.InstalllocationView)
+  ['Local Storage', True, True]
+    ['ATA WDC FKE1800UT (vml.0041)', '0', '2.05 TB', 'vml.0041', False, False]
+    ['ATA WDC FKE1600 (vml.0000)', '0', '76.80 GB', 'vml.0000', True, True]
+    ['ATA WDC FKE1700UT (vml.0001)', '1', '76.80 GB', 'vml.0001', True, True]
+      ['Fake Path', False, False]
+    ['Kingston DataTraveler 2.0 (vml.0003)', '1', '512 MB', 'vml.0003', False, False]
+    ['Lexar Firefly (vml.0025)', '0', '512 MB', 'vml.0025', False, False]
+    ['IDE HD Vendor IDE HD Model (vml.0030)', '0', '76.80 GB', 'vml.0030', True, True]
+    ['Lexar Firefly2 (vml.0026)', '1', '512 MB', 'vml.0026', False, False]
+    ['Compaq CCISS Disk (vml.0010)', '', '76.80 GB', 'vml.0010', False, False]
+  ['Remote Storage', True, True]
+    ['ATA WDC FKE1800UT (vml.0040)', '2', '2.56 GB', 'vml.0040', False, False]
+      ['WWPN: 20:06:00:a0:b8:0f:a2:70 WWNN: 20:06:00:a0:b8:0f:a2:6f', False, False]
+      ['WWPN: Bo:gu:sP:at:hT:oD:ev:ic:e', False, False]
+    ['ATA WDC FKE1600 (vml.0006)', '6', '768.00 GB', 'vml.0006', True, True]
+>>> mainwindow.kGtkLabel0InstalllocationIscsiButtonhbuttonbox5alignment40framemainwindow.get_property("label")
+'Add software iSCSI storage...'
+>>> mainwindow.InstalllocationIscsiButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_OK.get_property("label")
+'_OK'
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkLabel_Cancel.get_property("label")
+'_Cancel'
+>>> GtkMessageDialog.kGtkButtongtk_cancel.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkButtongtk_cancel.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel1GtkFramecommon_windowGtkMessageDialog.get_property("label") #doctest: +SKIP
+''
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>Existing ESX And Datastore</b>'
+>>> GtkMessageDialog.kGtkButtongtk_ok.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose("GtkMessageDialog")
+>>> runner.sleep()
+>>> mainwindow.TimezoneDrawingArea.get_property("sensitive")
+True
+>>> mainwindow.hover_label.get_property("label") #doctest: +SKIP
+''
+>>> mainwindow.tz_label.get_property("label")
+'Time zone:'
+>>> mainwindow.tz_entry.get_property("sensitive")
+False
+>>> mainwindow.kGtkLabelAdvanced___.get_property("label")
+'Advanced...'
+>>> mainwindow.tz_button.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.timedate_label.get_property("label")
+'How should the date and time for ESX be configured?'
+>>> mainwindow.label111.get_property("label")
+'NTP Server:'
+>>> mainwindow.ntpserver_entry.get_property("sensitive")
+True
+>>> mainwindow.ntpserver_error.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelSynchronize.get_property("label")
+'Synchronize'
+>>> mainwindow.ntpserver_sync.get_property("sensitive")
+False
+>>> mainwindow.kGtkLabelAutomatically.get_property("label")
+'Automatically'
+>>> mainwindow.TimedateAutomaticallyRadioButton.get_property("sensitive")
+True
+>>> mainwindow.clock_entry.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelManually.get_property("label")
+'Manually'
+>>> mainwindow.TimedateManuallyRadioButton.get_property("sensitive")
+True
+>>> mainwindow.TimedateManuallyRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.TimedateAutomaticallyRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.TimedateAutomaticallyRadioButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("n")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("nt")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.e")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.en")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.v")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vm")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vmw")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vmwa")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vmwar")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vmware")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vmware.")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vmware.c")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vmware.co")
+>>> runner.sleep()
+>>> mainwindow.ntpserver_entry.set_text("ntp1.eng.vmware.com")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label132.get_property("label")
+'The password must be at least 6 characters long.'
+>>> mainwindow.AdduserTreeView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.AdduserTreeView)
+(empty)
+>>> mainwindow.kGtkLabelAdd.get_property("label")
+'Add'
+>>> mainwindow.AdduserButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelRemove.get_property("label")
+'Remove'
+>>> mainwindow.RemoveuserButton.get_property("sensitive")
+False
+>>> mainwindow.label133.get_property("label")
+'Additional Accounts:'
+>>> mainwindow.RootpasswordPassword2Entry.get_property("sensitive")
+True
+>>> mainwindow.entry48.get_property("sensitive")
+False
+>>> mainwindow.RootpasswordPassword1Entry.get_property("sensitive")
+True
+>>> mainwindow.label131.get_property("label") #doctest: +SKIP
+''
+>>> mainwindow.label129.get_property("label")
+'Confirm Password:'
+>>> mainwindow.label127.get_property("label")
+'Password:'
+>>> mainwindow.label128.get_property("label")
+'User Name:'
+>>> mainwindow.RootpasswordPassword1Entry.set_text("f")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword1Entry.set_text("fo")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword1Entry.set_text("foo")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword1Entry.set_text("foob")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword1Entry.set_text("fooba")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword1Entry.set_text("foobar")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword2Entry.set_text("f")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword2Entry.set_text("fo")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword2Entry.set_text("foo")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword2Entry.set_text("foob")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword2Entry.set_text("fooba")
+>>> runner.sleep()
+>>> mainwindow.RootpasswordPassword2Entry.set_text("foobar")
+>>> runner.sleep()
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.label74.get_property("label")
+'Click Next to install ESX.'
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.InstallationLabel.get_property("label")
+'Status:'
+>>> mainwindow.InstallationStatusLabel.get_property("label") #doctest: +SKIP
+''
+>>> mainwindow.label80.get_property("label")
+'To stop the installation, click Cancel.'
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.FinishedNetworkLabel.get_property("label")
+"http://<This machine's IP address>"
+>>> mainwindow.label83.get_property("label")
+'<b><span size="18000">ESX 4.1 Installation Complete</span></b>'
+>>> mainwindow.label82.get_property("label")
+'To manage ESX after rebooting, use any\nweb browser to open the URL:'
+>>> mainwindow.label81.get_property("label")
+'Click Finish to reboot this system and start ESX'
+>>> mainwindow.MainFinishButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['/usr/bin/setxkbmap', '-layout', u'us', '-model', u'pc105']
+['/usr/bin/umount', '/mnt/source']
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['touch', '/etc/ntp.conf']
+['/usr/bin/mount', '/dev/sda1', '/mnt/testdir']
+['/usr/bin/umount', '/mnt/testdir']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/cdrom', '/mnt/source']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkfs.ext2', '/dev/sda1']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sda1']
+['/usr/sbin/vmkfstools', '-C', 'vmfs3', '-b', '1m', '-S', 'Storage1', '/vmfs/devices/disks/vml.0000:4']
+['/usr/sbin/vmkfstools', '-c', '7604M', '/vmfs/volumes/Storage1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['/usr/sbin/vsd', '-cu', '-f', '/vmfs/volumes/Storage1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkswap', '-v1', '/dev/sdh1']
+['/usr/sbin/mkfs.ext2', '/dev/sdh2']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh2']
+['/usr/sbin/mkfs.ext2', '-L', 'esx-root', '/dev/sdh4']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh4']
+['/usr/bin/mount', '/dev/sdh4', '/mnt/sysimage']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/boot']
+['/usr/bin/mount', '/dev/sdh2', '/mnt/sysimage/var/log']
+['/usr/bin/mount', '-t', 'proc', '/proc', '/mnt/sysimage//proc']
+['/usr/bin/mount', '-t', 'sysfs', '/sys', '/mnt/sysimage//sys']
+['/bin/rpm', '--rebuilddb']
+['/sbin/chkconfig', 'netfs', 'off']
+['/sbin/chkconfig', 'nfslock', 'off']
+['/sbin/chkconfig', 'portmap', 'off']
+['/sbin/chkconfig', 'iptables', 'off']
+['/sbin/chkconfig', 'sshd', 'on']
+['/sbin/chkconfig', 'ntpd', 'on']
+['/usr/sbin/esxupdate', 'syncdb', '-m', '/tmp/metadata.zip']
+['/mnt/sysimage/usr/sbin/esxcfg-configcheck']
+['/usr/sbin/esxcfg-firewall', '--enableService', 'ntpClient']
+['/usr/sbin/esxcfg-auth', '--kickstart', '--nostart', '--usepamqc', '8', '8', '8', '7', '6', '0', '--enableshadow', '--enablemd5', '--disablenis', '--disableldap', '--disableldapauth', '--disableldaptls', '--disablekrb5']
+['/usr/bin/chage', '-M', '-1', 'root']
+['touch', '/mnt/sysimage//etc/vmware/sysboot.conf']
+['/usr/sbin/esxcfg-boot', '-b', '--update-trouble']
+['/usr/sbin/grub', '--batch', '--device-map=/tmp/device.map', '<<EOF', 'root', '(hd0,0)', 'setup', '(hd0)', 'quit', 'EOF']
+['/usr/sbin/esxcfg-boot', '--rebuild', '-b', '--update-trouble']
+>>> import docage
+>>> docage.printFiles(["/etc/ntp.conf",
+...                    "/mnt/sysimage/boot/grub/grub.conf",
+...                    "/mnt/sysimage/root/ks.cfg",
+...                    "/mnt/sysimage/etc/sysconfig/keyboard",
+...                    "/mnt/sysimage/etc/sysconfig/clock",
+...                    "/mnt/sysimage/etc/sysconfig/i18n"])
+/etc/ntp.conf (regular f 700)
+/mnt/sysimage/boot/grub/grub.conf (regular f 600)
+  default 0
+  ###################### grub.conf #####################
+  # this file was generated by bootloader.py
+  #
+  # Any entries in this file marked with the comment
+  #   #vmware:autogenerated esx
+  # Should not be edited by hand.  They are likely to
+  # be clobbered on or before the next reboot.
+  #
+  timeout=3
+<BLANKLINE>
+  title ESX vmkernel
+          #vmware:autogenerated esx
+          root (hd0,0)
+          uppermem 307200
+          kernel /vmlinuz ro root=UUID=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51c mem=300M quiet
+          initrd /initrd.img
+  title Troubleshooting mode
+          #vmware:autogenerated esx
+          root (hd0,0)
+          uppermem 307200
+          kernel /trouble/vmlinuz ro root=UUID=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51c mem=300M trouble quiet
+          initrd /trouble/initrd.img
+<BLANKLINE>
+/mnt/sysimage/etc/sysconfig/clock (regular f 700)
+  ZONE=US/Pacific
+  UTC=true
+  ARC=false
+<BLANKLINE>
+/mnt/sysimage/etc/sysconfig/i18n (regular f 700)
+  LANG="en_US.UTF-8"
+<BLANKLINE>
+/mnt/sysimage/etc/sysconfig/keyboard (regular f 700)
+  KEYTABLE="us"
+  KEYBOARDTYPE="pc"
+<BLANKLINE>
+/mnt/sysimage/root/ks.cfg (regular f 600)
+<BLANKLINE>
+  accepteula
+<BLANKLINE>
+  keyboard us
+<BLANKLINE>
+  auth  --enablemd5 --enableshadow
+<BLANKLINE>
+  # Canonical drive names:
+  clearpart --drives=vml.0000
+  # Uncomment to use first detected disk:
+  #clearpart --firstdisk
+<BLANKLINE>
+  # Uncomment the esxlocation line and comment out the clearpart
+  # and physical partitions to do a non-destructive reinstall.
+  #esxlocation --uuid=4aa8e7c6-24ef-4f3e-9986-e628f7d1d51b
+<BLANKLINE>
+  install cdrom
+<BLANKLINE>
+  rootpw --iscrypted ...
+<BLANKLINE>
+  timezone --utc 'US/Pacific'
+<BLANKLINE>
+  network --addvmportgroup=true --device=vmnic32 --bootproto=dhcp
+<BLANKLINE>
+  part '/boot'  --fstype=ext3 --size=1100  --ondisk=vml.0000
+  # Uncomment to use first detected disk:
+  #part '/boot'  --fstype=ext3 --size=1100  --onfirstdisk
+  part 'none'  --fstype=vmkcore --size=110  --ondisk=vml.0000
+  # Uncomment to use first detected disk:
+  #part 'none'  --fstype=vmkcore --size=110  --onfirstdisk
+  part 'Storage1'  --fstype=vmfs3 --size=8604 --grow  --ondisk=vml.0000
+  # Uncomment to use first detected disk:
+  #part 'Storage1'  --fstype=vmfs3 --size=8604 --grow  --onfirstdisk
+<BLANKLINE>
+  virtualdisk 'esxconsole' --size=7604 --onvmfs='Storage1'
+<BLANKLINE>
+  part 'swap'  --fstype=swap --size=600 --onvirtualdisk='esxconsole'
+  part '/var/log'  --fstype=ext3 --size=2000 --onvirtualdisk='esxconsole'
+  part '/'  --fstype=ext3 --size=5000 --grow --onvirtualdisk='esxconsole'
+<BLANKLINE>
+  %post --interpreter=bash
+<BLANKLINE>
+<BLANKLINE>
+  # ntp settings
+  esxcfg-firewall --enableService ntpClient
+  chkconfig ntpd on
+  cat > /etc/ntp.conf <<EOF
+  # ---- ntp.conf ----
+  # Created by Weasel (ESX Installer)
+<BLANKLINE>
+  # Permit time synchronization with our time source, but do not
+  # permit the source to query or modify the service on this system.
+  restrict default kod nomodify notrap nopeer noquery
+  restrict -6 default kod nomodify notrap nopeer noquery
+<BLANKLINE>
+  server ntp1.eng.vmware.com
+<BLANKLINE>
+  EOF
+<BLANKLINE>

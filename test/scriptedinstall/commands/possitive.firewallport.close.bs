@@ -1,0 +1,1 @@
+firewallport --close --port=2 --proto=udp --dir=out --name=bar

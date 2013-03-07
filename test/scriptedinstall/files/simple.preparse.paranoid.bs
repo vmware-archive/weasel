@@ -1,0 +1,6 @@
+#
+#	start_verify
+#	userchoices.getParanoid() == True
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.paranoid.bs

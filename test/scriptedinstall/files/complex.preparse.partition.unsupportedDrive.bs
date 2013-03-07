@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	vmfs3 not supported on drive "vml.0003"
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.partition.unsupportedDrive.bs

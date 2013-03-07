@@ -1,0 +1,26 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+
+vmserialnum --esx=thisi-sanex-pired-seria-lnumb
+
+install cdrom
+
+reboot
+
+>>> import docage
+>>> docage.run()
+>>> docage.printFiles(["/dev/tty6"])
+/dev/tty6 (regular f 700)
+  Could not get driver name for /dev/sdb
+  No Console Path for /vmfs/devices/disks/vml.0002.  Skipping lun.
+  Parted couldn't open device /dev/sde.  Skipping lun.
+  Could not get driver name for /dev/cciss/c0d0
+<BLANKLINE>
+  error:/ks.cfg:line 10: The serial number has expired.
+<BLANKLINE>

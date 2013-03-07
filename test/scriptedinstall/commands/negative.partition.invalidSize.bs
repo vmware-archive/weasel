@@ -1,0 +1,1 @@
+part / --size=aa --fstype=ext3 --ondisk=sda

@@ -1,0 +1,1 @@
+auth --enablekrb5 --enablenis --disableshadow --disablemd5 

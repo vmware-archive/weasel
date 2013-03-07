@@ -1,0 +1,1 @@
+bootloader --password=pwd --location=mbr

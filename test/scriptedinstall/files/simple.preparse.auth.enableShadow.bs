@@ -1,0 +1,12 @@
+#
+#	start_warnings
+#	--disablemd5 is deprecated
+#	--enableshadow is deprecated
+#	end_warnings
+#	start_verify
+#	userchoices.getAuth()['nis'] == False
+#	userchoices.getAuth()['kerberos'] == False
+#	userchoices.getAuth()['ldap'] == False
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/possitive.auth.enableShadow.bs

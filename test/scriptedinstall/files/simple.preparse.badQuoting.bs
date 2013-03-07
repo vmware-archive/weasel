@@ -1,0 +1,7 @@
+#
+#	start_errors
+#	No closing quotation
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+
+bootloader --location=mbr --append="this is a \"quoting\" test

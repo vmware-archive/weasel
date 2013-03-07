@@ -1,0 +1,9 @@
+#
+#	start_warnings:
+#	authconfig option not specified. Using default settings
+#	end_warnings
+#	start_verify
+#	userchoices.getAuth() == {}
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.warn.bs

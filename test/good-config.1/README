@@ -1,0 +1,9 @@
+
+This is a "good" configuration for caged weasel.
+
+MANIFEST
+--------
+
+  mnt/source/VMware/RPMS/packageData.pkl - A dummy packageData file
+    created by running createinstdepot.py in the weasel directory,
+    it should be enough to get caged weasel to run.

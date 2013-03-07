@@ -1,0 +1,12 @@
+#
+#	start_verify
+#	userchoices.getClearPartitions()['whichParts'] == userchoices.CLEAR_PARTS_ALL
+#	len(userchoices.getClearPartitions()['drives']) == 9
+#	sorted(userchoices.getClearPartitions()['drives']) == ['vml.0000','vml.0003','vml.0006','vml.0010','vml.0025','vml.0026','vml.0030','vml.0040','vml.0041']
+#	end_verify
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/possitive.clearpart.ignoredrives.bs

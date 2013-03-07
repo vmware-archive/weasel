@@ -1,0 +1,94 @@
+-*- Mode: doctest -*-
+
+>>> import sys
+>>> import docage
+>>> docage.setup()
+>>> import textui.main
+>>> docage.doitInTheBackground(['keyboard'], textui.main.main)
+>>> print docage.waitAndFeed('2')
+Keyboard--------------------------------------------------------
+Which keyboard model is attached to this computer?
+<BLANKLINE>
+Current choice:  U.S. English
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.waitAndFeed('')
+Keyboard--------------------------------------------------------
+  1. Belgian (be-latin1)
+  2. Brazilian (ABNT2)
+  3. Croatian
+  4. Czechoslovakian
+  5. Czechoslovakian (qwertz)
+  6. Danish
+  7. Danish (latin1)
+  8. Dutch
+  9. Dvorak
+ 10. Estonian
+ 11. Finnish
+ 12. Finnish (latin1)
+ 13. French (latin1)
+ 14. French (latin9)
+ 15. French (pc)
+ 16. German
+ 17. German (latin1 w/ no deadkeys)
+ 18. German (latin1)
+ 19. Greek
+ 20. Icelandic
+[<number>: keyboard choice, <enter>: more, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('')
+Keyboard--------------------------------------------------------
+ 21. Italian
+ 22. Italian (IBM)
+ 23. Italian (it2)
+ 24. Japanese
+ 25. Latin American
+ 26. Macedonian
+ 27. Norwegian
+ 28. Polish
+ 29. Portuguese
+ 30. Romanian
+ 31. Russian
+ 32. Russian (Microsoft)
+ 33. Russian (cp1251)
+ 34. Slovenian
+ 35. Spanish
+ 36. Swedish
+ 37. Turkish
+ 38. U.S. English
+ 39. U.S. International
+ 40. Ukrainian
+[<number>: keyboard choice, <enter>: more, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('41')
+Keyboard--------------------------------------------------------
+ 41. United Kingdom
+[<number>: keyboard choice, '<': back, '?': help, '!': exit]
+> 
+
+>>> print docage.waitAndFeed('1')
+Keyboard--------------------------------------------------------
+Which keyboard model is attached to this computer?
+<BLANKLINE>
+Current choice:  United Kingdom
+<BLANKLINE>
+ 1) Keep
+ 2) Change
+ <) Back
+ ?) Help
+ !) Exit
+<BLANKLINE>
+> 
+
+>>> print docage.wait()
+<BLANKLINE>
+

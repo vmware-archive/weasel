@@ -1,0 +1,10 @@
+#
+#	start_errors
+#	vmaccepteula command was not specified. You must read and accept the VMware ESX End User License Agreement by including the command in the scripted install script.
+#	end_errors
+#
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.clearpart.minimal.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs

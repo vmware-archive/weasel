@@ -1,0 +1,24 @@
+root:$1$GzfLyl7N$kcdkfh.52PpCQeYRNESOT.:0:0:root:/root:/bin/bash
+bin:*:1:1:bin:/bin:/sbin/nologin
+daemon:*:2:2:daemon:/sbin:/sbin/nologin
+adm:*:3:4:adm:/var/adm:/sbin/nologin
+lp:*:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:*:5:0:sync:/sbin:/bin/sync
+shutdown:*:6:0:shutdown:/sbin:/sbin/shutdown
+halt:*:7:0:halt:/sbin:/sbin/halt
+mail:*:8:12:mail:/var/spool/mail:/sbin/nologin
+news:*:9:13:news:/etc/news:
+uucp:*:10:14:uucp:/var/spool/uucp:/sbin/nologin
+operator:*:11:0:operator:/root:/sbin/nologin
+gopher:*:13:30:gopher:/var/gopher:/sbin/nologin
+ftp:*:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:*:99:99:Nobody:/:/sbin/nologin
+nscd:*:28:28:NSCD Daemon:/:/sbin/nologin
+vcsa:*:69:69:virtual console memory owner:/dev:/sbin/nologin
+ntp:*:38:38::/etc/ntp:/sbin/nologin
+sshd:*:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+rpc:*:32:32:Portmapper RPC user:/:/sbin/nologin
+pcap:*:77:77::/var/arpwatch:/sbin/nologin
+rpm:*:37:37::/var/lib/rpm:/sbin/nologin
+vimuser:*:12:20:vimuser:/sbin:/sbin/nologin
+joe:$1$GzfLyl7N$kcdkfh.52PpCQeYRNESOT.:500:500:Joe:/home/joe:/bin/zsh

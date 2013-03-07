@@ -1,0 +1,7 @@
+#
+#	start_verify
+#	userchoices.getBoot()['kernelParams'] == 'this is a "quoting" test'
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+
+bootloader --append="this is a \"quoting\" test" --location=mbr

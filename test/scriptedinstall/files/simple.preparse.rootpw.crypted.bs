@@ -1,0 +1,11 @@
+#
+#	start_verify
+#	userchoices.getRootPassword()['password'] == '$1$7U8tB$KvxsVx7VskMJuUtaDG.Z01'
+#	userchoices.getRootPassword()['passwordType'] == userchoices.ROOTPASSWORD_TYPE_MD5
+#	end_verify
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.clearpart.minimal.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.rootpw.crypted.bs

@@ -1,0 +1,86 @@
+# mode: -*- doctest -*-
+
+clearpart --drives=vml.0000 --overwritevmfs
+autopart --drive=vml.0000
+vmaccepteula
+rootpw mypassword
+network --bootproto=dhcp --device=vmnic32
+auth --enablemd5 --enableshadow
+
+install cdrom
+
+reboot
+
+>>> import docage
+>>> docage.setup()
+>>> import fauxroot
+>>> import fauxconfig
+>>> savedContents = fauxconfig.PARTITION_CONTENTS["/dev/cdrom"]
+>>> fauxroot.MASKED_FILES['/mnt/source/packages.xml'] = True
+>>> fauxconfig.PARTITION_CONTENTS["/dev/cdrom"] = { }
+>>> class RestoreContents:
+...     def next(self):
+...         self.called = True
+...         fauxconfig.PARTITION_CONTENTS["/dev/cdrom"] = savedContents
+>>> rc = RestoreContents()
+>>> fauxroot.PROMPTS["Insert the ESX Installation media.\n"
+...                  "Press <enter> when ready..."] = rc
+>>> docage.doit()
+>>> rc.called
+True
+>>> docage.printSystemLog()
+['chvt', '6']
+['/bin/bash', '/tmp/initscripts.sh']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '14.foobar']
+['cd', '/', '&&', 'INSTALLER=1', '/init', '71.bogusipmi']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['touch', '/etc/ntp.conf']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/cdrom', '/mnt/source']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/umount', '/mnt/media']
+['/usr/bin/eject', '/dev/cdrom']
+['/usr/bin/mount', '-t', 'iso9660', '/dev/cdrom', '/mnt/source']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkfs.ext2', '/dev/sda1']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sda1']
+['/usr/sbin/vmkfstools', '-C', 'vmfs3', '-b', '1m', '-S', 'datastore1', '/vmfs/devices/disks/vml.0000:4']
+['/usr/sbin/vmkfstools', '-c', '7604M', '/vmfs/volumes/datastore1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['/usr/sbin/vsd', '-cu', '-f', '/vmfs/volumes/datastore1/esxconsole-47b51b25-7c15-28d3-7cd0-000c2935404a/esxconsole.vmdk']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/sbin/mkswap', '-v1', '/dev/sdh1']
+['/usr/sbin/mkfs.ext2', '/dev/sdh2']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh2']
+['/usr/sbin/mkfs.ext2', '-L', 'esx-root', '/dev/sdh4']
+['touch', '/etc/mtab']
+['/usr/sbin/tune2fs', '-c0', '-i0', '-j', '/dev/sdh4']
+['/usr/bin/mount', '/dev/sdh4', '/mnt/sysimage']
+['/usr/bin/mount', '/dev/sda1', '/mnt/sysimage/boot']
+['/usr/bin/mount', '/dev/sdh2', '/mnt/sysimage/var/log']
+['/usr/bin/mount', '-t', 'proc', '/proc', '/mnt/sysimage//proc']
+['/usr/bin/mount', '-t', 'sysfs', '/sys', '/mnt/sysimage//sys']
+['/bin/rpm', '--rebuilddb']
+['/sbin/chkconfig', 'netfs', 'off']
+['/sbin/chkconfig', 'nfslock', 'off']
+['/sbin/chkconfig', 'portmap', 'off']
+['/sbin/chkconfig', 'iptables', 'off']
+['/sbin/chkconfig', 'sshd', 'on']
+['/usr/sbin/esxupdate', 'syncdb', '-m', '/tmp/metadata.zip']
+['/mnt/sysimage/usr/sbin/esxcfg-configcheck']
+['/usr/sbin/esxcfg-auth', '--kickstart', '--nostart', '--usepamqc', '8', '8', '8', '7', '6', '0', '--disablenis', '--disableldap', '--disableldapauth', '--disableldaptls', '--disablekrb5']
+['/usr/bin/chage', '-M', '-1', 'root']
+['touch', '/mnt/sysimage//etc/vmware/sysboot.conf']
+['/usr/sbin/esxcfg-boot', '-b', '--update-trouble']
+['/usr/sbin/grub', '--batch', '--device-map=/tmp/device.map', '<<EOF', 'root', '(hd0,0)', 'setup', '(hd0)', 'quit', 'EOF']
+['/usr/sbin/esxcfg-boot', '--rebuild', '-b', '--update-trouble']
+['/usr/bin/eject', '/dev/cdrom']
+['/etc/init.d/iptables', 'stop']
+['/usr/bin/umount', '/mnt/sysimage/proc']
+['/usr/bin/umount', '/mnt/sysimage/sys']
+['/usr/bin/umount', '/mnt/sysimage/var/log']
+['/usr/bin/umount', '/mnt/sysimage/boot']
+['/usr/bin/umount', '/mnt/sysimage']
+['/usr/bin/umount', '/mnt/source']
+['/usr/bin/eject']

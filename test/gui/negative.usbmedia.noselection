@@ -1,0 +1,83 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'media']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> import fauxroot
+>>> fauxroot.WRITTEN_FILES["/proc/sys/dev/cdrom/info"] = \
+...   fauxroot.CopyOnWriteFile()
+>>> import vmkctl
+>>> vmkctl.VMKCTL_STORAGE_CONFIG['disks'] = [
+...     disk for disk in vmkctl.VMKCTL_STORAGE_CONFIG['disks']
+...     if not disk['scsiPaths'] or disk['scsiPaths'][0]['adapter']['driver'] != 'usb-storage']
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Install Media</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Select the source for this ESX installation'
+>>> mainwindow.InstallUsbRadioButton.get_property("label")
+'CD-ROM or USB Storage'
+>>> mainwindow.InstallUsbRadioButton.get_property("sensitive")
+True
+>>> mainwindow.InstallNfsRadioButton.get_property("label")
+'Network File System (NFS)'
+>>> mainwindow.InstallNfsRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallHttpRadioButtonalignment1framemainwindow.get_property("label")
+'World Wide Web (HTTP)'
+>>> mainwindow.InstallHttpRadioButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabel0InstallFtpRadioButtonalignment1framemainwindow.get_property("label")
+'File server (FTP)'
+>>> mainwindow.InstallFtpRadioButton.get_property("sensitive")
+True
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.get_property("is-focus")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.MainNextButton.clicked()
+>>> runner.sleep()
+>>> mainwindow.UsbMediaView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.UsbMediaView)
+(empty)
+>>> mainwindow.kGtkLabelEject.get_property("label")
+'Eject'
+>>> mainwindow.UsbEject.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelRescan.get_property("label")
+'Rescan'
+>>> mainwindow.UsbRescan.get_property("sensitive")
+True
+>>> runner.sleep()
+>>> mainwindow.UsbEject.clicked()
+>>> runner.sleep()
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...
+>>> import fauxroot
+>>> for cmd in fauxroot.SYSTEM_LOG:
+...     print cmd
+['echo', 'mkblkdevs', '|', 'nash', '--force']
+['/usr/bin/umount', '/mnt/usbmedia']
+['/usr/bin/eject']

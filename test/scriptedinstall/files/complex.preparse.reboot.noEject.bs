@@ -1,0 +1,12 @@
+#
+#	start_warnings
+#	using network based installation but "--noeject" was specified for reboot command.
+#	end_warnings
+#	start_verify
+#	userchoices.getReboot() == True
+#	userchoices.getNoEject() == True
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.install.ftp.bs
+include ./scriptedinstall/commands/possitive.reboot.noEject.bs

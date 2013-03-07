@@ -1,0 +1,1 @@
+bootloader --append=noapic --driveorder=foo --location=mbr

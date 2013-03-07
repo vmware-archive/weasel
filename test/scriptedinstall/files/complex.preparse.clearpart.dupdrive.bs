@@ -1,0 +1,15 @@
+#
+#	start_warnings
+#	clearpart --drives= specified, but drive "sda" was already given.
+#	end_warnings
+#	start_verify
+#	len(userchoices.getClearPartitions()['drives']) == 1
+#	userchoices.getClearPartitions()['drives'][0] == 'vml.0000'
+#	end_verify
+#
+include ./scriptedinstall/commands/possitive.vmaccepteula.bs
+include ./scriptedinstall/commands/possitive.rootpw.plaintext.bs
+include ./scriptedinstall/commands/possitive.network.bootproto.dhcp.bs
+include ./scriptedinstall/commands/possitive.partition.minimal.bs
+include ./scriptedinstall/commands/possitive.auth.enableNIS.bs
+include ./scriptedinstall/commands/negative.clearpart.dupdrive.bs

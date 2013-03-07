@@ -1,0 +1,8 @@
+#
+#
+#	start_errors
+#	more than 256 commands were included in the kickstart file(s)
+#	end_errors
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.include.self.bs

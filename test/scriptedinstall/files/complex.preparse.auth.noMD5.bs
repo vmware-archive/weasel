@@ -1,0 +1,8 @@
+#
+#	start_warnings:
+#	--disableshadow is deprecated
+#	end_warnings
+#
+
+include ./scriptedinstall/files/possitive.minimal.warn.bs
+include ./scriptedinstall/commands/possitive.auth.noMD5.bs

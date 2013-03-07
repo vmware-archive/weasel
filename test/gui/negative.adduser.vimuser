@@ -1,0 +1,175 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'password']
+>>> import gtk
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree, drawing_event
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Set Administrator Password</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Enter the administrator (root) password for ESX'
+>>> mainwindow.label132.get_property("label")
+'The password must be at least 6 characters long.'
+>>> mainwindow.AdduserTreeView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.AdduserTreeView)
+(empty)
+>>> mainwindow.kGtkLabelAdd.get_property("label")
+'Add'
+>>> mainwindow.AdduserButton.get_property("sensitive")
+True
+>>> mainwindow.kGtkLabelRemove.get_property("label")
+'Remove'
+>>> mainwindow.RemoveuserButton.get_property("sensitive")
+False
+>>> mainwindow.label133.get_property("label")
+'Additional Accounts:'
+>>> mainwindow.RootpasswordPassword2Entry.get_property("sensitive")
+True
+>>> mainwindow.entry48.get_property("sensitive")
+False
+>>> mainwindow.RootpasswordPassword1Entry.get_property("sensitive")
+True
+>>> mainwindow.RootpasswordPassword1Entry.get_property("is-focus")
+True
+>>> mainwindow.label131.get_property("label")
+''
+>>> mainwindow.label129.get_property("label")
+'Confirm Password:'
+>>> mainwindow.label127.get_property("label")
+'Password:'
+>>> mainwindow.label128.get_property("label")
+'User Name:'
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.AdduserButton.clicked()
+>>> runner.sleep()
+>>> adduser = runner.waitopen("adduser")
+>>> adduser.kGtkLabel_b___b_.get_property("label")
+'<b></b>'
+>>> adduser.AdduserPassword2Entry.get_property("sensitive")
+True
+>>> adduser.AdduserPassword1Entry.get_property("sensitive")
+True
+>>> adduser.AdduserNameEntry.get_property("sensitive")
+True
+>>> adduser.AdduserNameEntry.get_property("is-focus")
+True
+>>> adduser.label136.get_property("label")
+'Confirm Password:'
+>>> adduser.label135.get_property("label")
+'Password:'
+>>> adduser.label134.get_property("label")
+'User Name:'
+>>> adduser.kGtkLabelOK.get_property("label")
+'OK'
+>>> adduser.AdduserOkButton.get_property("sensitive")
+True
+>>> adduser.kGtkLabelCancel.get_property("label")
+'Cancel'
+>>> adduser.AdduserCancelButton.get_property("sensitive")
+True
+>>> adduser.AdduserNameEntry.set_text("v")
+>>> runner.sleep()
+>>> adduser.AdduserNameEntry.set_text("vi")
+>>> runner.sleep()
+>>> adduser.AdduserNameEntry.set_text("vim")
+>>> runner.sleep()
+>>> adduser.AdduserNameEntry.set_text("vimu")
+>>> runner.sleep()
+>>> adduser.AdduserNameEntry.set_text("vimus")
+>>> runner.sleep()
+>>> adduser.AdduserNameEntry.set_text("vimuse")
+>>> runner.sleep()
+>>> adduser.AdduserNameEntry.set_text("vimuser")
+>>> runner.sleep()
+>>> adduser.AdduserPassword1Entry.set_text("f")
+>>> runner.sleep()
+>>> adduser.AdduserPassword1Entry.set_text("fo")
+>>> runner.sleep()
+>>> adduser.AdduserPassword1Entry.set_text("foo")
+>>> runner.sleep()
+>>> adduser.AdduserPassword1Entry.set_text("foob")
+>>> runner.sleep()
+>>> adduser.AdduserPassword1Entry.set_text("fooba")
+>>> runner.sleep()
+>>> adduser.AdduserPassword1Entry.set_text("foobar")
+>>> runner.sleep()
+>>> adduser.AdduserPassword2Entry.set_text("f")
+>>> runner.sleep()
+>>> adduser.AdduserPassword2Entry.set_text("fo")
+>>> runner.sleep()
+>>> adduser.AdduserPassword2Entry.set_text("foo")
+>>> runner.sleep()
+>>> adduser.AdduserPassword2Entry.set_text("foob")
+>>> runner.sleep()
+>>> adduser.AdduserPassword2Entry.set_text("fooba")
+>>> runner.sleep()
+>>> adduser.AdduserPassword2Entry.set_text("foobar")
+>>> runner.sleep()
+>>> adduser.AdduserOkButton.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog = runner.waitopen("GtkMessageDialog")
+>>> GtkMessageDialog.kGtkLabel_OK.get_property("label")
+'_OK'
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("sensitive")
+True
+>>> GtkMessageDialog.kGtkButtongtk_ok.get_property("is-focus")
+True
+>>> GtkMessageDialog.kGtkLabel0GtkFramecommon_windowGtkMessageDialog.get_property("label")
+'The account you specified is reserved by the system.'
+>>> GtkMessageDialog.kGtkLabel1GtkFramecommon_windowGtkMessageDialog.get_property("label")
+''
+>>> GtkMessageDialog.kGtkLabel0kGtkEventBox0common_windowGtkMessageDialogcommon_windowGtkMessageDialog.get_property("label")
+'<b>User Account Error</b>'
+>>> GtkMessageDialog.kGtkButtongtk_ok.clicked()
+>>> runner.sleep()
+>>> GtkMessageDialog.delete()
+>>> runner.waitclose('GtkMessageDialog')
+>>> runner.sleep()
+>>> adduser.AdduserCancelButton.clicked()
+>>> runner.sleep()
+>>> adduser.delete()
+>>> runner.waitclose('adduser')
+>>> runner.sleep()
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...

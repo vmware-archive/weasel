@@ -1,0 +1,1 @@
+virtualdisk cos --size=2000 --onvmfs="Storage 1"

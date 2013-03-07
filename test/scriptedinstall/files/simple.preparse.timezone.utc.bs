@@ -1,0 +1,10 @@
+#
+#	start_verify
+#	userchoices.getTimezone()['tzName'] == 'Asia/Magadan'
+#	userchoices.getTimezone()['isUTC'] == True
+#	end_verify
+#       start_warnings
+#       --utc is deprecated
+#       end_warnings
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.timezone.utc.bs

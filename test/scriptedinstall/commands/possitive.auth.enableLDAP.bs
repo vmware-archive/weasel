@@ -1,0 +1,1 @@
+auth --enableldap --ldapbasedn='dc=example,dc=com' --disableshadow --disablemd5

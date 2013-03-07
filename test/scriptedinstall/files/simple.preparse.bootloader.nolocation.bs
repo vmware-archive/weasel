@@ -1,0 +1,12 @@
+#
+#	start_verify
+#	userchoices.getBoot()['upgrade'] == False
+#	userchoices.getBoot()['doNotInstall'] == False
+#	userchoices.getBoot()['location'] == userchoices.BOOT_LOC_MBR
+#	userchoices.getBoot()['kernelParams'] == 'noapic'
+#	end_verify
+#	start_warnings
+#	bootloader --location not specified. Defaulting to MBR.
+#	end_warnings
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.bootloader.nolocation.bs

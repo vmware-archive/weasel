@@ -1,0 +1,1 @@
+part /bar --size=100 --fstype=ext3 --ondisk=foo

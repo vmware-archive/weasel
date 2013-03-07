@@ -1,0 +1,2 @@
+part / --size=1500 --grow --onvirtualdisk=cos --fstype=ext3
+part swap --size=256 --fstype=swap --onvirtualdisk=cos

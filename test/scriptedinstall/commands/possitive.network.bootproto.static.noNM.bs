@@ -1,0 +1,1 @@
+network --bootproto=static --device=vmnic32 --ip=192.168.0.1 --gateway=192.168.0.254 --nameserver=10.20.147.1 --hostname=test.host.com

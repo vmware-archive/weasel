@@ -1,0 +1,1 @@
+part / --size=500 --maxsize=-500 --grow --fstype=ext3 --ondisk=vml.0000

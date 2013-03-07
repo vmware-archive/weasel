@@ -1,0 +1,6 @@
+#
+#	start_warnings
+#	--fstype not specified, defaulting to "ext3"
+#	end_warnings
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.partition.noFSType.bs

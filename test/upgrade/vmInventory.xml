@@ -1,0 +1,10 @@
+<ConfigRoot>
+  <ConfigEntry id="0000">
+    <objID>16</objID>
+    <vmxCfgPath>/vmfs/volumes/47880142-903d8b35-2534-0030485c3370/TestVM/TestVM.vmx</vmxCfgPath>
+  </ConfigEntry>
+  <ConfigEntry id="0001">
+    <objID>32</objID>
+    <vmxCfgPath>/vmfs/volumes/47880142-903d8b35-2534-0030485c3370/AnotherVM/AnotherVM.vmx</vmxCfgPath>
+  </ConfigEntry>
+</ConfigRoot>

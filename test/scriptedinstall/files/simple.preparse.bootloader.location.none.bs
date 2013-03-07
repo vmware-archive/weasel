@@ -1,0 +1,11 @@
+#
+#	start_verify
+#	userchoices.getBoot()['upgrade'] == False
+#	userchoices.getBoot()['doNotInstall'] == True
+#	userchoices.getBoot()['kernelParams'] == 'noapic'
+#	userchoices.getBoot()['password'] == ''
+#	userchoices.getBoot()['passwordType'] == userchoices.BOOT_PASSWORD_TYPE_PLAIN
+#	userchoices.getBoot()['driveOrder'] == None
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.bootloader.location.none.bs

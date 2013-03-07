@@ -1,0 +1,1 @@
+bootloader --append=noapic --location=mbr --driveorder=sda

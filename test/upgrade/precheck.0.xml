@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<precheck>
+  <vmfsSpaceRequired>8000</vmfsSpaceRequired>
+  <tests>
+    <test>
+      <name>SUPPORTED_CPU</name>
+      <expected>
+        <value>True</value>
+      </expected>
+      <found>
+        <value>True</value>
+      </found>
+      <result>SUCCESS</result>
+    </test>
+  </tests>
+</precheck>
+

@@ -1,0 +1,80 @@
+>>> None # -*- Mode: doctest -*-
+>>> None # run: ['test/caged_weasel.py', 'test/skip_to_step.py', 'keyboard']
+>>> from kiwi.ui.test.runner import runner
+>>> from kiwi.ui.test.common import flatten_tree
+>>> runner.start()
+>>> runner.sleep()
+>>> mainwindow = runner.waitopen("mainwindow")
+>>> mainwindow.headerbarTitle.get_property("label")
+'<big>Select Keyboard</big>'
+>>> mainwindow.headerbarText.get_property("label")
+'Select the type of keyboard for this system'
+>>> mainwindow.KeyboardTreeView.get_property("sensitive")
+True
+>>> print flatten_tree(mainwindow.KeyboardTreeView)
+  ['Belgian (be-latin1)']
+  ['Brazilian (ABNT2)']
+  ['Croatian']
+  ['Czechoslovakian']
+  ['Czechoslovakian (qwertz)']
+  ['Danish']
+  ['Danish (latin1)']
+  ['Dutch']
+  ['Dvorak']
+  ['Estonian']
+  ['Finnish']
+  ['Finnish (latin1)']
+  ['French (latin1)']
+  ['French (latin9)']
+  ['French (pc)']
+  ['German']
+  ['German (latin1 w/ no deadkeys)']
+  ['German (latin1)']
+  ['Greek']
+  ['Icelandic']
+  ['Italian']
+  ['Italian (IBM)']
+  ['Italian (it2)']
+  ['Japanese']
+  ['Latin American']
+  ['Macedonian']
+  ['Norwegian']
+  ['Polish']
+  ['Portuguese']
+  ['Romanian']
+  ['Russian']
+  ['Russian (Microsoft)']
+  ['Russian (cp1251)']
+  ['Slovenian']
+  ['Spanish']
+  ['Swedish']
+  ['Swiss French (latin1)']
+  ['Swiss German (latin1)']
+  ['Turkish']
+  ['U.S. English']
+  ['U.S. International']
+  ['Ukrainian']
+  ['United Kingdom']
+>>> mainwindow.label7.get_property("label")
+'_Debug'
+>>> mainwindow.MainDebugButton.get_property("sensitive")
+True
+>>> mainwindow.label3.get_property("label")
+'_Back'
+>>> mainwindow.MainBackButton.get_property("sensitive")
+True
+>>> mainwindow.label4.get_property("label")
+'_Next'
+>>> mainwindow.MainNextButton.get_property("sensitive")
+True
+>>> mainwindow.label6.get_property("label")
+'_Finish'
+>>> mainwindow.MainFinishButton.get_property("sensitive")
+True
+>>> mainwindow.label5.get_property("label")
+'_Cancel'
+>>> mainwindow.MainCancelButton.get_property("sensitive")
+True
+>>> mainwindow.MainCancelButton.clicked()
+>>> mainwindow.delete() # XXX hack
+>>> None # auto-verification below...

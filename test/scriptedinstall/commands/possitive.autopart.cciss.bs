@@ -1,0 +1,1 @@
+autopart  --disk=cciss/c0d0

@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	virtualdisk size is too large.  7000MB is required, but the minimum free size on cosvmfs is 5000MB.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.virtualdisk.badsize2.bs

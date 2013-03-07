@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	vmserialnum --esx value requires five, five character tuples separated by dashes
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.vmserialnum.badformat.bs

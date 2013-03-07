@@ -1,0 +1,18 @@
+#
+#	start_verify
+#	len(userchoices.getVirtualPartitionRequests('cos')) == 2
+#	userchoices.getVirtualPartitionRequests('cos')[0].mountPoint == '/foo'
+#	isinstance(userchoices.getVirtualPartitionRequests('cos')[0].fsType, fsset.getSupportedFileSystems()['ext3'])
+#	userchoices.getVirtualPartitionRequests('cos')[0].minimumSize == 100
+#	userchoices.getVirtualPartitionRequests('cos')[0].maximumSize == 0
+#	userchoices.getVirtualPartitionRequests('cos')[0].grow == False
+
+#	userchoices.getVirtualPartitionRequests('cos')[1].mountPoint == '/bar'
+#	isinstance(userchoices.getVirtualPartitionRequests('cos')[1].fsType, fsset.getSupportedFileSystems()['ext3'])
+#	userchoices.getVirtualPartitionRequests('cos')[1].minimumSize == 100
+#	userchoices.getVirtualPartitionRequests('cos')[1].maximumSize == 0
+#	userchoices.getVirtualPartitionRequests('cos')[1].grow == False
+#	end_verify
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.virtualdisk.minimal.bs
+include ./scriptedinstall/commands/possitive.virtualpart.minimal.bs

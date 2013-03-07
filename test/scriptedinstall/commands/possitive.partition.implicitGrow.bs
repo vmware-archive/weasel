@@ -1,0 +1,2 @@
+part /foo --fstype=ext3 --size=100 --maxsize=300 --ondisk=vml.0000
+

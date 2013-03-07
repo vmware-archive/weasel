@@ -1,0 +1,6 @@
+#
+#	start_errors
+#	Datastore names must not start or end with spaces.
+#	end_errors
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/negative.partition.badvmfs2.bs

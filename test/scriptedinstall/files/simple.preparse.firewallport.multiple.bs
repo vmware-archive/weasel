@@ -1,0 +1,18 @@
+#
+#	start_verify
+#	len(userchoices.getPortRules()) == 2
+#	userchoices.getPortRules()[0]['state'] == userchoices.PORT_STATE_OPEN
+#	userchoices.getPortRules()[0]['number'] == 1
+#	userchoices.getPortRules()[0]['protocol'] == userchoices.PORT_PROTO_TCP
+#	userchoices.getPortRules()[0]['direction'] == userchoices.PORT_DIRECTION_IN
+#	userchoices.getPortRules()[0]['name'] == 'foo'
+#	userchoices.getPortRules()[1]['state'] == userchoices.PORT_STATE_CLOSED
+#	userchoices.getPortRules()[1]['number'] == 2
+#	userchoices.getPortRules()[1]['protocol'] == userchoices.PORT_PROTO_UDP
+#	userchoices.getPortRules()[1]['direction'] == userchoices.PORT_DIRECTION_OUT
+#	userchoices.getPortRules()[1]['name'] == 'bar'
+#	end_verify
+#
+include ./scriptedinstall/files/possitive.minimal.bs
+include ./scriptedinstall/commands/possitive.firewallport.open.bs
+include ./scriptedinstall/commands/possitive.firewallport.close.bs
